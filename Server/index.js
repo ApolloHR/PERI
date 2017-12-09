@@ -26,8 +26,8 @@ app.use( passport.session());
 
 // API Access link for creating client ID and secret:
 // https://code.google.com/apis/console/
-var GOOGLE_CLIENT_ID      = "478350015763-8r9opoksab7rkbu9jj807bqbshr97ktr.apps.googleusercontent.com"
-  , GOOGLE_CLIENT_SECRET  = "CPb1_eBMl7zI-R8mcvFOcknM";
+// var GOOGLE_CLIENT_ID      = "478350015763-8r9opoksab7rkbu9jj807bqbshr97ktr.apps.googleusercontent.com"
+//   , GOOGLE_CLIENT_SECRET  = "CPb1_eBMl7zI-R8mcvFOcknM";
 
 
 passport.serializeUser(function(user, done) {
@@ -38,8 +38,8 @@ passport.deserializeUser(function(obj, done) {
 });
 
 passport.use(new GoogleStrategy({
-    clientID:     GOOGLE_CLIENT_ID,
-    clientSecret: GOOGLE_CLIENT_SECRET,
+    clientID:     process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: process.env.LOCAL_GOOGLE_REDIRECT || 'https://www.google.ca',
     passReqToCallback   : true
   },
