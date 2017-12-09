@@ -3,8 +3,6 @@ const path = require('path');
 const app = express()
 const PORT = process.env.PORT || 3000
 
-app.use(express.static(path.join(__dirname, '../client/dst')))
-
-console.log('hello world!')
+app.use(express.static(path.join(__dirname, '../Client/dst')))
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))

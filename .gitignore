@@ -1,2 +1,2 @@
 node_modules/
-Client/dist/bundle.js
+./Client/dst/bundle.js
