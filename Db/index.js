@@ -1,46 +1,39 @@
+//  REQUIRE
 const mongoose = require('mongoose');
+const { User } = require('./schema.js')
+
+// FOR .ENV VARIABLES
 require('dotenv').config();
-
-mongoose.connect('mongodb://localhost/peri' ||
-  `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_SERVER}`);
-
-const User = mongoose.Schema;
-const Trips = mongoose.Schema;
-const Spot = mongoose.Schema;
-const Forked = mongoose.Schema;
-
-const userSchema = new User({
-  username: {
-    type: String,
-    unique: true
-  },
-  sessionID: String,
-})
-
-const tripsSchema = new Trips({
-  username: String,
-  tripName: String,
-  destination: String,
-  description: String,
-  spots: [{spotID: Number}] //save the spots ID in here
-})
-
-const spotSchema = new Spot({
-  tripID: String,
-  spotName: String,
-  destination: String,
-  description: String,
-  long: Number,
-  lat: Number,
-  elevation: Number,
-  photo: String
-})
-
-const forkedSchema = new Forked({
-  userID: String,
-  destination: String,
-  spots: [{spotID: Number}]
-})
+// MONGOOSE PROMISES DEPRICATED IMPORT PROMISE
+mongoose.Promise = require('bluebird');
+// CONNECT MONGOOSE TO LOCAL HOST OR MLAB
+mongoose.connect(
+  'mongodb://localhost/peri' ||
+  `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_SERVER}`,
+  {userMongoClient: true});
+const db = mongoose.connection;
+// CONNECTION
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('openUri', () => {
+  console.log('Successfully connected to database.');
+});
 
 
+const saveNewUser = (data) => {
 
+  const newUser = new User({
+    username: 'thebkr11@gmail.com',
+    sessionID: '879234354'
+  });
+
+  newUser.save((err) => {
+    if (err) {
+      return err
+    } else{
+      console.log('successfully saved to the database.')
+    }
+  })
+
+}
+
+module.exports.saveNewUser = saveNewUser;
