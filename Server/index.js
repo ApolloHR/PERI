@@ -1,4 +1,6 @@
 const path = require('path');
+const { saveNewUser } = require('../Db/index.js')
+
 const PORT = process.env.PORT || 3000
 const express        = require( 'express' )
   , app              = express()
@@ -62,6 +64,8 @@ app.get('/login', function(req, res){
   res.render('login', { user: req.user });
 });
 
+
+saveNewUser();
 // GET /auth/google
 //   Use passport.authenticate() as route middleware to authenticate the
 //   request.  The first step in Google authentication will involve
