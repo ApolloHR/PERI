@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Landing from './components/landing.jsx'
+import React from "react";
+import ReactDOM from "react-dom";
+import Landing from "./components/landing.jsx"
 
 class App extends React.Component {
   render () {
