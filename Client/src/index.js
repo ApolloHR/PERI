@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux"
-
-import Landing from "./components/landing.jsx"
 import store from "./store.js"
+import Landing from "./components/landing.jsx"
 class App extends React.Component {
   render () {
     return (
