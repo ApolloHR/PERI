@@ -1,6 +1,6 @@
 //  REQUIRE
 const mongoose = require('mongoose');
-const { User } = require('./schema.js')
+const { User, Trip, Spot, Fork } = require('./schema.js')
 
 // FOR .ENV VARIABLES
 require('dotenv').config();
