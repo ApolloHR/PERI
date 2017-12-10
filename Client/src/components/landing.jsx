@@ -18,8 +18,8 @@ class Landing extends React.Component {
     return (
       <div>
         <div>Search form goes here</div>
-        <div>{this.props.trips.allTrips.map(tripObj => (
-             <OneTrip trip={tripObj} />
+        <div>{this.props.trips.allTrips.map((tripObj, i) => (
+             <OneTrip trip={tripObj} key={i}/>
         ))}</div>
       </div>
     )
