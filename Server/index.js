@@ -122,7 +122,7 @@ const data = {
   ]
 }
 
-saveNewTrip(data)
+// saveNewTrip(data)
 
 app.use(express.static(path.join(__dirname, '../Client/dst')))
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))

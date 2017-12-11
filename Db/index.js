@@ -78,42 +78,41 @@ const saveNewTrip = (data, cb) => {
         description: data.description,
         thumbnail: data.thumbnail,
         spots: []
-      });
+      })
 
       // loop through the spots
-      data.spots.map((spot) => {
-        // create a new spot
-        const newSpot = new Spot({
-          // add the tripID into each new spot
-          tripID: newTrip._id,
-          spotName: spot.spotName,
-          description: spot.description,
-          long: spot.long,
-          lat: spot.lat,
-          elevation: spot.elevation,
-          photo: spot.photo
-        });
-        // add the spotID into the trips
-        newTrip.spots.push({spotID: newSpot._id})
-        // save the new spot
-        newSpot.save((err) => {
-          if (err) {
-            return err;
-          } else {
-            console.log('succesfully saved spot');
-          }
-        });
-      }, () => {
-        console.log('will this line rune?')
-        newTrip.save((err) => {
-          if (err) {
-            return err;
-          } else {
-            console.log('succesfully saved trip') // will add callback ehre later
-          }
-        });
-      });
+      // data.spots.map((spot) => {
+      //   // create a new spot
+      //   const newSpot = new Spot({
+      //     // add the tripID into each new spot
+      //     tripID: newTrip._id,
+      //     spotName: spot.spotName,
+      //     description: spot.description,
+      //     long: spot.long,
+      //     lat: spot.lat,
+      //     elevation: spot.elevation,
+      //     photo: spot.photo
+      //   });
+      //   // add the spotID into the trips
+      //   newTrip.spots.push({spotID: newSpot._id})
+      //   // save the new spot
+      //   newSpot.save((err) => {
+      //     if (err) {
+      //       return err;
+      //     } else {
+      //       console.log('succesfully saved spot');
+      //     }
+      //   });
+      // });
       // save the trip
+      newTrip.save((err) => {
+        if (err) {
+          return err;
+        } else {
+          console.log('succesfully saved trip') // will add callback ehre later
+          console.log('this is a new trip', newTrip)
+        }
+      });
     }
   });
 }
