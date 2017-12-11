@@ -2,11 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import axios from "axios";
 
-@connect((store) => {
-  return {
-    login: store.login
-  }
-}, )
+// @connect((store) => {
+//   return {
+//     login: store.login
+//   }
+// }, )
 
 class Login extends React.Component {
 
