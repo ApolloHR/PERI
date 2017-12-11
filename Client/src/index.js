@@ -8,7 +8,7 @@ class App extends React.Component {
 
   uploadWidget() {
     let _this = this;
-    window.cloudinary.openUploadWidget({ cloud_name: 'apollohr', upload_preset: 'uploadperi', tags:['']},
+    window.cloudinary.openUploadWidget({ cloud_name: 'apollohr', cropping: 'server', theme: 'white', stylesheet: '#cloudinary-overlay { background-color: transparent; }', cropping_show_back_button: true, cropping_aspect_ratio: 1, sources: ['local', 'url', 'camera', 'google_photos', 'facebook', 'instagram'], show_powered_by: false, folder: 'user_photos', upload_preset: 'uploadperi', tags:['users', 'content']},
     function(error, result) {
       console.log(result);
     });
@@ -19,7 +19,7 @@ class App extends React.Component {
       <div>
         <p id="test"> Hello React project!</p>
         <h1>To the moon!</h1>
-        <div className="upload">
+        <div id="uploaded" className="upload">
           <button onClick={this.uploadWidget.bind(this)} className="upload-button">
             Add Image
           </button>
