@@ -80,30 +80,6 @@ const saveNewTrip = (data, cb) => {
         spots: []
       })
 
-      // loop through the spots
-      // data.spots.map((spot) => {
-      //   // create a new spot
-      //   const newSpot = new Spot({
-      //     // add the tripID into each new spot
-      //     tripID: newTrip._id,
-      //     spotName: spot.spotName,
-      //     description: spot.description,
-      //     long: spot.long,
-      //     lat: spot.lat,
-      //     elevation: spot.elevation,
-      //     photo: spot.photo
-      //   });
-      //   // add the spotID into the trips
-      //   newTrip.spots.push({spotID: newSpot._id})
-      //   // save the new spot
-      //   newSpot.save((err) => {
-      //     if (err) {
-      //       return err;
-      //     } else {
-      //       console.log('succesfully saved spot');
-      //     }
-      //   });
-      // });
       // save the trip
       newTrip.save((err) => {
         if (err) {
@@ -111,6 +87,47 @@ const saveNewTrip = (data, cb) => {
         } else {
           console.log('succesfully saved trip') // will add callback ehre later
           console.log('this is a new trip', newTrip)
+          // loop through the spots
+          data.spots.map((spot) => {
+            // create a new spot
+            const newSpot = new Spot({
+              // add the tripID into each new spot
+              tripID: newTrip._id,
+              spotName: spot.spotName,
+              description: spot.description,
+              long: spot.long,
+              lat: spot.lat,
+              elevation: spot.elevation,
+              photo: spot.photo
+            });
+            // add the spotID into the trips
+            // search for trip with the ID we have
+            Trip.findById(newTrip._id, (err, trip) => {
+              if (err) {
+                return err;
+              } else {
+                trip.spots.push({spotID: newSpot._id})
+                console.log(trip.spots)
+                   trip.save((err) => {
+                  if (err) {
+                    console.log('error saving the individual spot to the trip');
+                  } else {
+                    console.log('successfully saved spotID to the trip');
+                  }
+                })
+              }
+            })
+
+            // newTrip.spots.push({spotID: newSpot._id})
+            // save the new spot
+            newSpot.save((err) => {
+              if (err) {
+                return err;
+              } else {
+                console.log('succesfully saved spot');
+              }
+            });
+          });
         }
       });
     }
