@@ -72,7 +72,14 @@ app.get('/login', function(req, res){
 app.get('/auth/google', passport.authenticate('google', { scope: [
        'https://www.googleapis.com/auth/plus.login',
        'https://www.googleapis.com/auth/plus.profile.emails.read']
-}));
+}, console.log('Login clicked! line 77 server')));
+
+// .then((success) => {
+//   console.log('success google login ln78 server =', success);
+//   res.send(200);
+// }).catch((error) => {
+//   console.log('error ln80 google login = ', error);
+// })
 
 // GET /auth/google/callback
 //   Use passport.authenticate() as route middleware to authenticate the
