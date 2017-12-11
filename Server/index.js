@@ -2,16 +2,16 @@ const path = require('path');
 const { saveNewUser, saveNewTrip, getTrips } = require('../Db/index.js')
 
 const PORT = process.env.PORT || 3000
-const express        = require( 'express' )
-  , app              = express()
-  , server           = require( 'http' ).createServer( app )
-  , passport         = require( 'passport' )
-  , util             = require( 'util' )
-  , bodyParser       = require( 'body-parser' )
-  , cookieParser     = require( 'cookie-parser' )
-  , session          = require( 'express-session' )
-  // , RedisStore       = require( 'connect-redis' )( session )
-  , GoogleStrategy   = require( 'passport-google-oauth2' ).Strategy;
+const express = require( 'express' )
+const app= express()
+const server = require( 'http' ).createServer( app )
+const passport = require( 'passport' )
+const util = require( 'util' )
+const bodyParser = require( 'body-parser' )
+const cookieParser = require( 'cookie-parser' )
+const session = require( 'express-session' )
+  // , RedisStore = require( 'connect-redis' )( session )
+const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
   // configure Express
 // app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
