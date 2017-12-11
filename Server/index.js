@@ -40,7 +40,7 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new GoogleStrategy({
     clientID:     process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: process.env.LOCAL_GOOGLE_REDIRECT || 'https://www.google.ca',
+    callbackURL: process.env.LOCAL_GOOGLE_REDIRECT || 'https://www.goooogle.ca',
     passReqToCallback   : true
   },
   function(request, accessToken, refreshToken, profile, done) {
