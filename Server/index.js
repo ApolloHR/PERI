@@ -1,5 +1,6 @@
 const path = require('path');
 const { saveNewUser, saveNewTrip, getTrips } = require('../Db/index.js')
+const db = require('../Db/schema.js')
 
 const PORT = process.env.PORT || 3000
 const express = require( 'express' )
@@ -40,7 +41,7 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new GoogleStrategy({
     clientID:     process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: process.env.LOCAL_GOOGLE_REDIRECT || 'https://www.goooogle.ca',
+    callbackURL: process.env.LOCAL_GOOGLE_REDIRECT || 'https://www.google.ca',
     passReqToCallback   : true
   },
   function(request, accessToken, refreshToken, profile, done) {
@@ -49,16 +50,6 @@ passport.use(new GoogleStrategy({
     });
   }
 ));
-
-
-
-// app.get('/', function(req, res){
-//   res.render('index', { user: req.user });
-// });
-
-// app.get('/account', ensureAuthenticated, function(req, res){
-//   res.render('account', { user: req.user });
-// });
 
 app.get('/login', function(req, res){
   res.render('login', { user: req.user });
@@ -130,6 +121,19 @@ function ensureAuthenticated(req, res, next) {
 // }
 
 // saveNewTrip(data)
+
+
+//GET ALL TRIPS
+app.get('/trips', (req, res) => {
+  db.Trip.find({tripName: req.tripName}, (error, info) => {
+    if (error) {
+      console.log('error line 106 server =', error);
+    }
+    res.status(200).send(info);
+  });
+})
+
+
 
 app.use(express.static(path.join(__dirname, '../Client/dst')))
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
