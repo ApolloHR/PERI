@@ -17,7 +17,7 @@ class Login extends React.Component {
         <div>Build Your Own Adventure:</div>
         <div>Login</div>
         <form>
-          <a type="submit" href="/auth/google">Goooooogle Login</a>
+          <a type="submit" href="/auth/google">Google Login</a>
         </form>
       </div>
     )
