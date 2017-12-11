@@ -1,5 +1,5 @@
 const path = require('path');
-const { saveNewUser, saveNewTrip } = require('../Db/index.js')
+const { saveNewUser, saveNewTrip, getTrips } = require('../Db/index.js')
 
 const PORT = process.env.PORT || 3000
 const express        = require( 'express' )

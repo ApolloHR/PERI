@@ -131,5 +131,16 @@ const saveNewTrip = (data, cb) => {
   });
 }
 
+const getTrips = (cb) => {
+  Trip.find({}, (err, trips) => {
+    if (err) {
+      console.log(`Couldn't find the trips`)
+    } else {
+      console.log(`Found all the trips`, trips)
+    }
+  })
+}
+
 module.exports.saveNewUser = saveNewUser;
 module.exports.saveNewTrip = saveNewTrip;
+module.exports.getTrips = getTrips;
