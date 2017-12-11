@@ -8,7 +8,7 @@ class App extends React.Component {
 
   uploadWidget() {
     let _this = this;
-    window.cloudinary.openUploadWidget({ cloud_name: 'apollohr', cropping: 'server', theme: 'white', stylesheet: '#cloudinary-overlay { background-color: transparent; }', cropping_show_back_button: true, cropping_aspect_ratio: 1, sources: ['local', 'url', 'camera', 'google_photos', 'facebook', 'instagram'], show_powered_by: false, folder: 'user_photos', upload_preset: 'uploadperi', tags:['users', 'content']},
+    window.cloudinary.openUploadWidget({ cloud_name: 'apollohr', cropping: 'server', theme: 'white', stylesheet: '#cloudinary-overlay { background-color: transparent; }', cropping_show_back_button: true, cropping_aspect_ratio: 1, sources: ['local', 'url', 'camera', 'google_photos', 'facebook', 'instagram'], show_powered_by: false, upload_preset: 'uploadperi', tags:['users', 'content']},
     function(error, result) {
       console.log(result);
     });
@@ -25,6 +25,14 @@ class App extends React.Component {
           </button>
         </div>
         <Landing />
+        <div>
+          <Image cloudName="apolloHR" publicId="public_id" width="300" crop="scale"/>
+          {/* <CloudinaryContext cloudName="apolloHR">
+            <Image publicId="user_uploads">
+              <Transformation width="200" crop="scale" angle="10"/>
+            </Image>
+          </CloudinaryContext> */}
+        </div>
       </div>
     )
   }
