@@ -17,6 +17,10 @@ class Landing extends React.Component {
   render () {
     return (
       <div>
+        <form class="landing-search">
+          <input type="text" placeholder="Find your next adventure..."/>
+          <input type="submit" value="Search" />
+        </form>
         <div>Search form goes here</div>
         <div>{this.props.trips.allTrips.map((tripObj, i) => (
              <OneTrip trip={tripObj} key={i}/>
