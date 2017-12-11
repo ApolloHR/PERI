@@ -1,5 +1,5 @@
 const path = require('path');
-const { saveNewUser } = require('../Db/index.js')
+const { saveNewUser, saveNewTrip } = require('../Db/index.js')
 
 const PORT = process.env.PORT || 3000
 const express        = require( 'express' )
@@ -64,8 +64,6 @@ app.get('/login', function(req, res){
   res.render('login', { user: req.user });
 });
 
-
-saveNewUser();
 // GET /auth/google
 //   Use passport.authenticate() as route middleware to authenticate the
 //   request.  The first step in Google authentication will involve
@@ -98,7 +96,33 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/login');
 }
 
+// const data = {
+//   username: 'huynh.r.k@gmail.com',
+//   tripName: 'vacation in bali',
+//   destination: 'Bali',
+//   description: 'vacay after the bootcamp!',
+//   thumbnail: 'https://goo.gl/HCgNo1',
+//   spots: [
+//     {
+//       spotName: 'beach1',
+//       description: 'description for this spot hello world',
+//       long: 8.3405,
+//       lat: 115.0920,
+//       elevation: 32,
+//       photo: 'https://goo.gl/fdc8y3',
+//     },
+//     {
+//       spotName: 'beach2',
+//       description: 'description for this spot hello world',
+//       long: 8.3403,
+//       lat: 115.0921,
+//       elevation: 52,
+//       photo: 'https://goo.gl/WXtpYx',
+//     }
+//   ]
+// }
 
+// saveNewTrip(data)
 
 app.use(express.static(path.join(__dirname, '../Client/dst')))
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))

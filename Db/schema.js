@@ -25,7 +25,6 @@ const tripSchema = new Trips({
 const spotSchema = new Spot({
   tripID: String,
   spotName: String,
-  destination: String,
   description: String,
   long: Number,
   lat: Number,
