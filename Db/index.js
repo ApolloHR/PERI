@@ -63,8 +63,9 @@ const saveNewUser = (data) => {
 
 }
 
+// SAVES NEW TRIP AND SPOTS WITH IDS
 const saveNewTrip = (data, cb) => {
-  // find the user
+  // find the user to make sure we have the correct user
     User.findOne({username: data.username}, (err, user) => {
     if (err) {
       console.log('could not find the user'); //will add a callback here later
@@ -80,14 +81,13 @@ const saveNewTrip = (data, cb) => {
         spots: []
       })
 
-      // save the trip
+      // Save the new trip
       newTrip.save((err) => {
         if (err) {
           return err;
         } else {
           console.log('succesfully saved trip') // will add callback ehre later
-          console.log('this is a new trip', newTrip)
-          // loop through the spots
+          // loop through the spots that was given
           data.spots.map((spot) => {
             // create a new spot
             const newSpot = new Spot({
@@ -100,14 +100,13 @@ const saveNewTrip = (data, cb) => {
               elevation: spot.elevation,
               photo: spot.photo
             });
-            // add the spotID into the trips
-            // search for trip with the ID we have
+            // before we save new spot, search for the trip and add the spots into Trip
             Trip.findById(newTrip._id, (err, trip) => {
               if (err) {
                 return err;
               } else {
-                trip.spots.push({spotID: newSpot._id})
-                console.log(trip.spots)
+                trip.spots.push(newSpot._id)
+                console.log('array for our trip! ', trip.spots)
                    trip.save((err) => {
                   if (err) {
                     console.log('error saving the individual spot to the trip');
@@ -117,9 +116,7 @@ const saveNewTrip = (data, cb) => {
                 })
               }
             })
-
-            // newTrip.spots.push({spotID: newSpot._id})
-            // save the new spot
+            // save the spot
             newSpot.save((err) => {
               if (err) {
                 return err;
