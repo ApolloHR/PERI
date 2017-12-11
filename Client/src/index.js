@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux"
 import store from "./store.js"
-import Landing from "./components/landing.jsx"
+import Routes from "./components/routes.jsx"
+import { BrowserRouter } from 'react-router-dom'
 import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
 class App extends React.Component {
 
@@ -24,7 +25,7 @@ class App extends React.Component {
             Add Image
           </button>
         </div>
-        <Landing />
+          <Routes />
         <div>
           <Image cloudName="apolloHR" publicId="public_id" width="300" crop="scale"/>
           {/* <CloudinaryContext cloudName="apolloHR">
@@ -38,4 +39,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('app'));
+ReactDOM.render(<Provider store={store}><BrowserRouter><App/></BrowserRouter></Provider>, document.getElementById('app'));
