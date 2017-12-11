@@ -1,17 +1,18 @@
 const path = require('path');
 const { saveNewUser, saveNewTrip, getTrips } = require('../Db/index.js')
+const db = require('../Db/schema.js')
 
 const PORT = process.env.PORT || 3000
-const express        = require( 'express' )
-  , app              = express()
-  , server           = require( 'http' ).createServer( app )
-  , passport         = require( 'passport' )
-  , util             = require( 'util' )
-  , bodyParser       = require( 'body-parser' )
-  , cookieParser     = require( 'cookie-parser' )
-  , session          = require( 'express-session' )
-  // , RedisStore       = require( 'connect-redis' )( session )
-  , GoogleStrategy   = require( 'passport-google-oauth2' ).Strategy;
+const express = require( 'express' )
+const app= express()
+const server = require( 'http' ).createServer( app )
+const passport = require( 'passport' )
+const util = require( 'util' )
+const bodyParser = require( 'body-parser' )
+const cookieParser = require( 'cookie-parser' )
+const session = require( 'express-session' )
+  // , RedisStore = require( 'connect-redis' )( session )
+const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
   // configure Express
 // app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -50,16 +51,6 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-
-
-// app.get('/', function(req, res){
-//   res.render('index', { user: req.user });
-// });
-
-// app.get('/account', ensureAuthenticated, function(req, res){
-//   res.render('account', { user: req.user });
-// });
-
 app.get('/login', function(req, res){
   res.render('login', { user: req.user });
 });
@@ -72,7 +63,14 @@ app.get('/login', function(req, res){
 app.get('/auth/google', passport.authenticate('google', { scope: [
        'https://www.googleapis.com/auth/plus.login',
        'https://www.googleapis.com/auth/plus.profile.emails.read']
-}));
+}, console.log('Login clicked! line 77 server')));
+
+// .then((success) => {
+//   console.log('success google login ln78 server =', success);
+//   res.send(200);
+// }).catch((error) => {
+//   console.log('error ln80 google login = ', error);
+// })
 
 // GET /auth/google/callback
 //   Use passport.authenticate() as route middleware to authenticate the
@@ -123,6 +121,19 @@ function ensureAuthenticated(req, res, next) {
 // }
 
 // saveNewTrip(data)
+
+
+//GET ALL TRIPS
+app.get('/trips', (req, res) => {
+  db.Trip.find({tripName: req.tripName}, (error, info) => {
+    if (error) {
+      console.log('error line 106 server =', error);
+    }
+    res.status(200).send(info);
+  });
+})
+
+
 
 app.use(express.static(path.join(__dirname, '../Client/dst')))
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
