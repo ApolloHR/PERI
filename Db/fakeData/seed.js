@@ -34,5 +34,5 @@ users.map((user) => {
 })
 
 trips.map((trip) => {
-  saveNewTrip(trips);
+  saveNewTrip(trip);
 })

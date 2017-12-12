@@ -42,7 +42,6 @@ const saveNewTrip = (data, cb) => {
     if (err) {
       console.log('could not find the user'); //will add a callback here later
     } else {
-      console.log('usernot found');
     // create a new trip
       const newTrip = new Trip({
         username: user,
@@ -60,6 +59,7 @@ const saveNewTrip = (data, cb) => {
         } else {
           console.log('succesfully saved trip') // will add callback ehre later
           // loop through the spots that was given
+          console.log('data from server: ', data);
           data.spots.map((spot) => {
             // create a new spot
             const newSpot = new Spot({

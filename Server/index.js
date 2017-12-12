@@ -94,7 +94,7 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/login');
 }
 
-// const data = {
+// const data = [{
 //   username: 'huynh.r.k@gmail.com',
 //   tripName: 'vacation in bali',
 //   destination: 'Bali',
@@ -118,9 +118,9 @@ function ensureAuthenticated(req, res, next) {
 //       photo: 'https://goo.gl/WXtpYx',
 //     }
 //   ]
-// }
+// }]
 
-// saveNewTrip(data)
+// saveNewTrip(data[0])
 
 
 //GET ALL TRIPS
