@@ -17,7 +17,8 @@ export class MapContainer extends React.Component {
       <Marker title={spot.spotName}
              position={{ lat:spot.lat, lng: spot.long }}
       />
-    })
+    });
+
     return (
       <Map  style={style.map} google={this.props.google} zoom={10}
             initialCenter={{lat: 1.3521, lng: 103.8198}}>
