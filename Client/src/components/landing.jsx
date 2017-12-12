@@ -2,6 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import OneTrip from "./oneTrip.jsx"
 import { fetchTrips } from "../actions/tripsActions"
+import Login from "./login.jsx"
 
 @connect((store) => {
   return {
@@ -17,11 +18,16 @@ class Landing extends React.Component {
   render () {
     return (
       <div>
-        <div>Search form goes here</div>
+        <form class="landing-search">
+          <input type="text" placeholder="Find your next adventure..."/>
+          <input type="submit" value="Search" />
+        </form>
         <div>{this.props.trips.allTrips.map((tripObj, i) => (
              <OneTrip trip={tripObj} key={i}/>
         ))}</div>
+
         <div>Landing Image wall goes here</div>
+        <Login />
         <div>{this.props.trips.test}</div>
       </div>
     )
