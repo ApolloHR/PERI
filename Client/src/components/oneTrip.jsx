@@ -8,7 +8,7 @@ let OneTrip = ({trip}) => (
   <div>
     <Card className='small'
   header={<CardTitle image={trip.thumbnail}>{trip.destination}</CardTitle>}
-  actions={[<Link to="/allTripInfo" activeClassName="active">more info</Link>]}>
+  actions={[<Link to={{pathname: "/allTripInfo", query: trip}}>more info</Link>]}>
       <div>{trip.tripName}</div>
       <div>{trip.description}</div>
       <div>created by {trip.username}</div>
