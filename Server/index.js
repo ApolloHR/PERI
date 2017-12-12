@@ -12,7 +12,9 @@ const bodyParser = require( 'body-parser' )
 const cookieParser = require( 'cookie-parser' )
 const session = require( 'express-session' )
   // , RedisStore = require( 'connect-redis' )( session )
-const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
+// const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
+//CHOOSE*****
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
   // configure Express
 // app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -25,45 +27,50 @@ app.use( bodyParser.urlencoded({
 app.use( passport.initialize());
 app.use( passport.session());
 
-// API Access link for creating client ID and secret:
-// https://code.google.com/apis/console/
-// var GOOGLE_CLIENT_ID      = "478350015763-8r9opoksab7rkbu9jj807bqbshr97ktr.apps.googleusercontent.com"
-//   , GOOGLE_CLIENT_SECRET  = "CPb1_eBMl7zI-R8mcvFOcknM";
+app.use(session({secret: 'anystringoftext',
+  saveUninitialized: true,
+  resave: true}));
 
-
-passport.serializeUser(function(user, done) {
-  done(null, user);
-});
-passport.deserializeUser(function(obj, done) {
-  done(null, obj);
-});
 
 passport.use(new GoogleStrategy({
-    clientID:     process.env.GOOGLE_CLIENT_ID,
+    clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: process.env.LOCAL_GOOGLE_REDIRECT || 'https://www.google.ca',
-    passReqToCallback   : true
+    passReqToCallback : true
   },
-  function(request, accessToken, refreshToken, profile, done) {
+  function(userInfo, accessToken, refreshToken, profile, done) {
     process.nextTick(function () {
-      return done(null, profile);
+      console.log('SESSION id line 45 server =', userInfo.sessionID);
+      db.User.findOne({'username.type': profile.displayName}, function(err, user){
+        if(err) {
+          console.log('error line 46')
+          return done(err);
+        }
+        if(user) {
+          console.log('error line 49')
+          return done(null, user);
+        } else {
+          var newUser = {
+            username: profile.displayName,
+            sessionID: userInfo.sessionID
+          }
+          saveNewUser(newUser);
+        }
+      })
+      return done(null, null, null);
+      // SessionID IS userInfo.sessionID
+      //Full name IS profile.displayName
+      //Email IS profile.emails[0].value
     });
   }
 ));
 
-app.get('/login', function(req, res){
-  res.render('login', { user: req.user });
-});
 
 // GET /auth/google
-//   Use passport.authenticate() as route middleware to authenticate the
-//   request.  The first step in Google authentication will involve
-//   redirecting the user to google.com.  After authorization, Google
-//   will redirect the user back to this application at /auth/google/callback
-app.get('/auth/google', passport.authenticate('google', { scope: [
-       'https://www.googleapis.com/auth/plus.login',
-       'https://www.googleapis.com/auth/plus.profile.emails.read']
-}, console.log('Login clicked! line 77 server')));
+// app.get('/auth/google', passport.authenticate('google', { scope: [
+//        'https://www.googleapis.com/auth/plus.login',
+//        'https://www.googleapis.com/auth/plus.profile.emails.read']
+// }));
 
 // .then((success) => {
 //   console.log('success google login ln78 server =', success);
@@ -72,21 +79,35 @@ app.get('/auth/google', passport.authenticate('google', { scope: [
 //   console.log('error ln80 google login = ', error);
 // })
 
-// GET /auth/google/callback
-//   Use passport.authenticate() as route middleware to authenticate the
-//   request.  If authentication fails, the user will be redirected back to the
-//   login page.  Otherwise, the primary route function function will be called,
-//   which, in this example, will redirect the user to the home page.
-app.get( '/auth/google/callback',
-      passport.authenticate( 'google', {
-        successRedirect: '/',
-        failureRedirect: '/login'
-}));
+//CALLBACK
+// app.get( '/auth/google/callback',
+//       passport.authenticate( 'google', {
+//         successRedirect: '/',
+//         failureRedirect: '/auth/google'
+// }));
+
+
+//NEWWW
+app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
+
+app.get('/auth/google/callback',
+  passport.authenticate('google', {
+    successRedirect: '/',
+    failureRedirect: '/' })); //****FAILURE GETTING HIT
 
 app.get('/logout', function(req, res){
   req.logout();
   res.redirect('/');
 });
+
+
+
+// app.get('/', function(req, res){
+//   console.log('line 92 server', req.sessionID);
+//   res.send()
+// });
+
+
 
 
 function ensureAuthenticated(req, res, next) {
