@@ -4,6 +4,7 @@ import Nav from "./nav.jsx"
 import landing from "./landing.jsx"
 import buildTrip from "./buildTrip.jsx"
 import cart from "./cart.jsx"
+import TripViewer from "./tripViewer.jsx"
 
 let Routes = (props) => (
 
@@ -13,6 +14,7 @@ let Routes = (props) => (
     <Route exact path="/" component={landing}/>
     <Route path="/buildTrip" component={buildTrip}/>
     <Route path="/cart" component={cart}/>
+    <Route path="/tripViewer" component={TripViewer}/>
   </div>
 </HashRouter>
 
