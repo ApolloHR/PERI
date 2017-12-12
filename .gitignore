@@ -1,3 +1,4 @@
 node_modules/
 .env
 Client/dst/bundle.js
+npm-debug.log
