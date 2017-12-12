@@ -5,7 +5,8 @@ import MapsContainer from './map.jsx'
 
 @connect((store) => {
   return {
-    test: store.tripView.test
+    test: store.tripView.test,
+    spots: store.tripView.trip
   }
 })
 
@@ -14,7 +15,7 @@ class TripViewer extends React.Component {
     return (
       <div>
         <h3>{this.props.test}</h3>
-        <MapsContainer />
+        <MapsContainer spots={this.props.spots}/>
       </div>
     )
   }
