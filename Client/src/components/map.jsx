@@ -1,5 +1,5 @@
 import {Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
-import React from 'React';
+import React from 'react';
 
 const style = {
   map: {
