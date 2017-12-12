@@ -44,7 +44,7 @@ const saveNewTrip = (data, cb) => {
     } else {
     // create a new trip
       const newTrip = new Trip({
-        username: user,
+        username: data.username,
         tripName: data.tripName,
         destination: data.destination,
         description: data.description,
@@ -106,9 +106,9 @@ const saveNewTrip = (data, cb) => {
 const getTrips = (cb) => {
   Trip.find({}, (err, trips) => {
     if (err) {
-      console.log(`Couldn't find the trips`)
+      cb(err, null)
     } else {
-      console.log(`Found all the trips`, trips)
+      cb(err, trips)
     }
   })
 }
