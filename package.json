@@ -37,6 +37,7 @@
     "passport-google-oauth2": "^0.1.6",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-materialize": "^1.1.1",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
