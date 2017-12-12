@@ -2,6 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import OneTrip from "./oneTrip.jsx"
 import { fetchTrips } from "../actions/tripsActions"
+import Login from "./login.jsx"
 
 @connect((store) => {
   return {
@@ -24,11 +25,9 @@ class Landing extends React.Component {
         <div>{this.props.trips.allTrips.map((tripObj, i) => (
              <OneTrip trip={tripObj} key={i}/>
         ))}</div>
-<<<<<<< HEAD
+
         <div>Landing Image wall goes here</div>
-=======
         <Login />
->>>>>>> deleted old placeholders in landing.jsx, going to pull in latest merge
         <div>{this.props.trips.test}</div>
       </div>
     )
