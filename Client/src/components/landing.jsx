@@ -46,8 +46,6 @@ class Landing extends React.Component {
         <div>{this.props.trips.allTrips.map((tripObj, i) => (
              <OneTrip trip={tripObj} key={i}/>
         ))}</div>
-
-        <div>Landing Image wall goes here</div>
         <div className="main">
           <div className="gallery">
             <CloudinaryContext cloudName="apolloHR">
@@ -71,8 +69,6 @@ class Landing extends React.Component {
             <div className="clearfix"></div>
           </div>
         </div>
-        <Login />
-        <div>{this.props.trips.test}</div>
       </div>
     )
   }
