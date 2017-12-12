@@ -1,5 +1,6 @@
-import React from "react"
-import { NavLink } from "react-router-dom"
+import React from "react";
+import { NavLink } from "react-router-dom";
+import Login from "./login.jsx";
 
 let Nav = (props) => (
 
@@ -8,6 +9,7 @@ let Nav = (props) => (
     <NavLink to="/" activeClassName="active"> Home </NavLink>
     <NavLink to="/buildTrip" activeClassName="active"> Build Trip </NavLink>
     <NavLink to="/cart" activeClassName="active"> Cart </NavLink>
+    <NavLink to="/auth/google" activeClassName="active">Login </NavLink>
   </nav>
 </div>
 

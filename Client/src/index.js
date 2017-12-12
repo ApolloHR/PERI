@@ -18,14 +18,12 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <p id="test"> Hello React project!</p>
-        <h1>To the moon!</h1>
+        <Routes />
         <div id="uploaded" className="upload">
           <button onClick={this.uploadWidget.bind(this)} className="upload-button">
             Add Image
           </button>
         </div>
-          <Routes />
         <div>
           <Image cloudName="apolloHR" publicId="public_id" width="300" crop="scale"/>
           {/* <CloudinaryContext cloudName="apolloHR">
