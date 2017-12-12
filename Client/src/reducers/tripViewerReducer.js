@@ -1,5 +1,5 @@
 export default function reducer(state={
-  test: 'hello world!!'
+  test: 'Google Maps FTW'
 }, action) {
   switch(action.payload) {
 
