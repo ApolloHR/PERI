@@ -125,13 +125,13 @@ function ensureAuthenticated(req, res, next) {
 
 //GET ALL TRIPS
 app.get('/trips', (req, res) => {
-  db.Trip.find({tripName: req.tripName}, (error, info) => {
-    if (error) {
+  getTrips((err, trips) => {
+    if (err) {
       console.log('error line 106 server =', error);
     }
-    res.status(200).send(info);
+    res.send(trips);
   });
-})
+});
 
 
 
