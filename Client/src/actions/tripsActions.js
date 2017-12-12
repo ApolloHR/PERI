@@ -1,11 +1,4 @@
 export function fetchTrips() {
-
-console.log('fetchTrips was called');
-
-axios.get('/user?ID=12345')
-  .then(function (response) {
-    console.log('tirps response',response);
-
   return {type: "FETCH_TRIPS_SUCCESS", payload:[{
     username: 'nick',
     tripName: 'London 2017',
@@ -22,13 +15,4 @@ axios.get('/user?ID=12345')
     thumbnail: 'http://knowledge.wharton.upenn.edu/wp-content/uploads/2016/03/rio.jpg',
     spots: [{spotID: 2}]
   }]}
-
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-
-
-
-
 }
