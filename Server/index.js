@@ -28,20 +28,39 @@ app.use( passport.initialize());
 app.use( passport.session());
 
 app.use(session({secret: 'anystringoftext',
-         saveUninitialized: true,
-         resave: true}));
+  saveUninitialized: true,
+  resave: true}));
 
 
 passport.use(new GoogleStrategy({
-    clientID:     process.env.GOOGLE_CLIENT_ID,
+    clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: process.env.LOCAL_GOOGLE_REDIRECT || 'https://www.google.ca',
-    passReqToCallback   : true
+    passReqToCallback : true
   },
-  function(accessToken, refreshToken, profile, done) {
+  function(userInfo, accessToken, refreshToken, profile, done) {
     process.nextTick(function () {
-      console.log('SESSION id line 45 server =', accessToken.sessionID);
-      // return done(null, profile);
+      console.log('SESSION id line 45 server =', userInfo.sessionID);
+      db.User.findOne({'username.type': profile.displayName}, function(err, user){
+        if(err) {
+          console.log('error line 46')
+          return done(err);
+        }
+        if(user) {
+          console.log('error line 49')
+          return done(null, user);
+        } else {
+          var newUser = {
+            username: profile.displayName,
+            sessionID: userInfo.sessionID
+          }
+          saveNewUser(newUser);
+        }
+      })
+      return done(null, null, null);
+      // SessionID IS userInfo.sessionID
+      //Full name IS profile.displayName
+      //Email IS profile.emails[0].value
     });
   }
 ));
@@ -71,9 +90,10 @@ passport.use(new GoogleStrategy({
 //NEWWW
 app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 
-  app.get('/auth/google/callback',
-    passport.authenticate('google', { successRedirect: '/',
-                                        failureRedirect: '/sgadfad' }));
+app.get('/auth/google/callback',
+  passport.authenticate('google', {
+    successRedirect: '/',
+    failureRedirect: '/' })); //****FAILURE GETTING HIT
 
 app.get('/logout', function(req, res){
   req.logout();

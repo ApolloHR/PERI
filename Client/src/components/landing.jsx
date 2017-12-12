@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import OneTrip from "./oneTrip.jsx";
 import { fetchTrips } from "../actions/tripsActions";
 import Login from "./login.jsx";
-import axios from 'axios';
 import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
 import { render } from 'react-dom';
+import axios from "axios";
 
 @connect((store) => {
   return {
@@ -22,8 +22,19 @@ class Landing extends React.Component {
     });
     this.props.dispatch(fetchTrips());
     console.log('this props cloudinary =', this.props.cloudinary)
-    
+
+    this.props.dispatch(fetchTrips())
+
+    //BENJI is working on this
+    // axios.get('/')
+    //   .then((response) => {
+    //     console.log('response lin 18', response);
+    //   })
+    //   .catch((error) => {
+    //     console.log('eror =', error);
+    //   })
   }
+
 
   render () {
     return (
