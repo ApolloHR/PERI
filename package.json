@@ -29,6 +29,7 @@
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
+    "google-maps-react": "^1.1.2",
     "mongodb": "^3.0.0-rc0",
     "mongoose": "^4.13.6",
     "passport": "~0.3.2",

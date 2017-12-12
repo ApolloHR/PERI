@@ -1,3 +1,9 @@
 #test {
   color: blue;
 }
+
+#map {
+  width: 50%;
+  height: 400px;
+  background-color: grey;
+}
