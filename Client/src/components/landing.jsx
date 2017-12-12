@@ -21,11 +21,14 @@ class Landing extends React.Component {
           <input type="text" placeholder="Find your next adventure..."/>
           <input type="submit" value="Search" />
         </form>
-        <div>Search form goes here</div>
         <div>{this.props.trips.allTrips.map((tripObj, i) => (
              <OneTrip trip={tripObj} key={i}/>
         ))}</div>
+<<<<<<< HEAD
         <div>Landing Image wall goes here</div>
+=======
+        <Login />
+>>>>>>> deleted old placeholders in landing.jsx, going to pull in latest merge
         <div>{this.props.trips.test}</div>
       </div>
     )
