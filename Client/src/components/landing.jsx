@@ -16,7 +16,7 @@ import { fetchTrips } from "../actions/tripsActions";
 })
 class Landing extends React.Component {
 
-  componentDidMount() {
+  componentWillMount() {
     axios.get('https://res.cloudinary.com/peri/image/list/users.json').then((res) => {
       console.log('axios res =', res);
       this.props.dispatch(cloudinaryAction(res));
