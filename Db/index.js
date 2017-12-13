@@ -1,6 +1,6 @@
 //  REQUIRE
 const mongoose = require('mongoose');
-const { User, Trip, Spot, Fork } = require('./schema.js')
+const { User, Trip, Spot, Fork } = require('./schema.js');
 
 // FOR .ENV VARIABLES
 require('dotenv').config();
@@ -28,17 +28,17 @@ const saveNewUser = (data) => {
   newUser.save((err) => {
     if (err) {
       return err;
-    } else{
+    } else {
       console.log('successfully saved to the database.');
     }
-  })
+  });
 
-}
+};
 
 // SAVES NEW TRIP AND SPOTS WITH IDS
 const saveNewTrip = (data, cb) => {
   // find the user to make sure we have the correct user
-    User.findOne({username: data.username}, (err, user) => {
+  User.findOne({username: data.username}, (err, user) => {
     if (err) {
       console.log('could not find the user'); //will add a callback here later
     } else {
@@ -50,14 +50,14 @@ const saveNewTrip = (data, cb) => {
         description: data.description,
         thumbnail: data.thumbnail,
         spots: []
-      })
+      });
 
       // Save the new trip
       newTrip.save((err) => {
         if (err) {
           return err;
         } else {
-          console.log('succesfully saved trip') // will add callback ehre later
+          console.log('succesfully saved trip'); // will add callback ehre later
           // loop through the spots that was given
           console.log('data from server: ', data);
           data.spots.map((spot) => {
@@ -77,17 +77,17 @@ const saveNewTrip = (data, cb) => {
               if (err) {
                 return err;
               } else {
-                trip.spots.push(newSpot._id)
-                console.log('array for our trip! ', trip.spots)
-                   trip.save((err) => {
+                trip.spots.push(newSpot._id);
+                console.log('array for our trip! ', trip.spots);
+                trip.save((err) => {
                   if (err) {
                     console.log('error saving the individual spot to the trip');
                   } else {
                     console.log('successfully saved spotID to the trip');
                   }
-                })
+                });
               }
-            })
+            });
             // save the spot
             newSpot.save((err) => {
               if (err) {
@@ -101,27 +101,27 @@ const saveNewTrip = (data, cb) => {
       });
     }
   });
-}
+};
 
 const getTrips = (cb) => {
   Trip.find({}, (err, trips) => {
     if (err) {
-      cb(err, null)
+      cb(err, null);
     } else {
-      cb(err, trips)
+      cb(err, trips);
     }
-  })
-}
+  });
+};
 
 const getSpots = (tripId, cb) => {
   Spot.find({'tripID': tripId}, (err, spots) => {
     if (err) {
-      cb(err, null)
+      cb(err, null);
     } else {
-      cb(err, spots)
+      cb(err, spots);
     }
-  })
-}
+  });
+};
 
 module.exports.saveNewUser = saveNewUser;
 module.exports.saveNewTrip = saveNewTrip;

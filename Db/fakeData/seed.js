@@ -31,8 +31,8 @@ Spot.remove({}, (err) => {
 
 users.map((user) => {
   saveNewUser(user);
-})
+});
 
 trips.map((trip) => {
   saveNewTrip(trip);
-})
+});
