@@ -1,13 +1,26 @@
 import React from "react";
 import {CardTitle, Card} from 'react-materialize';
+import axios from "axios";
 
+class OneSpot extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-let OneSpot = ({spot}) => (
+  getSpot() {
+    axios.post('/spots', function)
+  }
 
-  <div>
-    HELLOOOOO :D
-  </div>
-)
+  render () {
+    return (
+      <div>
+      {console.log(spot)}
+        HELLOOOOO :D
+      </div>
+    )
+  }
+}
 
 
 export default OneSpot;
