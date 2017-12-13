@@ -1,30 +1,31 @@
 import React from "react";
+import axios from "axios";
 import { connect } from "react-redux";
+import { render } from 'react-dom';
+import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
+import { cloudinaryAction } from "../actions/cloudinary";
+import Login from "./login.jsx";
 import OneTrip from "./oneTrip.jsx";
 import { fetchTrips } from "../actions/tripsActions";
-import Login from "./login.jsx";
-import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
-import { render } from 'react-dom';
-import axios from "axios";
 
 @connect((store) => {
   return {
     trips: store.trips,
-    cloudinary: store.cloudinary.gallery
+    cloudinaryGallery: store.cloudinary.gallery
   }
 })
 class Landing extends React.Component {
 
   componentDidMount() {
-    axios.get('https://res.cloudinary.com/apolloHR/image/list/users.json').then(res => {
+    axios.get('https://res.cloudinary.com/peri/image/list/users.json').then((res) => {
       console.log('axios res =', res);
+      this.props.dispatch(cloudinaryAction(res));
       // this.setState({gallery: res.data.resources});
+    }).catch(function (error) {
+      console.log('cloudinary axios catch error =', error);
     });
     this.props.dispatch(fetchTrips());
-    console.log('this props cloudinary =', this.props.cloudinary)
-
-    this.props.dispatch(fetchTrips())
-
+    console.log('this props cloudinaryGallery =', this.props.cloudinaryGallery)
     //BENJI is working on this
     // axios.get('/')
     //   .then((response) => {
@@ -47,14 +48,14 @@ class Landing extends React.Component {
              <OneTrip trip={tripObj} key={i}/>
         ))}</div>
         <div className="main">
-          <div className="gallery">
-            <CloudinaryContext cloudName="apolloHR">
+          {/* <div className="gallery">
+            <CloudinaryContext cloudName="peri">
               {
-                this.props.cloudinary.map(data => {
+                this.props.cloudinaryGallery.map(data => {
                   return (
                     <div className="responsive" key={data.public_id}>
                       <div className="img">
-                        <a target="_blank" href={`https://res.cloudinary.com/apolloHR/image/upload/${data.public_id}.jpg`}>
+                        <a target="_blank" href={`https://res.cloudinary.com/peri/image/upload/${data.public_id}.jpg`}>
                           <Image publicId={data.public_id}>
                             <Transformation crop="scale" width="300" height="200" dpr="auto" responsive_placeholder="blank" />
                           </Image>
@@ -67,7 +68,7 @@ class Landing extends React.Component {
               }
             </CloudinaryContext>
             <div className="clearfix"></div>
-          </div>
+          </div> */}
         </div>
       </div>
     )
