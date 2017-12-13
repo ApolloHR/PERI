@@ -113,8 +113,8 @@ const getTrips = (cb) => {
   })
 }
 
-const getSpots = (cb) => {
-  Spots.find({}, (err, trips) => {
+const getSpots = (tripId, cb) => {
+  Spots.find({'tripId': tripId}, (err, spots) => {
     if (err) {
       cb(err, null)
     } else {
