@@ -42,6 +42,7 @@
     "react-materialize": "^1.1.1",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
+    "recompose": "^0.26.0",
     "redux": "^3.7.2",
     "redux-middleware": "^0.1.21",
     "redux-promise-middleware": "^5.0.0",
