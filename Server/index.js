@@ -123,7 +123,7 @@ app.get('/trips', (req, res) => {
 });
 
 app.get('/spots', (req, res) => {
-  getSpots((err, spots) => {
+  getSpots(req.tripId, (err, spots) => {
     if (err) {
       console.log('error line 128 server =', error);
     }
