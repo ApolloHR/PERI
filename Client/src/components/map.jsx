@@ -7,9 +7,9 @@ const MyMapComponent = compose(
   withProps({
     // googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
     googleMapURL: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCXBfFMVmtAzLxzykJh74QKlFPDV9IYLDI&libraries=geometry,drawing,places',
-    loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
-    mapElement: <div style={{ height: `100%` }} />,
+    loadingElement: <div style={{ height: '100%' }} />,
+    containerElement: <div style={{ height: '400px' }} />,
+    mapElement: <div style={{ height: '100%' }} />,
   }),
   withScriptjs,
   withGoogleMap
@@ -20,7 +20,11 @@ const MyMapComponent = compose(
   >
     {console.log(props.spots.spots[0].lat)}
     {console.log(props)}
-    <Marker position={{ lat: props.spots.spots[0].lat, lng: props.spots.spots[0].long }}/>
+    {
+      props.spots.spots.map( (spot) =>
+        <Marker position={{ lat: spot.lat, lng: spot.long }}/>
+      )
+    }
 
   </GoogleMap>
 ));

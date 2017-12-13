@@ -15,7 +15,7 @@ class TripViewer extends React.Component {
     console.log('this.props.spots.spots =====>', this.props.spots.spots)
     return (
       <div>
-        <h3>{this.props.test}</h3>
+        <h3>{this.props.spots.tripName}</h3>
         <MapContainer spots={this.props.spots}/>
       </div>
     )
