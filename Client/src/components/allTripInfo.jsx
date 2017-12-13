@@ -1,5 +1,5 @@
 import React from 'react';
-import OneSpot from "./oneSpot.jsx";
+import OneSpot from './oneSpot.jsx';
 
 
 let AllTripInfo = (props) => (

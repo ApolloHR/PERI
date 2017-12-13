@@ -11,7 +11,7 @@ const userSchema = new User({
     unique: true
   },
   sessionID: String,
-})
+});
 
 const tripSchema = new Trips({
   username: String,
@@ -20,7 +20,7 @@ const tripSchema = new Trips({
   description: String,
   thumbnail: String,
   spots: [{spotID: Number}] //save the spots ID in here
-})
+});
 
 const spotSchema = new Spot({
   tripID: String,
@@ -30,13 +30,13 @@ const spotSchema = new Spot({
   lat: Number,
   elevation: Number,
   photo: String
-})
+});
 
 const forkedSchema = new Forked({
   userID: String,
   destination: String,
   spots: [{spotID: Number}]
-})
+});
 
 module.exports.User = mongoose.model('User', userSchema);
 module.exports.Trip = mongoose.model('Trip', tripSchema);

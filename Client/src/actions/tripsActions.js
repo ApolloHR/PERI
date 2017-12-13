@@ -1,18 +1,18 @@
-import axios from "axios"
+import axios from 'axios';
 
 export function fetchTrips() {
- return function(dispatch) {
-  dispatch({type: "FETCH_TRIPS"})
-  axios.get('/trips')
+  return function(dispatch) {
+    dispatch({type: 'FETCH_TRIPS'});
+    axios.get('/trips')
       .then(function (response) {
-        console.log('trips response',response);
-        dispatch({type: "FETCH_TRIPS_SUCCESS", payload: response.data})
-  })
-  .catch(function (error) {
-    console.log(error);
-    dispatch({type: "FETCH_FAILURE"})
-  });
- }
+        console.log('trips response', response);
+        dispatch({type: 'FETCH_TRIPS_SUCCESS', payload: response.data});
+      })
+      .catch(function (error) {
+        console.log(error);
+        dispatch({type: 'FETCH_FAILURE'});
+      });
+  };
 }
 
 // {type: "FETCH_TRIPS_SUCCESS", payload:[{

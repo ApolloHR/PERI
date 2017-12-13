@@ -1,4 +1,4 @@
-export default function reducer(state={
+export default function reducer(state = {
   test: 'Google Maps FTW',
   trip: {
     username: 'huynh.r.k@gmail.com',
@@ -26,7 +26,7 @@ export default function reducer(state={
     ]
   }
 }, action) {
-  switch(action.payload) {
+  switch (action.payload) {
 
   }
   return state;

@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux"
-import store from "./store.js"
-import Routes from "./components/routes.jsx"
-import { BrowserRouter } from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store.js';
+import Routes from './components/routes.jsx';
+import { BrowserRouter } from 'react-router-dom';
 
 class App extends React.Component {
 
@@ -12,7 +12,7 @@ class App extends React.Component {
       <div>
         <Routes />
       </div>
-    )
+    );
   }
 }
 
