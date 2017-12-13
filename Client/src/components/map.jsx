@@ -14,26 +14,31 @@ export class MapContainer extends React.Component {
     const { username, tripName, destination, description, spots } = this.props.spots
 
     const markers = spots.map((spot) => {
-      <Marker title={spot.spotName}
-             position={{ lat:spot.lat, lng: spot.long }}
-      />
+      return <Marker
+                    title={spot.spotName}
+                    name={'testing'}
+                    position={{ lat:spot.lat, lng: spot.long }}
+              />
     });
 
+    console.log(spots[0].lat, spots[0].long)
     return (
-      <Map  style={style.map} google={this.props.google} zoom={10}
-            initialCenter={{lat: 1.3521, lng: 103.8198}}>
+      <div>
+        <Map  style={style.map} google={this.props.google} zoom={10}
+              initialCenter={{lat: spots[0].lat, lng: spots[0].long}}>
 
-        <Marker title={'Start'}
-                name={'Current location!'}
-                position={{lat:1.3521, lng:103.8198}}
-        />
+          <Marker title={'Start'}
+                  name={'Current location!'}
+                  position={{lat:1.3521, lng:103.8198}}
+          />
 
-        <Marker title={'The Garden by the Bay'}
-                name={'Current location!'}
-                position={{lat:1.2816, lng:103.8636}}
-        />
-
-      </Map>
+          <Marker title={'The Garden by the Bay'}
+                  name={'Current location!'}
+                  position={{lat:1.2816, lng:103.8636}}
+          />
+          {markers}
+        </Map>
+      </div>
     )
   }
 }
