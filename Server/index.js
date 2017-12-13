@@ -21,6 +21,15 @@ app.use(session({secret: 'hellofuturebenji',
   saveUninitialized: true,
   resave: true}));
 
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(id, done) {
+  db.User.findById(id, function(err, user) {
+    done(err, user);
+  });
+});
 
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
@@ -33,7 +42,7 @@ function(userInfo, accessToken, refreshToken, profile, done) {
     console.log('SESSION id line 33 server =', userInfo.sessionID);
     db.User.findOne({'username.type': profile.displayName}, function(err, user) {
       if (err) {
-        console.log('error line 46 server');
+        console.log('error line 36 server');
         return done(err);
       }
       if (user) {
@@ -45,9 +54,9 @@ function(userInfo, accessToken, refreshToken, profile, done) {
           sessionID: userInfo.sessionID
         };
         saveNewUser(newUser);
+        return done(null, newUser);
       }
     });
-    return done(null, null, null);
     // SessionID IS userInfo.sessionID
     //Full name IS profile.displayName
     //Email IS profile.emails[0].value
@@ -61,14 +70,14 @@ app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'ema
 app.get('/auth/google/callback',
   passport.authenticate('google', {
     successRedirect: '/',
-    failureRedirect: '/' })); //****FAILURE GETTING HIT
+    failureRedirect: '/auth/google' }));
 
 app.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
 });
 
-ensureAuthenticated = (req, res, next) => {
+var ensureAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) { return next(); }
   res.redirect('/login');
 };
@@ -93,7 +102,6 @@ app.post('/spots', (req, res) => {
     res.send(spots);
   });
 });
-
 
 
 app.use(express.static(path.join(__dirname, '../Client/dst')));
