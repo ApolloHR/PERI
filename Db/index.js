@@ -113,6 +113,17 @@ const getTrips = (cb) => {
   })
 }
 
+const getSpots = (cb) => {
+  Spots.find({}, (err, trips) => {
+    if (err) {
+      cb(err, null)
+    } else {
+      cb(err, trips)
+    }
+  })
+}
+
 module.exports.saveNewUser = saveNewUser;
 module.exports.saveNewTrip = saveNewTrip;
 module.exports.getTrips = getTrips;
+module.exports.getSpots = getSpots;

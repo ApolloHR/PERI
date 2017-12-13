@@ -1,5 +1,5 @@
 const path = require('path');
-const { saveNewUser, saveNewTrip, getTrips } = require('../Db/index.js')
+const { saveNewUser, saveNewTrip, getTrips, getSpots } = require('../Db/index.js')
 const db = require('../Db/schema.js')
 const PORT = process.env.PORT || 3000
 const express = require( 'express' )
@@ -116,9 +116,18 @@ function ensureAuthenticated(req, res, next) {
 app.get('/trips', (req, res) => {
   getTrips((err, trips) => {
     if (err) {
-      console.log('error line 106 server =', error);
+      console.log('error line 119 server =', error);
     }
     res.send(trips);
+  });
+});
+
+app.get('/spots', (req, res) => {
+  getSpots((err, spots) => {
+    if (err) {
+      console.log('error line 128 server =', error);
+    }
+    res.send(spots);
   });
 });
 
