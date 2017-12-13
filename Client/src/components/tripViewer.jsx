@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { GoogleApiWrapper } from 'google-maps-react';
-import MapsContainer from './map.jsx'
+import MapContainer from './map.jsx'
 
 @connect((store) => {
   return {
@@ -12,10 +12,11 @@ import MapsContainer from './map.jsx'
 
 class TripViewer extends React.Component {
   render () {
+    console.log('this.props.spots.spots =====>', this.props.spots.spots)
     return (
       <div>
         <h3>{this.props.test}</h3>
-        <MapsContainer spots={this.props.spots}/>
+        <MapContainer spots={this.props.spots}/>
       </div>
     )
   }
