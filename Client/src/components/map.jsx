@@ -13,17 +13,17 @@ const MyMapComponent = compose(
   }),
   withScriptjs,
   withGoogleMap
-)((props) =>
-
+)( (props) => (
   <GoogleMap
     defaultZoom={8}
-    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+    defaultCenter={{ lat: props.spots.spots[0].lat, lng: props.spots.spots[0].long }}
   >
+    {console.log(props.spots.spots[0].lat)}
     {console.log(props)}
-    {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} onClick={props.onMarkerClick} />}
-    }
+    <Marker position={{ lat: props.spots.spots[0].lat, lng: props.spots.spots[0].long }}/>
+
   </GoogleMap>
-);
+));
 
 export default MyMapComponent;
 
