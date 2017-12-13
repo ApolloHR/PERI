@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 
 
 let AllTripInfo = (props) => (
@@ -7,7 +7,6 @@ let AllTripInfo = (props) => (
     <div>{console.log(props)}</div>
     <div>{props.location.query.tripName}</div>
   </div>
-
-  )
+);
 
 export default AllTripInfo;
