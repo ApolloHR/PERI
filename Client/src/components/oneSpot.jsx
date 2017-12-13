@@ -28,11 +28,13 @@ class OneSpot extends React.Component {
   render () {
     return (
       <div>
-        {console.log('state exists', this.state.spots)}
         {this.state.spots.map((spot) => {
           return (
             <div>
-              {spot.spotName}
+              <Card header={<CardTitle reveal image={spot.photo} waves='light'/>}
+                title={spot.spotName}reveal={<p>{spot.description}</p>}>
+                <p><a href="#">see map</a></p>
+              </Card>
             </div>
           );
         })}
