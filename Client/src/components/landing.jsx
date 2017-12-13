@@ -24,8 +24,8 @@ class Landing extends React.Component {
     }).catch(function (error) {
       console.log('cloudinary axios catch error =', error);
     });
-    this.props.dispatch(fetchTrips());
     console.log('this props cloudinaryGallery =', this.props.cloudinaryGallery)
+    this.props.dispatch(fetchTrips());
     //BENJI is working on this
     // axios.get('/')
     //   .then((response) => {
@@ -48,7 +48,7 @@ class Landing extends React.Component {
              <OneTrip trip={tripObj} key={i}/>
         ))}</div>
         <div className="main">
-          {/* <div className="gallery">
+          <div className="gallery">
             <CloudinaryContext cloudName="peri">
               {
                 this.props.cloudinaryGallery.map(data => {
@@ -68,7 +68,7 @@ class Landing extends React.Component {
               }
             </CloudinaryContext>
             <div className="clearfix"></div>
-          </div> */}
+          </div>
         </div>
       </div>
     )

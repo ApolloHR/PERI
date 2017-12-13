@@ -3,7 +3,7 @@ export default function reducer(state={
 }, action) {
   switch (action.type) {
     case "FETCH_GALLERY": {
-      return {...state, gallery: action.payload}
+      return {...state, gallery: action.payload.data.resources}
     }
   }
   return state
