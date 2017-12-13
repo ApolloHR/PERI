@@ -10,7 +10,7 @@ let Nav = (props) => (
       <NavLink to="/" activeClassName="active"> Home </NavLink>
       <NavLink to="/buildTrip" activeClassName="active"> Build Trip </NavLink>
       <NavLink to="/cart" activeClassName="active"> Cart </NavLink>
-      <NavLink to="/auth/google" activeClassName="active">Login </NavLink>
+      <a activeClassName="active" href="/auth/google">Login </a>
     </nav>
   </div>
 
