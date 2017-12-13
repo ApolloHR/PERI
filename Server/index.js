@@ -128,7 +128,7 @@ app.post('/spots', (req, res) => {
     if (err) {
       console.log('error line 128 server =', error);
     }
-    console.log('SPOTS server l131 =', spots)
+    // console.log('SPOTS server l131 =', spots)
     res.send(spots);
   });
 });
