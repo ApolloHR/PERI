@@ -57,6 +57,13 @@ class Landing extends React.Component {
                       <div className="img">
                         <a target="_blank" href={`https://res.cloudinary.com/peri/image/upload/${data.public_id}.jpg`}>
                           <Image publicId={`${data.public_id}.jpg`}>
+                            <Transformation
+                              crop="scale"
+                              width="300"
+                              height="300"
+                              dpr="auto"
+                              responsive_placeholder="blank"
+                            />
                           </Image>
                         </a>
                       <div className="desc">Created at {data.created_at}</div>
