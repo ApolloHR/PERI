@@ -47,7 +47,7 @@ class OneSpot extends React.Component {
                   </div>
                 </div>
 
-                <div class="content">
+                <div class="has-text-centered">
                   {spot.description}
                   <br/>
                 </div>
