@@ -7,7 +7,7 @@ let AllTripInfo = (props) => (
   <div>
     <Card className='large' header={<CardTitle image={props.location.query.thumbnail}>{props.location.query.tripName}</CardTitle>} actions={[<a href='#'>Find Another Adventure</a>]}>{props.location.query.description}
     </Card>
-    <h2>All Spots on This Trip:</h2>
+    <a>All Spots on This Trip:</a>
     <OneSpot trip={props}/>
   </div>
 );
