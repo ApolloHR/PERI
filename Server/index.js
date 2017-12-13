@@ -122,11 +122,13 @@ app.get('/trips', (req, res) => {
   });
 });
 
-app.get('/spots', (req, res) => {
-  getSpots(req.tripId, (err, spots) => {
+app.post('/spots', (req, res) => {
+  // console.log('REQ TRIP ID', req.body)
+  getSpots(req.body.tripId, (err, spots) => {
     if (err) {
       console.log('error line 128 server =', error);
     }
+    console.log('SPOTS server l131 =', spots)
     res.send(spots);
   });
 });

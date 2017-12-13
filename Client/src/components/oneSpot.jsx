@@ -5,17 +5,26 @@ import axios from "axios";
 class OneSpot extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
 
-  getSpot() {
-    axios.post('/spots', function)
+  componentDidMount() {
+    axios.post('/spots', {
+      tripId: this.props.trip.location.query._id
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
+
 
   render () {
     return (
       <div>
-      {console.log(spot)}
+      {console.log('HIIIIII', this.props.trip.location.query._id)}
         HELLOOOOO :D
       </div>
     )
