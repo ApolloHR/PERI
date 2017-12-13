@@ -10,7 +10,7 @@ export default function reducer(state={
       {
         spotName: 'beach1',
         description: 'description for this spot hello world',
-        long: 8.3405,
+        long: -8.3405,
         lat: 115.0920,
         elevation: 32,
         photo: 'https://goo.gl/fdc8y3'
@@ -18,7 +18,7 @@ export default function reducer(state={
       {
         spotName: 'beach2',
         description: 'description for this spot hello world',
-        long: 8.3403,
+        long: -8.3403,
         lat: 115.0921,
         elevation: 52,
         photo: 'https://goo.gl/WXtpYx'
