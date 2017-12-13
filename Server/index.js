@@ -1,24 +1,15 @@
 const path = require('path');
-const { saveNewUser, saveNewTrip, getTrips } = require('../Db/index.js')
+const { saveNewUser, saveNewTrip, getTrips, getSpots } = require('../Db/index.js')
 const db = require('../Db/schema.js')
-
 const PORT = process.env.PORT || 3000
 const express = require( 'express' )
 const app= express()
 const server = require( 'http' ).createServer( app )
 const passport = require( 'passport' )
-const util = require( 'util' )
 const bodyParser = require( 'body-parser' )
 const cookieParser = require( 'cookie-parser' )
 const session = require( 'express-session' )
-  // , RedisStore = require( 'connect-redis' )( session )
-// const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
-//CHOOSE*****
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-  // configure Express
-// app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-// app.use( express.static(__dirname + '/public'));
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 app.use( cookieParser());
 app.use( bodyParser.json());
 app.use( bodyParser.urlencoded({
@@ -26,8 +17,7 @@ app.use( bodyParser.urlencoded({
 }));
 app.use( passport.initialize());
 app.use( passport.session());
-
-app.use(session({secret: 'anystringoftext',
+app.use(session({secret: 'hellofuturebenji',
   saveUninitialized: true,
   resave: true}));
 
@@ -40,18 +30,18 @@ passport.use(new GoogleStrategy({
   },
   function(userInfo, accessToken, refreshToken, profile, done) {
     process.nextTick(function () {
-      console.log('SESSION id line 45 server =', userInfo.sessionID);
+      console.log('SESSION id line 33 server =', userInfo.sessionID);
       db.User.findOne({'username.type': profile.displayName}, function(err, user){
         if(err) {
-          console.log('error line 46')
+          console.log('error line 46 server')
           return done(err);
         }
         if(user) {
-          console.log('error line 49')
+          console.log('error line 40 server')
           return done(null, user);
         } else {
           var newUser = {
-            username: profile.displayName,
+            username: profile.emails[0].value,
             sessionID: userInfo.sessionID
           }
           saveNewUser(newUser);
@@ -64,28 +54,6 @@ passport.use(new GoogleStrategy({
     });
   }
 ));
-
-
-// GET /auth/google
-// app.get('/auth/google', passport.authenticate('google', { scope: [
-//        'https://www.googleapis.com/auth/plus.login',
-//        'https://www.googleapis.com/auth/plus.profile.emails.read']
-// }));
-
-// .then((success) => {
-//   console.log('success google login ln78 server =', success);
-//   res.send(200);
-// }).catch((error) => {
-//   console.log('error ln80 google login = ', error);
-// })
-
-//CALLBACK
-// app.get( '/auth/google/callback',
-//       passport.authenticate( 'google', {
-//         successRedirect: '/',
-//         failureRedirect: '/auth/google'
-// }));
-
 
 //NEWWW
 app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
@@ -148,9 +116,20 @@ function ensureAuthenticated(req, res, next) {
 app.get('/trips', (req, res) => {
   getTrips((err, trips) => {
     if (err) {
-      console.log('error line 106 server =', error);
+      console.log('error line 119 server =', error);
     }
     res.send(trips);
+  });
+});
+
+app.post('/spots', (req, res) => {
+  // console.log('REQ TRIP ID', req.body)
+  getSpots(req.body.tripId, (err, spots) => {
+    if (err) {
+      console.log('error line 128 server =', error);
+    }
+    // console.log('SPOTS server l131 =', spots)
+    res.send(spots);
   });
 });
 
