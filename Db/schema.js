@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const User = mongoose.Schema;
-const Trips = mongoose.Schema;
+const Trip = mongoose.Schema;
 const Spot = mongoose.Schema;
 const Forked = mongoose.Schema;
 
@@ -13,7 +13,7 @@ const userSchema = new User({
   sessionID: String,
 });
 
-const tripSchema = new Trips({
+const tripSchema = new Trip({
   username: String,
   tripName: String,
   destination: String,
