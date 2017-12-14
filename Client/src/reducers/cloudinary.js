@@ -3,7 +3,13 @@ export default function reducer(state={
 }, action) {
   switch (action.type) {
     case "FETCH_GALLERY": {
-      return {...state, gallery: action.payload.data.resources}
+      let oldImages = [...state.gallery];
+      let allImages = oldImages.concat(action.payload);
+      console.log('allImages =', allImages);
+      return {
+        ...state, 
+        gallery: [...state.gallery, allImages]
+      }
     }
   }
   return state

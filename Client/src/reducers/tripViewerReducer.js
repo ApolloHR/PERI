@@ -1,4 +1,6 @@
 export default function reducer(state = {
+  test: 'Google Maps FTW',
+  uploadTrip: {},
   trip: {
     username: 'huynh.r.k@gmail.com',
     tripName: 'vacation in bali',
@@ -25,8 +27,10 @@ export default function reducer(state = {
     ]
   }
 }, action) {
-  switch (action.payload) {
-
+  switch (action.type) {
+    case "UPLOAD_TRIP": {
+      return {...state, uploadTrip: action.payload}
+    }
   }
   return state;
 }
