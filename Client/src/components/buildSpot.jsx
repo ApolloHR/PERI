@@ -38,7 +38,8 @@ class BuildSpot extends React.Component {
   
   
   
-    handleChange(e) {
+    handleSubmit(e) {
+      e.preventDefault();
       this.props.dispatch(uploadTrip(e.target.value));
     }
   
@@ -47,9 +48,9 @@ class BuildSpot extends React.Component {
     <div>
       <div>Add a Spot!</div>
       <form onSubmit={this.handleSubmit}>
-          <label> Spot Name: <input type="text" onChange={this.handleChange.bind(this)}/>
+          <label> Spot Name: <input type="text" required />
           </label><br></br>
-          <label> Spot Description: <textarea onChange={this.handleChange.bind(this)}/>
+          <label> Spot Description: <textarea required />
           </label><br></br>
         <div id="uploaded" className="upload">
           <button onClick={this.uploadWidget.bind(this)} className="upload-button">

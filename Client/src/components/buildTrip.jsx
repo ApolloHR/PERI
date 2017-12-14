@@ -15,6 +15,11 @@ import { NavLink } from 'react-router-dom';
 })
 
 class BuildTrip extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
   uploadWidget() {
     let _this = this;
@@ -33,20 +38,31 @@ class BuildTrip extends React.Component {
   }
 
   handleSubmit(e) {
-    console.log('handleSubmit e=', e.target.value);
+    const form = e.target;
+    const data = new FormData(form);
+    let _this = this;
+    // for (let field in this.refs)
+    console.log('handlesubmit this =', _this);
+    
+    console.log('form data =', formData);
     // this.props.dispatch(uploadTrip(e.target.value));
+  }
+
+
+  submitTrip() {
+    
   }
 
   render() {
     return (
   <div>
     <div>Build a Trip!</div>
-    <form onSubmit={this.handleSubmit}>
-        <label> Trip Name: <input type="text" onChange={this.handleSubmit.bind(this)}/>
+    <form onSubmit={this.handleSubmit} noValidate >
+        <label htmlFor="tripname"> Trip Name: <input type="text" id="tripname" name="tripname" placeholder="Enter Trip Name" required />
         </label><br></br>
-        <label> Destination: <input type="text" onChange={this.handleSubmit.bind(this)} />
+        <label htmlFor="destination"> Destination: <input type="text" id="destination" name="destination" placeholder="Enter Destination" required />
         </label><br></br>
-        <label> Trip Description: <textarea onChange={this.handleSubmit.bind(this)}/>
+        <label htmlFor="tripdescription"> Trip Description: <input type="text" id="tripdescription" name="tripdescription" placeholder="Enter Trip Description" required />
         </label><br></br>
       <div id="uploaded" className="upload">
         <button onClick={this.uploadWidget.bind(this)} className="upload-button">
@@ -54,7 +70,7 @@ class BuildTrip extends React.Component {
         </button>
       </div>
       <NavLink to="/buildSpot" activeClassName="active">
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit"/>
       </NavLink>
     </form>
   </div>
