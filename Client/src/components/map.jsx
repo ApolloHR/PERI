@@ -18,14 +18,11 @@ const MyMapComponent = compose(
     defaultZoom={8}
     defaultCenter={{ lat: props.spots.spots[0].lat, lng: props.spots.spots[0].long }}
   >
-    {console.log(props.spots.spots[0].lat)}
-    {console.log(props)}
     {
-      props.spots.spots.map( (spot) =>
-        <Marker position={{ lat: spot.lat, lng: spot.long }}/>
+      props.spots.spots.map( (spot, i) =>
+        <Marker position={{ lat: spot.lat, lng: spot.long }} key={ i }/>
       )
     }
-
   </GoogleMap>
 ));
 
