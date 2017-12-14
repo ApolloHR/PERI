@@ -46,27 +46,30 @@ class TripViewer extends React.Component {
     return (
       <div>
         <MapContainer spots={this.props.spots}/>
-        <section className="hero">
-          <div className="hero-body">
-            <div className="container">
-              <h3 className="title has-text-centered">{ tripName }</h3>
+        <div className="container">
+          <section className="hero">
+            <div className="hero-body">
+              <div className="">
+                <h3 className="title has-text-centered">{ tripName }</h3>
+              </div>
             </div>
-          </div>
-        </section>
-        <div className="container" style={style.container}>
-          <div className="block">
-            {trips}
-          </div>
-          <div className="level">
-            <div className="level-left"></div>
-            <div className="level-right">
-              <div className="level-item">
-                <NavLink to="/" activeClassName="active">
-                  <button className="button is-primary is-outlined is-large"
-                          onClick={() => this.props.dispatch(postTrip(this.props.spots))}>
-                          POST YOUR TRIP
-                  </button>
-                </NavLink>
+          </section>
+          <br></br>
+          <div className="">
+            <div className="block">
+              {trips}
+            </div>
+            <div className="level">
+              <div className="level-left"></div>
+              <div className="level-right">
+                <div className="level-item">
+                  <NavLink to="/" activeClassName="active">
+                    <button className="button is-primary is-outlined is-large"
+                            onClick={() => this.props.dispatch(postTrip(this.props.spots))}>
+                            POST YOUR TRIP
+                    </button>
+                  </NavLink>
+                </div>
               </div>
             </div>
           </div>
