@@ -1,5 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import MapContainer from './map.jsx';
+import SpotMap from './spotMap.jsx';
+
 
 class OneSpot extends React.Component {
   constructor(props) {
@@ -25,31 +28,37 @@ class OneSpot extends React.Component {
 
 
   render () {
+    const style = {
+      spot: {
+        margin: 0,
+      }
+    };
     return (
       <div>
         {this.state.spots.map((spot) => {
           return (
-            <div class="box">
-              <div class="card-image">
-                <figure class="image is-4by5">
-                  <img src={spot.photo} alt="Placeholder image" />
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-48x48">
-                      <img src={spot.photo} alt="Placeholder image" />
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-4">{spot.spotName}</p>
-                  </div>
+            <div className="container">
+              <div className="card">
+                <div className="">
+                  <figure className="image" style={style.spot}>
+                    <img src={spot.photo} alt="Placeholder image"/>
+                  </figure>
                 </div>
-
-                <div class="content">
-                  {spot.description}
-                  <br/>
+                <div className="card-content">
+                  <div className="media">
+                    <div className="media-content">
+                      <p className="title is-4">{spot.spotName}</p>
+                      <br></br>
+                      <p className="subtitle is-6">{spot.description}</p>
+                      <div class="modal">
+                        <div class="modal-background"></div>
+                        <div class="modal-content">
+                          <SpotMap spots={spot}/>
+                        </div>
+                        <button class="modal-close is-large" aria-label="close">Map me</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
