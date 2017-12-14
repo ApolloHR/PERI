@@ -10,10 +10,10 @@ import { fetchTrips } from "../actions/tripsActions";
     trips: store.trips
   }
 })
+
 class Landing extends React.Component {
 
   componentWillMount() {
-
     this.props.dispatch(fetchTrips());
   }
 
@@ -40,36 +40,12 @@ class Landing extends React.Component {
                <OneTrip trip={tripObj} key={i}/>
           ))}</div>
         </div>
-        <div className="main">
-          <div className="gallery">
-            <CloudinaryContext cloudName="peri">
-              {
-                this.props.cloudinaryGallery.map(data => {
-                  return (
-                    <div className="responsive" key={data.public_id}>
-                      <div className="img">
-                        <a target="_blank" href={`https://res.cloudinary.com/peri/image/upload/${data.public_id}.jpg`}>
-                          <Image publicId={`${data.public_id}.jpg`}>
-                          </Image>
-                        </a>
-                      <div className="desc">Created at {data.created_at}</div>
-                    </div>
-                    </div>
-                  )
-                })
-              }
-            </CloudinaryContext>
-            <div className="clearfix"></div>
-          </div>
-        </div>
       </div>
     )
   }
 }
 
 export default Landing;
-
-
 
 
 
