@@ -33,14 +33,15 @@ class BuildTrip extends React.Component {
       })
       _this.props.dispatch(cloudinaryThumbnail(res));
     });
-    console.log('this.props.cloudinaryGallery =', this.props.cloudinaryGallery);
   }
 
   handleSubmit(e) {
     e.preventDefault();    
     const form = e.target;
     // for (let field in this.refs)
-    console.log('handlesubmit e.target.val =', e.target.val);    
+    console.log('handlesubmit e.target.val =', e.target.val); 
+    console.log('this.props.cloudinaryGallery =', this.props.cloudinaryGallery);
+    
     // this.props.dispatch(uploadTrip(e.target.value));
   }
 
@@ -59,29 +60,27 @@ class BuildTrip extends React.Component {
               <div className="columns is-vcentered">
                 <div className="column main-search">
                   <p className="title">Build a Trip!</p>
-                  <form onSubmit={this.handleSubmit} >
+                  <form >
                     <div className="field is-grouped">
                       <div className="control is-expanded">
                         <input className="input" type="text" id="tripname" name="tripname" placeholder="Enter Trip Name"/>
                       </div>
-
                       <div className="control is-expanded">
                         <input className="input" type="text" id="destination" name="destination" placeholder="Enter Destination" />
                       </div>
                       <div className="control is-expanded">
                         <input className="input" type="text" id="tripdescription" name="tripdescription" placeholder="Enter Trip Description" />
-                      </div>
-                    <div className="control">
-                      <button className="button is-primary">Submit</button>
-                    </div>
-                    <div id="uploaded" className="upload">
-                      <button onClick={this.uploadWidget.bind(this)} className="upload-button">
+                      </div>                  
+                    <div id="uploaded" className="control">
+                      <button onClick={this.uploadWidget.bind(this)} className="button is-secondary">
                         Add Cover Image
                       </button>
                     </div>
-                    <NavLink to="/buildSpot" activeClassName="active">
-                      <input type="submit" value="Submit"/>
-                    </NavLink>
+                    <div className="control">
+                      <NavLink to="/buildSpot" activeClassName="active">
+                        <button className="button is-primary" type="submit" value="Submit" onClick={this.handleSubmit.bind(this)} >Submit</button>
+                      </NavLink>
+                    </div>
                     </div>
                   </form>
                 </div>
@@ -89,6 +88,7 @@ class BuildTrip extends React.Component {
             </div>
           </div>
         </section>
+
   </div>
   )
   }
