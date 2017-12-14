@@ -21,7 +21,7 @@ class TripViewer extends React.Component {
     }
     const { username, tripName, destination, description, spots } = this.props.spots;
     const trips = spots.map((spot, i) =>
-      <div className="card" key={i}>
+      <div className="card block" key={i}>
         <div className="">
           <figure className="image" style={style.spot}>
             <img src={spot.photo} alt="Placeholder image"/>
@@ -30,9 +30,9 @@ class TripViewer extends React.Component {
         <div className="card-content">
           <div className="media">
             <div className="media-content">
-              <p className="title is-4">{spot.spotName}</p>
+              <p className="title is-2">{spot.spotName}</p>
               <br></br>
-              <p className="subtitle is-6">{spot.description}</p>
+              <p className="subtitle is-4">{spot.description}</p>
             </div>
           </div>
         </div>
@@ -51,18 +51,25 @@ class TripViewer extends React.Component {
           </div>
         </section>
         <div className="container">
-          <div>
+          <div className="block">
             {trips}
           </div>
-          <div className="block">
-            <NavLink to="/" activeClassName="active">
-              <button className="button"
-                      onClick={() => this.props.dispatch(postTrip(this.props.spots))}>
-                      POST
-              </button>
-            </NavLink>
+          <div className="level">
+            <div className="level-left"></div>
+            <div className="level-right">
+              <div className="level-item">
+                <NavLink to="/" activeClassName="active">
+                  <button className="button is-primary is-outlined is-large"
+                          onClick={() => this.props.dispatch(postTrip(this.props.spots))}>
+                          POST YOUR TRIP
+                  </button>
+                </NavLink>
+              </div>
+            </div>
           </div>
         </div>
+        <br></br>
+        <br></br>
       </div>
     )
   }
