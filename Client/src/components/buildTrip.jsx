@@ -1,10 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
 import { connect } from "react-redux";
-// import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 import { uploadTrip } from "../actions/uploadActions.js";
 import { cloudinaryAction } from "../actions/cloudinary.js";
 import { fetchTrips } from "../actions/tripsActions";
+import { NavLink } from 'react-router-dom';
+// import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 
 @connect ((store) => {
   return {
@@ -31,14 +32,9 @@ class BuildTrip extends React.Component {
     console.log('this.props.cloudinaryGallery =', this.props.cloudinaryGallery);
   }
 
-  saveData() {
-    //assemble data object
-    //send to trip previewer/post to server
-  }
-
-  handleChange(e) {
-    this.props.dispatch(uploadTrip(e.target.value));
-    console.log(this.props.test);
+  handleSubmit(e) {
+    console.log('handleSubmit e=', e.target.value);
+    // this.props.dispatch(uploadTrip(e.target.value));
   }
 
   render() {
@@ -46,18 +42,20 @@ class BuildTrip extends React.Component {
   <div>
     <div>Build a Trip!</div>
     <form onSubmit={this.handleSubmit}>
-        <label> Trip Name: <input type="text" onChange={this.handleChange.bind(this)}/>
+        <label> Trip Name: <input type="text" onChange={this.handleSubmit.bind(this)}/>
         </label><br></br>
-        <label> Destination: <input type="text" onChange={this.handleChange.bind(this)} />
+        <label> Destination: <input type="text" onChange={this.handleSubmit.bind(this)} />
         </label><br></br>
-        <label> Trip Description: <textarea onChange={this.handleChange.bind(this)}/>
+        <label> Trip Description: <textarea onChange={this.handleSubmit.bind(this)}/>
         </label><br></br>
       <div id="uploaded" className="upload">
         <button onClick={this.uploadWidget.bind(this)} className="upload-button">
-          Add Image
+          Add Cover Image
         </button>
       </div>
-      <input type="submit" value="Submit" />
+      <NavLink to="/buildSpot" activeClassName="active">
+        <input type="submit" value="Submit" />
+      </NavLink>
     </form>
   </div>
   )
