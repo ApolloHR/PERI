@@ -17,6 +17,9 @@ class TripViewer extends React.Component {
     const style = {
       spot: {
         margin: 0,
+      },
+      container: {
+        margin: '10%'
       }
     }
     const { username, tripName, destination, description, spots } = this.props.spots;
@@ -50,7 +53,7 @@ class TripViewer extends React.Component {
             </div>
           </div>
         </section>
-        <div className="container">
+        <div className="container" style={style.container}>
           <div className="block">
             {trips}
           </div>
