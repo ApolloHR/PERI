@@ -1,5 +1,4 @@
 import React from 'react';
-import {CardTitle, Card} from 'react-materialize';
 import { Link } from 'react-router-dom';
 
 

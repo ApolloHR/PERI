@@ -24,9 +24,9 @@ class Landing extends React.Component {
           <div class="hero-body">
             <div class="container">
                 <div class="field">
-                  <label class="label">Travel Well</label>
+                  <label class="label">Peri - Travel Well</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Find your next adventure..."></input>
+                    <input class="input" type="text" placeholder="Find your next adventure..."/>
                   </div>
                 </div>
                 <div class="control">

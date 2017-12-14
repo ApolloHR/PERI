@@ -1,5 +1,4 @@
 import React from 'react';
-import { CardTitle, Card } from 'react-materialize';
 import OneSpot from './oneSpot.jsx';
 
 
