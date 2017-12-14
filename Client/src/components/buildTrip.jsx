@@ -18,7 +18,6 @@ class BuildTrip extends React.Component {
   constructor() {
     super();
     this.state = {};
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   uploadWidget() {
@@ -38,11 +37,11 @@ class BuildTrip extends React.Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault();    
     const form = e.target;
-    const data = new FormData(form);
     let _this = this;
     // for (let field in this.refs)
-    console.log('handlesubmit this =', _this);
+    console.log('handlesubmit this =', this);
     
     console.log('form data =', formData);
     // this.props.dispatch(uploadTrip(e.target.value));
@@ -57,12 +56,12 @@ class BuildTrip extends React.Component {
     return (
   <div>
     <div>Build a Trip!</div>
-    <form onSubmit={this.handleSubmit} noValidate >
-        <label htmlFor="tripname"> Trip Name: <input type="text" id="tripname" name="tripname" placeholder="Enter Trip Name" required />
+    <form onSubmit={this.handleSubmit} >
+        <label><input type="text" id="tripname" name="tripname" placeholder="Enter Trip Name" />
         </label><br></br>
-        <label htmlFor="destination"> Destination: <input type="text" id="destination" name="destination" placeholder="Enter Destination" required />
+        <label><input type="text" id="destination" name="destination" placeholder="Enter Destination" />
         </label><br></br>
-        <label htmlFor="tripdescription"> Trip Description: <input type="text" id="tripdescription" name="tripdescription" placeholder="Enter Trip Description" required />
+        <label><input type="text" id="tripdescription" name="tripdescription" placeholder="Enter Trip Description" />
         </label><br></br>
       <div id="uploaded" className="upload">
         <button onClick={this.uploadWidget.bind(this)} className="upload-button">
