@@ -6,6 +6,10 @@ const style = {
   nav: {
     marginTop: 10,
     marginBottom: 10,
+  },
+  routes: {
+    marginRight: 10,
+    marginLeft: 10,
   }
 };
 
@@ -18,16 +22,16 @@ let Nav = (props) => (
       </div>
       <div className="level-right">
         <p className="level-item has-text-centered">
-          <NavLink to="/" activeClassName="active"> Home </NavLink>
+          <NavLink to="/" activeClassName="active" style={style.routes}> Home </NavLink>
         </p>
         <p className="level-item has-text-centered">
-          <NavLink to="/buildTrip" activeClassName="active"> Build Trip </NavLink>
+          <NavLink to="/buildTrip" activeClassName="active" style={style.routes}> Build Trip </NavLink>
         </p>
         <p className="level-item has-text-centered">
-          <NavLink to="/cart" activeClassName="active"> Cart </NavLink>
+          <NavLink to="/cart" activeClassName="active" style={style.routes}> Cart </NavLink>
         </p>
         <p className="level-item has-text-centered">
-          <a activeClassName="active" href="/auth/google">Login </a>
+          <a activeClassName="active" href="/auth/google" style={style.routes}>Login </a>
         </p>
       </div>
     </nav>
