@@ -6,6 +6,7 @@ import BuildTrip from './buildTrip.jsx';
 import Cart from './cart.jsx';
 import TripViewer from './tripViewer.jsx';
 import AllTripInfo from './allTripInfo.jsx';
+import BuildSpot from './buildSpot.jsx';
 
 
 let Routes = (props) => (
@@ -15,6 +16,7 @@ let Routes = (props) => (
       <Nav />
       <Route exact path="/" component={Landing}/>
       <Route path="/buildTrip" component={BuildTrip}/>
+      <Route path="/buildSpot" component={BuildSpot}/>
       <Route path="/cart" component={Cart}/>
       <Route path="/tripViewer" component={TripViewer}/>
       <Route path="/allTripInfo" component={AllTripInfo}/>

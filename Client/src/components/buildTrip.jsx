@@ -1,10 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
 import { connect } from "react-redux";
-// import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 import { uploadTrip } from "../actions/uploadActions.js";
 import { cloudinaryAction } from "../actions/cloudinary.js";
 import { fetchTrips } from "../actions/tripsActions";
+import { NavLink } from 'react-router-dom';
+// import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 
 @connect ((store) => {
   return {
@@ -14,6 +15,10 @@ import { fetchTrips } from "../actions/tripsActions";
 })
 
 class BuildTrip extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
 
   uploadWidget() {
     let _this = this;
@@ -31,33 +36,41 @@ class BuildTrip extends React.Component {
     console.log('this.props.cloudinaryGallery =', this.props.cloudinaryGallery);
   }
 
-  saveData() {
-    //assemble data object
-    //send to trip previewer/post to server
+  handleSubmit(e) {
+    e.preventDefault();    
+    const form = e.target;
+    let _this = this;
+    // for (let field in this.refs)
+    console.log('handlesubmit this =', this);
+    
+    console.log('form data =', formData);
+    // this.props.dispatch(uploadTrip(e.target.value));
   }
 
-  handleChange(e) {
-    this.props.dispatch(uploadTrip(e.target.value));
-    console.log(this.props.test);
+
+  submitTrip() {
+    
   }
 
   render() {
     return (
   <div>
     <div>Build a Trip!</div>
-    <form onSubmit={this.handleSubmit}>
-        <label> Trip Name: <input type="text" onChange={this.handleChange.bind(this)}/>
+    <form onSubmit={this.handleSubmit} >
+        <label><input type="text" id="tripname" name="tripname" placeholder="Enter Trip Name" />
         </label><br></br>
-        <label> Destination: <input type="text" onChange={this.handleChange.bind(this)} />
+        <label><input type="text" id="destination" name="destination" placeholder="Enter Destination" />
         </label><br></br>
-        <label> Trip Description: <textarea onChange={this.handleChange.bind(this)}/>
+        <label><input type="text" id="tripdescription" name="tripdescription" placeholder="Enter Trip Description" />
         </label><br></br>
       <div id="uploaded" className="upload">
         <button onClick={this.uploadWidget.bind(this)} className="upload-button">
-          Add Image
+          Add Cover Image
         </button>
       </div>
-      <input type="submit" value="Submit" />
+      <NavLink to="/buildSpot" activeClassName="active">
+        <input type="submit" value="Submit"/>
+      </NavLink>
     </form>
   </div>
   )
