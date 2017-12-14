@@ -7,3 +7,11 @@
   height: 400px;
   background-color: grey;
 }
+
+.main-search {
+  margin: 5% 15%;
+}
+
+.trip-card {
+  margin: 5% 10%;
+}

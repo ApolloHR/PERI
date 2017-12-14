@@ -4,24 +4,23 @@ import { Link } from 'react-router-dom';
 
 let OneTrip = ({trip}) => (
   <div>
-    <div class="card">
-      <div class="card-image">
-        <figure class="image" style={{margin: 0}}>
+    <div className="card trip-card">
+      <div className="card-image">
+        <figure className="image" style={{margin: 0}}>
           <img src={trip.thumbnail} alt="Placeholder image"/>
         </figure>
       </div>
-      <div class="card-content">
-        <div class="media">
-
-          <div class="media-content">
-            <p class="title is-4">{trip.tripName}</p>
-            <br/>
-            <p class="subtitle is-6">{trip.destination + ' - ' + trip.description}</p>
+      <div className="card-content">
+        <div className="media-content">
+          <div className="title is-2">{trip.tripName}</div>
+          <div className="subtitle is-4">{trip.destination + ' - ' + trip.description}<br/>{trip.spots.length + ' locations on this trip'}
           </div>
         </div>
-
-        <div class="content">Created by: {trip.username}
-          <Link class="is-pulled-right" to={{pathname: '/allTripInfo', query: trip}}>more info</Link>
+        <div className="column">
+          <div className="subtitle is-8 is-pulled-left">Created by: {trip.username}</div>
+          <Link className="is-pulled-right" to={{pathname: '/allTripInfo', query: trip}}>
+            <button className="button is-primary is-outlined">see trip route</button>
+          </Link>
           <br/>
         </div>
       </div>
