@@ -20,22 +20,28 @@ class Landing extends React.Component {
   render () {
     return (
       <div>
-        <section class="hero">
-          <div class="hero-body">
-            <div class="container">
-                <div class="field">
-                  <label class="label">Peri - Travel Well</label>
-                  <div class="control">
-                    <input class="input" type="text" placeholder="Find your next adventure..."/>
-                  </div>
+        <section className="hero">
+          <div className="hero-body">
+            <div className="container">
+              <div className="columns is-vcentered">
+                <div className="column main-search">
+                  <p className="title">Travel that inspires</p>
+                  <form>
+                    <div className="field is-grouped">
+                      <div className="control is-expanded">
+                        <input className="input" type="text" placeholder="Find your next adventure..."/>
+                      </div>
+                    <div className="control">
+                      <button className="button is-primary">Submit</button>
+                    </div>
+                    </div>
+                  </form>
                 </div>
-                <div class="control">
-                  <button class="button is-primary">Submit</button>
-                </div>
+              </div>
             </div>
           </div>
         </section>
-        <div class="container">
+        <div className="container">
           <div>{this.props.trips.allTrips.map((tripObj, i) => (
                <OneTrip trip={tripObj} key={i}/>
           ))}</div>
