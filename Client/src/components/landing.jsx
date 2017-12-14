@@ -13,31 +13,55 @@ import { fetchTrips } from "../actions/tripsActions";
 class Landing extends React.Component {
 
   componentWillMount() {
-    
+
     this.props.dispatch(fetchTrips());
-    //BENJI is working on this
-    // axios.get('/')
-    //   .then((response) => {
-    //     console.log('response lin 18', response);
-    //   })
-    //   .catch((error) => {
-    //     console.log('eror =', error);
-    //   })
   }
 
   render () {
     return (
       <div>
-        <form className="landing-search">
-          <input type="text" placeholder="Find your next adventure..."/>
-          <input type="submit" value="Search" />
-        </form>
-        <div>{this.props.trips.allTrips.map((tripObj, i) => 
-          (
-            <OneTrip trip={tripObj} key={i}/>
-          )
-          )}
-        </div>        
+        <section class="hero">
+          <div class="hero-body">
+            <div class="container">
+                <div class="field">
+                  <label class="label">Peri - Travel Well</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Find your next adventure..."/>
+                  </div>
+                </div>
+                <div class="control">
+                  <button class="button is-primary">Submit</button>
+                </div>
+            </div>
+          </div>
+        </section>
+        <div class="container">
+          <div>{this.props.trips.allTrips.map((tripObj, i) => (
+               <OneTrip trip={tripObj} key={i}/>
+          ))}</div>
+        </div>
+        <div className="main">
+          <div className="gallery">
+            <CloudinaryContext cloudName="peri">
+              {
+                this.props.cloudinaryGallery.map(data => {
+                  return (
+                    <div className="responsive" key={data.public_id}>
+                      <div className="img">
+                        <a target="_blank" href={`https://res.cloudinary.com/peri/image/upload/${data.public_id}.jpg`}>
+                          <Image publicId={`${data.public_id}.jpg`}>
+                          </Image>
+                        </a>
+                      <div className="desc">Created at {data.created_at}</div>
+                    </div>
+                    </div>
+                  )
+                })
+              }
+            </CloudinaryContext>
+            <div className="clearfix"></div>
+          </div>
+        </div>
       </div>
     )
   }
