@@ -55,11 +55,13 @@ const saveNewTrip = (data, cb) => {
       // Save the new trip
       newTrip.save((err) => {
         if (err) {
-          return err;
+          return cb(err, null);
         } else {
           console.log('succesfully saved trip'); // will add callback ehre later
+
+          cb(null, true);
+
           // loop through the spots that was given
-          console.log('data from server: ', data);
           data.spots.map((spot) => {
             // create a new spot
             const newSpot = new Spot({

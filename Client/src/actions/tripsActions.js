@@ -15,6 +15,18 @@ export function fetchTrips() {
   };
 }
 
+export function postTrip(data) {
+  return function(dispatch) {
+    dispatch({type: 'SAVE_TRIP'});
+    axios.post('/api/saveTrip', data)
+      .then(function (response) {
+        console.log('Successfully saved to db', response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+}
 // {type: "FETCH_TRIPS_SUCCESS", payload:[{
 //     username: 'nick',
 //     tripName: 'London 2017',
