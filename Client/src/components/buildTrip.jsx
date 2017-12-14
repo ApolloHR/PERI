@@ -31,19 +31,16 @@ class BuildTrip extends React.Component {
       let res = result.map((e) => {
         return e.url;
       })
-      _this.props.dispatch(cloudinaryAction(res));
+      _this.props.dispatch(cloudinaryThumbnail(res));
     });
     console.log('this.props.cloudinaryGallery =', this.props.cloudinaryGallery);
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault();    
     const form = e.target;
-    let _this = this;
     // for (let field in this.refs)
-    console.log('handlesubmit this =', this);
-
-    console.log('form data =', formData);
+    console.log('handlesubmit e.target.val =', e.target.val);    
     // this.props.dispatch(uploadTrip(e.target.value));
   }
 
