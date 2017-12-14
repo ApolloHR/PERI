@@ -1,6 +1,6 @@
 export default function reducer(state = {
   test: 'Google Maps FTW',
-  uploadTrip: {}, 
+  uploadTrip: {},
   trip: {
     username: 'huynh.r.k@gmail.com',
     tripName: 'vacation in bali',
