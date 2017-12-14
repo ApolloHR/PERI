@@ -30,9 +30,9 @@ Spot.remove({}, (err) => {
 
 
 users.map((user) => {
-  saveNewUser(user);
+  saveNewUser(user, () => console.log('hello world'));
 });
 
 trips.map((trip) => {
-  saveNewTrip(trip);
+  saveNewTrip(trip, () => console.log('hello world'));
 });
