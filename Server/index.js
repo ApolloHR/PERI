@@ -103,6 +103,16 @@ app.post('/spots', (req, res) => {
   });
 });
 
+app.post('/api/saveTrip', (req, res) => {
+  console.log(req.body);
+  saveNewTrip(req.body, (err, status) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(status);
+    }
+  });
+});
 
 app.use(express.static(path.join(__dirname, '../Client/dst')));
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));

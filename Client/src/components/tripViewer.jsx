@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { GoogleApiWrapper } from 'google-maps-react';
+import { postTrip } from '../actions/tripsActions.js';
 import MapContainer from './map.jsx'
 
 @connect((store) => {
@@ -37,7 +38,7 @@ class TripViewer extends React.Component {
       </div>
     )
 
-    console.log(spots);
+    console.log(this.props.spots);
     return (
       <div>
         <MapContainer spots={this.props.spots}/>
@@ -53,7 +54,7 @@ class TripViewer extends React.Component {
             {trips}
           </div>
           <div className="block">
-            <button className="button">POST</button>
+            <button className="button" onClick={this.props.dispatch(postTrip(this.props.spots))}>POST</button>
           </div>
         </div>
       </div>
