@@ -37,41 +37,61 @@ class BuildTrip extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();    
+    e.preventDefault();
     const form = e.target;
     let _this = this;
     // for (let field in this.refs)
     console.log('handlesubmit this =', this);
-    
+
     console.log('form data =', formData);
     // this.props.dispatch(uploadTrip(e.target.value));
   }
 
 
   submitTrip() {
-    
+
   }
 
   render() {
     return (
   <div>
-    <div>Build a Trip!</div>
-    <form onSubmit={this.handleSubmit} >
-        <label><input type="text" id="tripname" name="tripname" placeholder="Enter Trip Name" />
-        </label><br></br>
-        <label><input type="text" id="destination" name="destination" placeholder="Enter Destination" />
-        </label><br></br>
-        <label><input type="text" id="tripdescription" name="tripdescription" placeholder="Enter Trip Description" />
-        </label><br></br>
-      <div id="uploaded" className="upload">
-        <button onClick={this.uploadWidget.bind(this)} className="upload-button">
-          Add Cover Image
-        </button>
-      </div>
-      <NavLink to="/buildSpot" activeClassName="active">
-        <input type="submit" value="Submit"/>
-      </NavLink>
-    </form>
+
+    <section className="hero">
+          <div className="hero-body">
+            <div className="container">
+              <div className="columns is-vcentered">
+                <div className="column main-search">
+                  <p className="title">Build a Trip!</p>
+                  <form onSubmit={this.handleSubmit} >
+                    <div className="field is-grouped">
+                      <div className="control is-expanded">
+                        <input className="input" type="text" id="tripname" name="tripname" placeholder="Enter Trip Name"/>
+                      </div>
+
+                      <div className="control is-expanded">
+                        <input className="input" type="text" id="destination" name="destination" placeholder="Enter Destination" />
+                      </div>
+                      <div className="control is-expanded">
+                        <input className="input" type="text" id="tripdescription" name="tripdescription" placeholder="Enter Trip Description" />
+                      </div>
+                    <div className="control">
+                      <button className="button is-primary">Submit</button>
+                    </div>
+                    <div id="uploaded" className="upload">
+                      <button onClick={this.uploadWidget.bind(this)} className="upload-button">
+                        Add Cover Image
+                      </button>
+                    </div>
+                    <NavLink to="/buildSpot" activeClassName="active">
+                      <input type="submit" value="Submit"/>
+                    </NavLink>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
   </div>
   )
   }
