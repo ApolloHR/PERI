@@ -1,5 +1,6 @@
 export default function reducer(state={
   gallery: [],
+  thumbnail: '',
 }, action) {
   switch (action.type) {
     case "FETCH_GALLERY": {
@@ -10,6 +11,9 @@ export default function reducer(state={
         ...state, 
         gallery: [...state.gallery, allImages]
       }
+    }
+    case "FETCH_THUMBNAIL": {
+      return {...state, thumbnail: action.payload}
     }
   }
   return state
