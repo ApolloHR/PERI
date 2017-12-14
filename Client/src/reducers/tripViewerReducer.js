@@ -1,5 +1,4 @@
 export default function reducer(state = {
-  test: 'Google Maps FTW',
   trip: {
     username: 'huynh.r.k@gmail.com',
     tripName: 'vacation in bali',
@@ -10,16 +9,16 @@ export default function reducer(state = {
       {
         spotName: 'beach1',
         description: 'description for this spot hello world',
-        long: -8.3405,
-        lat: 115.0920,
+        long: 115.0920,
+        lat: -8.3405,
         elevation: 32,
         photo: 'https://goo.gl/fdc8y3'
       },
       {
         spotName: 'beach2',
         description: 'description for this spot hello world',
-        long: -8.3403,
-        lat: 115.0921,
+        long: 115.2126,
+        lat: -8.6705,
         elevation: 52,
         photo: 'https://goo.gl/WXtpYx'
       }

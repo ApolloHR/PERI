@@ -5,18 +5,57 @@ import MapContainer from './map.jsx'
 
 @connect((store) => {
   return {
-    test: store.tripView.test,
     spots: store.tripView.trip
   }
 })
 
+
 class TripViewer extends React.Component {
   render () {
-    console.log('this.props.spots.spots =====>', this.props.spots.spots)
+    const style = {
+      spot: {
+        margin: 0,
+      }
+    }
+    const { username, tripName, destination, description, spots } = this.props.spots;
+    const trips = spots.map((spot, i) =>
+      <div className="card" key={i}>
+        <div className="">
+          <figure className="image" style={style.spot}>
+            <img src={spot.photo} alt="Placeholder image"/>
+          </figure>
+        </div>
+        <div className="card-content">
+          <div className="media">
+            <div className="media-content">
+              <p className="title is-4">{spot.spotName}</p>
+              <br></br>
+              <p className="subtitle is-6">{spot.description}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+
+    console.log(spots);
     return (
       <div>
-        <h3>{this.props.test}</h3>
         <MapContainer spots={this.props.spots}/>
+        <section className="hero">
+          <div className="hero-body">
+            <div className="container">
+              <h3 className="title has-text-centered">{ tripName }</h3>
+            </div>
+          </div>
+        </section>
+        <div className="container">
+          <div>
+            {trips}
+          </div>
+          <div className="block">
+            <button className="button">POST</button>
+          </div>
+        </div>
       </div>
     )
   }

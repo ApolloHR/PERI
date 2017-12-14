@@ -7,23 +7,24 @@ const MyMapComponent = compose(
   withProps({
     // googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
     googleMapURL: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCXBfFMVmtAzLxzykJh74QKlFPDV9IYLDI&libraries=geometry,drawing,places',
-    loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
-    mapElement: <div style={{ height: `100%` }} />,
+    loadingElement: <div style={{ height: '100%' }} />,
+    containerElement: <div style={{ height: '400px' }} />,
+    mapElement: <div style={{ height: '100%' }} />,
   }),
   withScriptjs,
   withGoogleMap
-)((props) =>
-
+)( (props) => (
   <GoogleMap
     defaultZoom={8}
-    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+    defaultCenter={{ lat: props.spots.spots[0].lat, lng: props.spots.spots[0].long }}
   >
-    {console.log(props)}
-    {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} onClick={props.onMarkerClick} />}
+    {
+      props.spots.spots.map( (spot, i) =>
+        <Marker position={{ lat: spot.lat, lng: spot.long }} key={ i }/>
+      )
     }
   </GoogleMap>
-);
+));
 
 export default MyMapComponent;
 
