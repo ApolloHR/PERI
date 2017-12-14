@@ -38,7 +38,7 @@ const saveNewUser = (data) => {
 // SAVES NEW TRIP AND SPOTS WITH IDS
 const saveNewTrip = (data, cb) => {
   // find the user to make sure we have the correct user
-  User.findOne({username: data.username}, (err, user) => {
+  User.find({username: data.username}, (err, user) => {
     if (err) {
       console.log('could not find the user'); //will add a callback here later
     } else {
