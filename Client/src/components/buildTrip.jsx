@@ -40,7 +40,7 @@ class BuildTrip extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();    
+    // e.preventDefault();    
     let data = this.props.cloudinaryStore.tripInfo;
     data.thumbnail = this.props.cloudinaryStore.thumbnail[0];
     console.log('handleSubmit data =', data); 
