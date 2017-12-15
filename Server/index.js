@@ -40,15 +40,16 @@ passport.use(new GoogleStrategy({
 function(userInfo, accessToken, refreshToken, profile, done) {
   process.nextTick(function () {
     console.log('SESSION id line 33 server =', userInfo.sessionID);
-    db.User.findOne({'username.type': profile.displayName}, function(err, user) {
+    db.User.find({username: profile.displayName}, function(err, user) {
       if (err) {
         console.log('error line 36 server');
         return done(err);
       }
       if (user) {
-        console.log('error line 40 server');
+        console.log('found user line 49 server', user);
         return done(null, user);
       } else {
+        console.log('LINE 52 CHECKING!!!!!');
         var newUser = {
           username: profile.emails[0].value,
           sessionID: userInfo.sessionID
