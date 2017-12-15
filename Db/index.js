@@ -9,7 +9,7 @@ mongoose.Promise = require('bluebird');
 // CONNECT MONGOOSE TO LOCAL HOST OR MLAB
 mongoose.connect(
   `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds141406.mlab.com:41406/peri`,
-  {userMongoClient: true});
+  {mongoUseClient: true});
 const db = mongoose.connection;
 // CONNECTION
 db.on('error', console.error.bind(console, 'connection error:'));
