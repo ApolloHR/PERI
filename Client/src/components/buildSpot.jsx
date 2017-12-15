@@ -4,12 +4,11 @@ import { connect } from "react-redux";
 import { uploadTrip } from "../actions/uploadActions.js";
 import { cloudinaryAction } from "../actions/cloudinary.js";
 import { fetchTrips } from "../actions/tripsActions";
-// import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 
 @connect ((store) => {
   return {
     test: store.trips.uploadTrip,
-    cloudinaryGallery: store.cloudinary
+    cloudinaryStore: store.cloudinary
   }
 })
 
@@ -26,9 +25,8 @@ class BuildSpot extends React.Component {
         let res = result.map((e) => {
           return e.url;
         })
-        _this.props.dispatch(cloudinaryAction(res));
+        _this.props.dispatch(cloudinaryGallery(res));
       });
-      console.log('this.props.cloudinaryGallery =', this.props.cloudinaryGallery);
     }
   
     postDataToServer() {
