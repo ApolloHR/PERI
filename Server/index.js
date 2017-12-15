@@ -86,7 +86,7 @@ var ensureAuthenticated = (req, res, next) => {
 app.get('/trips', (req, res) => {
   getTrips((err, trips) => {
     if (err) {
-      console.log('error line 119 server =', error);
+      res.send(err);
     }
     res.send(trips);
   });
