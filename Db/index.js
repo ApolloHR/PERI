@@ -8,7 +8,7 @@ require('dotenv').config();
 mongoose.Promise = require('bluebird');
 // CONNECT MONGOOSE TO LOCAL HOST OR MLAB
 mongoose.connect(
-  'mongodb://admin:admin@ds141406.mlab.com:41406/peri',
+  `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds141406.mlab.com:41406/peri`,
   {userMongoClient: true});
 const db = mongoose.connection;
 // CONNECTION
