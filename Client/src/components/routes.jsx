@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, HashRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Nav from './nav.jsx';
 import Landing from './landing.jsx';
 import BuildTrip from './buildTrip.jsx';
@@ -11,7 +11,7 @@ import BuildSpot from './buildSpot.jsx';
 
 let Routes = (props) => (
 
-  <HashRouter>
+  <BrowserRouter>
     <div>
       <Nav />
       <Route exact path="/" component={Landing}/>
@@ -21,7 +21,7 @@ let Routes = (props) => (
       <Route path="/tripViewer" component={TripViewer}/>
       <Route path="/allTripInfo" component={AllTripInfo}/>
     </div>
-  </HashRouter>
+  </BrowserRouter>
 
 );
 
