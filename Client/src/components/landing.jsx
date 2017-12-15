@@ -29,10 +29,10 @@ class Landing extends React.Component {
                   <form>
                     <div className="field is-grouped">
                       <div className="control is-expanded">
-                        <input className="input" type="text" placeholder="Find your next adventure..."/>
+                        <input className="input is-large" type="text" placeholder="Find your next adventure..."/>
                       </div>
                     <div className="control">
-                      <button className="button is-primary">Submit</button>
+                      <button className="button is-primary is-large">Submit</button>
                     </div>
                     </div>
                   </form>
@@ -42,9 +42,16 @@ class Landing extends React.Component {
           </div>
         </section>
         <div className="container">
-          <div>{this.props.trips.allTrips.map((tripObj, i) => (
-               <OneTrip trip={tripObj} key={i}/>
-          ))}</div>
+          <div className="columns">{this.props.trips.allTrips.slice(0, 4).map((tripObj) => (
+            <div className="column">
+               <OneTrip trip={tripObj} key={tripObj._id}/>
+            </div>))}
+          </div>
+           <div className="columns">{this.props.trips.allTrips.slice(4, 8).map((tripObj) => (
+            <div className="column">
+               <OneTrip trip={tripObj} key={tripObj._id}/>
+            </div>))}
+          </div>
         </div>
       </div>
     )

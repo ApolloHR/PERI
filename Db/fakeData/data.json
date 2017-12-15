@@ -98,5 +98,105 @@
         "photo": "https://goo.gl/t7xeio"
       }
     ]
+  },
+  {
+    "username": "huynh.r.k@gmail.com",
+    "tripName": "vacation in bali",
+    "destination": "Bali",
+    "description": "vacay after the bootcamp!",
+    "thumbnail": "https://goo.gl/HCgNo1",
+    "spots": [
+      {
+        "spotName": "beach1",
+        "description": "description for this spot hello world",
+        "long": 8.3405,
+        "lat": 115.0920,
+        "elevation": 32,
+        "photo": "https://goo.gl/fdc8y3"
+      },
+      {
+        "spotName": "beach2",
+        "description": "description for this spot hello world",
+        "long": 8.3403,
+        "lat": 115.0921,
+        "elevation": 52,
+        "photo": "https://goo.gl/WXtpYx"
+      }
+    ]
+  },
+  {
+    "username": "thebkr7@gmail.com",
+    "tripName": "vacation in New Zealand",
+    "destination": "New Zealand",
+    "description": "vacay after the bootcamp!",
+    "thumbnail": "https://goo.gl/kYsq8u",
+    "spots": [
+      {
+        "spotName": "beach1",
+        "description": "description for this spot hello world",
+        "long": 40.9006,
+        "lat": 174.8860,
+        "elevation": 32,
+        "photo": "https://goo.gl/kYsq8u"
+      },
+      {
+        "spotName": "beach2",
+        "description": "description for this spot hello world",
+        "long": 40.9006,
+        "lat": 174.8860,
+        "elevation": 52,
+        "photo": "https://goo.gl/kYsq8u"
+      }
+    ]
+  },
+  {
+    "username": "theNickChapman@gmail.com",
+    "tripName": "vacation in Australia",
+    "destination": "Australia",
+    "description": "vacay after the bootcamp!",
+    "thumbnail": "https://goo.gl/b2DPgh",
+    "spots": [
+      {
+        "spotName": "beach1",
+        "description": "description for this spot hello world",
+        "long": 25.2744,
+        "lat": 133.7751,
+        "elevation": 32,
+        "photo": "https://goo.gl/b2DPgh"
+      },
+      {
+        "spotName": "beach2",
+        "description": "description for this spot hello world",
+        "long": 25.2744,
+        "lat": 133.7751,
+        "elevation": 52,
+        "photo": "https://goo.gl/b2DPgh"
+      }
+    ]
+  },
+  {
+    "username": "thePhilster@gmail.com",
+    "tripName": "Motherland of South Korea",
+    "destination": "South Korea",
+    "description": "vacay after the bootcamp!",
+    "thumbnail": "https://goo.gl/t7xeio",
+    "spots": [
+      {
+        "spotName": "beach1",
+        "description": "description for this spot hello world",
+        "long": 35.9078,
+        "lat": 127.7669,
+        "elevation": 32,
+        "photo": "https://goo.gl/t7xeio"
+      },
+      {
+        "spotName": "beach2",
+        "description": "description for this spot hello world",
+        "long": 35.9078,
+        "lat": 127.7669,
+        "elevation": 52,
+        "photo": "https://goo.gl/t7xeio"
+      }
+    ]
   }
 ]
