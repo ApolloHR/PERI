@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import Login from "./login.jsx";
 import OneTrip from "./oneTrip.jsx";
 import { fetchTrips } from "../actions/tripsActions";
+import Infinite from "./infinite.jsx";
 
 @connect((store) => {
   return {
@@ -57,6 +58,7 @@ class Landing extends React.Component {
             </div>))}
           </div>
         </div>
+        <Infinite />
       </div>
     )
   }
