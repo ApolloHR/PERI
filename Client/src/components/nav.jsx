@@ -18,7 +18,7 @@ let Nav = (props) => (
   <div className="container">
     <nav className="level">
       <div className="level-left">
-        <i class="fa fa-paw fa-2x has-text-primary" style={style.nav}></i>
+        <i class="fa fa-paw fa-inverse fa-2x has-text-primary" style={style.nav}></i>
       </div>
       <div className="level-right">
         <p className="level-item has-text-centered">
