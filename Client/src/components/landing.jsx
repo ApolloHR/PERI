@@ -25,14 +25,15 @@ class Landing extends React.Component {
             <div className="container">
               <div className="columns is-vcentered">
                 <div className="column main-search">
-                  <p className="title">Travel that inspires</p>
+                  <h1 className="title is-1 has-text-primary">PERI</h1>
+                  <h3 className="subtitle is-3">Travel that inspires</h3>
                   <form>
                     <div className="field is-grouped">
                       <div className="control is-expanded">
                         <input className="input is-large" type="text" placeholder="Find your next adventure..."/>
                       </div>
                     <div className="control">
-                      <button className="button is-primary is-large">Submit</button>
+                      <button className="button is-primary is-large">Search</button>
                     </div>
                     </div>
                   </form>
@@ -42,6 +43,9 @@ class Landing extends React.Component {
           </div>
         </section>
         <div className="container">
+        <div class="level">
+          <h3 class="level-left title has-text-grey-dark">Experiences</h3>
+        </div>
           <div className="columns">{this.props.trips.allTrips.slice(0, 4).map((tripObj) => (
             <div className="column">
                <OneTrip trip={tripObj} key={tripObj._id}/>

@@ -4,7 +4,7 @@ import Login from './login.jsx';
 
 const style = {
   nav: {
-    marginTop: 10,
+    marginTop: 20,
     marginBottom: 10,
   },
   routes: {
@@ -18,20 +18,20 @@ let Nav = (props) => (
   <div className="container">
     <nav className="level">
       <div className="level-left">
-        <p className="title is-1 level-item has-text-centered" style={style.nav}>PERI</p>
+        <i class="fa fa-paw fa-2x has-text-primary" style={style.nav}></i>
       </div>
       <div className="level-right">
         <p className="level-item has-text-centered">
-          <NavLink to="/" activeClassName="active" style={style.routes}> Home </NavLink>
+          <NavLink to="/" class="has-text-grey-dark"activeClassName="active" style={style.routes}> Home </NavLink>
         </p>
         <p className="level-item has-text-centered">
-          <NavLink to="/buildTrip" activeClassName="active" style={style.routes}> Build Trip </NavLink>
+          <NavLink to="/buildTrip" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Build Trip </NavLink>
         </p>
         <p className="level-item has-text-centered">
-          <NavLink to="/cart" activeClassName="active" style={style.routes}> Cart </NavLink>
+          <NavLink to="/cart" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Cart </NavLink>
         </p>
         <p className="level-item has-text-centered">
-          <a activeClassName="active" href="/auth/google" style={style.routes}>Login </a>
+          <a class="has-text-grey-dark" activeClassName="active" href="/auth/google" style={style.routes}>Login </a>
         </p>
       </div>
     </nav>
