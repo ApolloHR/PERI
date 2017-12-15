@@ -7,7 +7,9 @@ require('dotenv').config();
 // MONGOOSE PROMISES DEPRICATED IMPORT PROMISE
 mongoose.Promise = require('bluebird');
 // CONNECT MONGOOSE TO LOCAL HOST OR MLAB
-mongoose.connect('mongodb://admin:admin@ds141406.mlab.com:41406/peri',
+mongoose.connect(
+  'mongodb://admin:admin@ds141406.mlab.com:41406/peri' || 'mongodb://localhost/peri'
+  ,
   {userMongoClient: true});
 const db = mongoose.connection;
 // CONNECTION
