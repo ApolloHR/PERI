@@ -83,24 +83,23 @@ const saveNewTrip = (data, cb) => {
                 return err;
               } else {
                 trip.spots.push(newSpot._id);
-                console.log('array for our trip! ', trip.spots);
                 trip.save((err) => {
                   if (err) {
                     console.log('error saving the individual spot to the trip');
                   } else {
                     console.log('successfully saved spotID to the trip');
+                    newSpot.save((err) => {
+                      if (err) {
+                        return err;
+                      } else {
+                        console.log('succesfully saved spot');
+                      }
+                    });
                   }
                 });
               }
             });
             // save the spot
-            newSpot.save((err) => {
-              if (err) {
-                return err;
-              } else {
-                console.log('succesfully saved spot');
-              }
-            });
           });
         }
       });

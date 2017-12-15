@@ -46,7 +46,7 @@ function(userInfo, accessToken, refreshToken, profile, done) {
         return done(err);
       }
       if (user) {
-        console.log('error line 40 server');
+        console.log('found user line 49 server', user);
         return done(null, user);
       } else {
         var newUser = {
