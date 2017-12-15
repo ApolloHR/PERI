@@ -11,3 +11,10 @@ export function cloudinaryThumbnail(data) {
     type: 'FETCH_THUMBNAIL', payload: data
   };
 }
+
+export function cloudinaryTripInfo(data) {
+  // insert function that takes the parameter from buildTrip form and sets the new payload
+  return {
+    type: 'FETCH_TRIPINFO', payload: data
+  };
+}
