@@ -1,0 +1,1 @@
+web: webpack && node ./Server/index.js
