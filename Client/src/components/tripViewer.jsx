@@ -7,7 +7,7 @@ import MapContainer from './map.jsx'
 
 @connect((store) => {
   return {
-    spots: store.tripView.trip
+    spots: store.cloudinary.tripInfo
   }
 })
 
