@@ -13,20 +13,15 @@ class Infinite extends Component {
       tracks: [],
       hasMoreItems: true,
       nextHref: null,
-      counter: 0,
-      bottomReached: false
+      counter: 0
     };
   }
 
   loadItems(page) {
     var self = this;
 
-    // var url = api.baseUrl + '/users/8665091/favorites';
-    // if (this.state.nextHref) {
-    //   url = this.state.nextHref;
-    // }
-    if (!self.state.bottomReached) {
-      axios.get('/getAllSpots', 'kitten')
+    if (self.state.hasMoreItems) {
+      axios.get('/getAllSpots')
         .then(function(resp) {
           if (resp) {
             console.log('RESPPPONSE L28 infinite.jsx =', resp);
@@ -42,7 +37,7 @@ class Infinite extends Component {
                 self.setState({
                   tracks: self.state.tracks.concat([toLoad]),
                   counter: self.state.counter + 4,
-                  bottomReached: true
+                  hasMoreItems: false
                 });
               } else {
                 self.setState({
@@ -82,21 +77,18 @@ console.log('TRACKS ===', this.state.tracks)
           pageStart={0}
           loadMore={this.loadItems.bind(this)}
           hasMore={this.state.hasMoreItems}
-          loader={loader}
         >
-
           <div className="container">
             <div class="level">
               <h3 class="level-left title has-text-grey-dark">Experiences
               </h3>
             </div>
 
-            <div className="columns">{
+            <div>{
               context.state.tracks.map((tripObj) => (
                 <div>
                   <OneTripSpotsIntercept trip={tripObj} />
                 </div>))}
-
             </div>
           </div>
         </InfiniteScroll>

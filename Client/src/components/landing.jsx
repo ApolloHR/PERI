@@ -44,9 +44,9 @@ class Landing extends React.Component {
           </div>
         </section>
         <div className="container">
-        <div class="level">
-          <h3 class="level-left title has-text-grey-dark">Experiences</h3>
-        </div>
+          <div class="level">
+            <h3 class="level-left title has-text-grey-dark">Experiences</h3>
+          </div>
           <div className="columns">{this.props.trips.allTrips.slice(0, 4).map((tripObj) => (
             <div className="column">
                <OneTrip trip={tripObj} key={tripObj._id}/>
@@ -57,8 +57,8 @@ class Landing extends React.Component {
                <OneTrip trip={tripObj} key={tripObj._id}/>
             </div>))}
           </div>
+          <Infinite />
         </div>
-        <Infinite />
       </div>
     )
   }
