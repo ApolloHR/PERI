@@ -68,7 +68,7 @@ class Infinite extends Component {
     //     </div>
     //   );
     // });
-console.log('TRACKS ===', this.state.tracks)
+    console.log('TRACKS ===', this.state.tracks);
     var context = this;
 
     if (this.state.tracks[0]) {
