@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Login from './login.jsx';
 
 const style = {
@@ -22,16 +22,16 @@ let Nav = (props) => (
       </div>
       <div className="level-right">
         <p className="level-item has-text-centered">
-          <NavLink to="/" class="has-text-grey-dark"activeClassName="active" style={style.routes}> Home </NavLink>
+          <Link to="/" class="has-text-grey-dark"activeClassName="active" style={style.routes}> Home </Link>
         </p>
         <p className="level-item has-text-centered">
-          <NavLink to="/buildTrip" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Build Trip </NavLink>
+          <Link to="/buildTrip" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Build Trip </Link>
         </p>
         <p className="level-item has-text-centered">
-          <NavLink to="/cart" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Cart </NavLink>
+          <Link to="/cart" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Cart </Link>
         </p>
         <p className="level-item has-text-centered">
-          <a class="has-text-grey-dark" activeClassName="active" href="/auth/google" style={style.routes}>Login </a>
+          <a class="has-text-grey-dark" activeClassName="active" href="/auth/google" style={style.routes}> Login </a>
         </p>
       </div>
     </nav>
