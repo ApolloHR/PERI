@@ -2,7 +2,6 @@ import React from "react";
 import { render } from "react-dom";
 import { connect } from "react-redux";
 import { uploadTrip } from "../actions/uploadActions.js";
-import { cloudinaryAction } from "../actions/cloudinary.js";
 import { cloudinaryThumbnail } from "../actions/cloudinary.js";
 import { cloudinaryTripInfo } from "../actions/cloudinary.js";
 import { fetchTrips } from "../actions/tripsActions";
@@ -10,7 +9,6 @@ import { NavLink } from 'react-router-dom';
 
 @connect ((store) => {
   return {
-    test: store.trips.uploadTrip,
     cloudinaryStore: store.cloudinary
   }
 })
@@ -35,7 +33,6 @@ class BuildTrip extends React.Component {
   handleChange(e) {
     let info = this.props.cloudinaryStore.tripInfo;
     info[e.target.name] = e.target.value;
-    console.log('handleChange info =', info);
     this.props.dispatch(cloudinaryTripInfo(info));
   }
 
