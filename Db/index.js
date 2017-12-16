@@ -144,3 +144,4 @@ module.exports.saveNewUser = saveNewUser;
 module.exports.saveNewTrip = saveNewTrip;
 module.exports.getTrips = getTrips;
 module.exports.getSpots = getSpots;
+module.exports.getAllSpots = getAllSpots;
