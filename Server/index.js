@@ -10,6 +10,7 @@ const bodyParser = require( 'body-parser' );
 const cookieParser = require( 'cookie-parser' );
 const session = require( 'express-session' );
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
 app.use( cookieParser());
 app.use( bodyParser.json());
 app.use( bodyParser.urlencoded({
@@ -31,10 +32,11 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
+//GOOGLE LOGIN
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: process.env.LOCAL_GOOGLE_REDIRECT || 'https://peri-app-apollo-hr.herokuapp.com/auth/google/callback',
+  callbackURL: process.env.LOCAL_GOOGLE_REDIRECT || 'https://travelperi.herokuapp.com/auth/google/callback',
   passReqToCallback: true
 },
 function(userInfo, accessToken, refreshToken, profile, done) {
@@ -72,6 +74,48 @@ app.get('/auth/google/callback',
   passport.authenticate('google', {
     successRedirect: '/',
     failureRedirect: '/auth/google' }));
+
+
+//FACEBOOK LOGIN
+// passport.use(new FacebookStrategy({
+//   clientID: process.env.APPID,
+//   clientSecret: process.env.SECRET,
+//   callbackURL: '/auth/facebook/callback'
+// },
+// function(accessToken, refreshToken, profile, done) {
+//   process.nextTick(function() {
+//     console.log('ACCESS TOKEN ======', accessToken);
+//     db.User.findOne({'username.type': profile.id}, function(err, user) {
+//       if (err) {
+//         return done(err);
+//       }
+//       if (user) {
+//         return done(null, user);
+//       } else {
+//         var newUser = new User();
+//         newUser.facebook.id = profile.id;
+//         newUser.facebook.token = accessToken;
+//         newUser.facebook.name = profile.name.givenName + ' ' + profile.name.familyName;
+//         newUser.facebook.email = profile.emails[0].value;
+
+//         newUser.save(function(err) {
+//           if (err) {
+//             throw err;
+//           }
+//           return done(null, newUser);
+//         });
+//         console.log(profile);
+//       }
+//     });
+//   });
+// }));
+
+// app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email']}));
+
+// app.get('/auth/facebook/callback',
+//   passport.authenticate('facebook', { successRedirect: '/profile',
+//     failureRedirect: '/' }));
+
 
 app.get('/logout', function(req, res) {
   req.logout();
