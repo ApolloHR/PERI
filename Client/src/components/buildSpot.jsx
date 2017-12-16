@@ -24,9 +24,19 @@ class BuildSpot extends React.Component {
           console.log("upload widget error =", error);
         }
         console.log('uploadwidget result =', result);
+        let location = result.map((e) => {
+          return {
+            lat: e.image_metadata.GPSLatitude,
+            long: e.image_metadata.GPSLongitude,
+            elevation: e.image_metadata.GPSAltitudeRef
+          }
+        })
         let res = result.map((e) => {
           return e.url;
         })
+        _this.props.dispatch(cloudinarySpotInfo(location.lat));
+        _this.props.dispatch(cloudinarySpotInfo(location.long));
+        _this.props.dispatch(cloudinarySpotInfo(location.elevation));        
         _this.props.dispatch(cloudinaryGallery(res));
       });
     }
@@ -47,6 +57,9 @@ class BuildSpot extends React.Component {
       e.preventDefault();
       let info = {...this.props.cloudinaryStore.tempSpot};
       info.photo = this.props.cloudinaryStore.gallery[this.props.cloudinaryStore.gallery.length-1];      
+      info.long = 
+      info.lat =
+      info.elevation =
       console.log('buildSpot handleSubmit info =', info); 
       this.props.dispatch(cloudinaryAddSpot(info));    
     }
