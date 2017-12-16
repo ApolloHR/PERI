@@ -76,45 +76,45 @@ app.get('/auth/google/callback',
     failureRedirect: '/auth/google' }));
 
 
-//FACEBOOK LOGIN
-// passport.use(new FacebookStrategy({
-//   clientID: process.env.APPID,
-//   clientSecret: process.env.SECRET,
-//   callbackURL: '/auth/facebook/callback'
-// },
-// function(accessToken, refreshToken, profile, done) {
-//   process.nextTick(function() {
-//     console.log('ACCESS TOKEN ======', accessToken);
-//     db.User.findOne({'username.type': profile.id}, function(err, user) {
-//       if (err) {
-//         return done(err);
-//       }
-//       if (user) {
-//         return done(null, user);
-//       } else {
-//         var newUser = new User();
-//         newUser.facebook.id = profile.id;
-//         newUser.facebook.token = accessToken;
-//         newUser.facebook.name = profile.name.givenName + ' ' + profile.name.familyName;
-//         newUser.facebook.email = profile.emails[0].value;
+// FACEBOOK LOGIN
+passport.use(new FacebookStrategy({
+  clientID: '198611860701120',
+  clientSecret: 'c98e22895cdfe8d807af4ec849dce2d3',
+  callbackURL: '/auth/facebook/callback'
+},
+function(accessToken, refreshToken, profile, done) {
+  process.nextTick(function() {
+    console.log('ACCESS TOKEN ======', accessToken);
+    db.User.findOne({'username.type': profile.id}, function(err, user) {
+      if (err) {
+        return done(err);
+      }
+      if (user) {
+        return done(null, user);
+      } else {
+        var newUser = new User();
+        newUser.facebook.id = profile.id;
+        newUser.facebook.token = accessToken;
+        newUser.facebook.name = profile.name.givenName + ' ' + profile.name.familyName;
+        newUser.facebook.email = profile.emails[0].value;
 
-//         newUser.save(function(err) {
-//           if (err) {
-//             throw err;
-//           }
-//           return done(null, newUser);
-//         });
-//         console.log(profile);
-//       }
-//     });
-//   });
-// }));
+        newUser.save(function(err) {
+          if (err) {
+            throw err;
+          }
+          return done(null, newUser);
+        });
+        console.log(profile);
+      }
+    });
+  });
+}));
 
-// app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email']}));
+app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email']}));
 
-// app.get('/auth/facebook/callback',
-//   passport.authenticate('facebook', { successRedirect: '/profile',
-//     failureRedirect: '/' }));
+app.get('/auth/facebook/callback',
+  passport.authenticate('facebook', { successRedirect: '/profile',
+    failureRedirect: '/' }));
 
 
 app.get('/logout', function(req, res) {
