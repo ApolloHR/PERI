@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "jest",
     "startDev": "webpack -d --watch | nodemon Server/index.js --inspect",
     "start": "./node_modules/.bin/webpack -d --watch | node Server/index.js --inspect",
     "compile": "./node_modules/.bin/webpack -d --progress --colors --watch",
@@ -56,7 +56,7 @@
     "eslint": "^4.13.1",
     "eslint-config-airbnb-standard": "^1.6.5",
     "eslint-plugin-react": "^7.5.1",
-    "mocha": "^4.0.1",
+    "jest": "^21.2.1",
     "nodemon": "^1.12.5"
   }
 }
