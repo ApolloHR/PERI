@@ -11,7 +11,9 @@ mongoose.Promise = require('bluebird');
 
 
 mongoose.connect(
+
   `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds059546.mlab.com:59546/peri2`,
+
   {mongoUseClient: true});
 
 
