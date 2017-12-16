@@ -40,7 +40,7 @@ passport.use(new GoogleStrategy({
 function(userInfo, accessToken, refreshToken, profile, done) {
   process.nextTick(function () {
     console.log('SESSION id line 33 server =', userInfo.sessionID);
-    db.User.find({username: profile.displayName}, function(err, user) {
+    db.User.findOne({'username.type': profile.displayName}, function(err, user) {
       if (err) {
         console.log('error line 36 server');
         return done(err);
