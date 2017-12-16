@@ -2,16 +2,13 @@ import React from "react";
 import { render } from "react-dom";
 import { connect } from "react-redux";
 import { uploadTrip } from "../actions/uploadActions.js";
-import { cloudinaryAction } from "../actions/cloudinary.js";
 import { cloudinaryThumbnail } from "../actions/cloudinary.js";
 import { cloudinaryTripInfo } from "../actions/cloudinary.js";
 import { fetchTrips } from "../actions/tripsActions";
 import { NavLink } from 'react-router-dom';
-// import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 
 @connect ((store) => {
   return {
-    test: store.trips.uploadTrip,
     cloudinaryStore: store.cloudinary
   }
 })
@@ -34,66 +31,89 @@ class BuildTrip extends React.Component {
   }
 
   handleChange(e) {
-    //send data to redux store
     let info = this.props.cloudinaryStore.tripInfo;
     info[e.target.name] = e.target.value;
-    console.log('handleChange info =', info);
     this.props.dispatch(cloudinaryTripInfo(info));
   }
 
   handleSubmit(e) {
-    e.preventDefault();    
+    // e.preventDefault();    
     let data = this.props.cloudinaryStore.tripInfo;
-    // for (let field in this.refs)
-    console.log('this.props.cloudinaryStore.tripInfo =', this.props.cloudinaryStore.tripInfo); 
-    
-    // this.props.dispatch(uploadTrip(e.target.value));
+    data.thumbnail = this.props.cloudinaryStore.thumbnail[0];
+    console.log('handleSubmit data =', data); 
+    this.props.dispatch(cloudinaryTripInfo(data));    
   }
 
-
   submitTrip() {
-
   }
 
   render() {
     return (
   <div>
-
     <section className="hero">
-          <div className="hero-body">
-            <div className="container">
-              <div className="columns is-vcentered">
-                <div className="column main-search">
-                  <p className="title">Build a Trip!</p>
-                  <div className="field is-grouped">
-                    <form >
-                      <div className="control is-expanded">
-                        <input className="input" type="text" id="tripname" name="tripname" placeholder="Enter Trip Name" onChange={this.handleChange.bind(this)}/>
-                      </div>
-                      <div className="control is-expanded">
-                        <input className="input" type="text" id="destination" name="destination" placeholder="Enter Destination" onChange={this.handleChange.bind(this)}/>
-                      </div>
-                      <div className="control is-expanded">
-                        <input className="input" type="text" id="tripdescription" name="tripdescription" placeholder="Enter Trip Description" onChange={this.handleChange.bind(this)}/>
-                      </div>                    
-                    <div className="control">
-                      <NavLink to="/buildSpot" activeClassName="active">
-                        <button className="button is-primary" type="submit" value="Submit" onClick={this.handleSubmit.bind(this)} >Submit</button>
-                      </NavLink>
-                    </div>
-                    </form>
-                    <div id="uploaded" className="control">
-                      <button onClick={this.uploadWidget.bind(this)} className="button is-secondary">
-                        Add Cover Image
-                      </button>
-                    </div>
+      <div className="hero-body">
+        <div className="container">
+          <div className="columns is-vcentered">
+            <div className="column main-search">
+              <p className="title">Build a Trip!</p>
+              <div className="field is-grouped">
+                <form >
+                  <div className="control is-expanded">
+                    <input 
+                      className="input" 
+                      type="text" 
+                      id="tripname" 
+                      name="tripname" 
+                      placeholder="Enter Trip Name" 
+                      onChange={this.handleChange.bind(this)}
+                    />
                   </div>
+                  <div className="control is-expanded">
+                    <input 
+                      className="input" 
+                      type="text" 
+                      id="destination" 
+                      name="destination" 
+                      placeholder="Enter Destination" 
+                      onChange={this.handleChange.bind(this)}
+                    />
+                  </div>
+                  <div className="control is-expanded">
+                    <input 
+                      className="input" 
+                      type="text" 
+                      id="tripdescription" 
+                      name="tripdescription" 
+                      placeholder="Enter Trip Description" 
+                      onChange={this.handleChange.bind(this)}
+                    />
+                  </div>                    
+                  <div className="control">
+                    <NavLink to="/buildSpot" 
+                      activeClassName="active">
+                      <button 
+                        className="button is-primary" 
+                        type="submit" 
+                        value="submit" 
+                        onClick={this.handleSubmit.bind(this)} >
+                        Submit
+                      </button>
+                    </NavLink>
+                  </div>
+                </form>
+                <div id="uploaded" className="control">
+                  <button 
+                    onClick={this.uploadWidget.bind(this)} 
+                    className="button is-secondary">
+                    Add Cover Image
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-
+        </div>
+      </div>
+    </section>
   </div>
   )
   }

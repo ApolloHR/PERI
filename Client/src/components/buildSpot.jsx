@@ -2,14 +2,15 @@ import React from "react";
 import { render } from "react-dom";
 import { connect } from "react-redux";
 import { uploadTrip } from "../actions/uploadActions.js";
-import { cloudinaryAction } from "../actions/cloudinary.js";
+import { cloudinarySpotInfo } from "../actions/cloudinary.js";
+import { cloudinaryAddSpot } from "../actions/cloudinary.js";
+import { cloudinaryGallery } from "../actions/cloudinary.js";
 import { fetchTrips } from "../actions/tripsActions";
-// import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
+import { NavLink } from 'react-router-dom';
 
 @connect ((store) => {
   return {
-    test: store.trips.uploadTrip,
-    cloudinaryGallery: store.cloudinary
+    cloudinaryStore: store.cloudinary
   }
 })
 
@@ -26,41 +27,98 @@ class BuildSpot extends React.Component {
         let res = result.map((e) => {
           return e.url;
         })
-        _this.props.dispatch(cloudinaryAction(res));
+        _this.props.dispatch(cloudinaryGallery(res));
       });
-      console.log('this.props.cloudinaryGallery =', this.props.cloudinaryGallery);
     }
-  
-    postDataToServer() {
-      //assemble data object
-      //post to server
+    
+    handleChange(e) {
+      let info = {...this.props.cloudinaryStore.tempSpot};
+      info[e.target.name] = e.target.value;
+      this.props.dispatch(cloudinarySpotInfo(info));
     }
-  
-  
   
     handleSubmit(e) {
+      let info = {...this.props.cloudinaryStore.tempSpot};
+      info.photo = this.props.cloudinaryStore.gallery[this.props.cloudinaryStore.gallery.length-1];      
+      this.props.dispatch(cloudinaryAddSpot(info));    
+    }
+
+    handleSubmitOne(e) {
       e.preventDefault();
-      this.props.dispatch(uploadTrip(e.target.value));
+      let info = {...this.props.cloudinaryStore.tempSpot};
+      info.photo = this.props.cloudinaryStore.gallery[this.props.cloudinaryStore.gallery.length-1];      
+      console.log('buildSpot handleSubmit info =', info); 
+      this.props.dispatch(cloudinaryAddSpot(info));    
     }
   
     render() {
       return (
-    <div>
-      <div>Add a Spot!</div>
-      <form onSubmit={this.handleSubmit}>
-          <label> Spot Name: <input type="text" required />
-          </label><br></br>
-          <label> Spot Description: <textarea required />
-          </label><br></br>
-        <div id="uploaded" className="upload">
-          <button onClick={this.uploadWidget.bind(this)} className="upload-button">
-            Add Image
-          </button>
+        <div>
+          <section className="hero">
+            <div className="hero-body">
+              <div className="container">
+                <div className="columns is-vcentered">
+                  <div className="column main-search">
+                    <p className="title">Add a Place!</p>
+                    <div className="field is-grouped">
+                      <form >
+                        <div className="control is-expanded">
+                          <input
+                            className="input"
+                            type="text"
+                            name="spotName"
+                            placeholder="Enter Place Name"
+                            onChange={this.handleChange.bind(this)}
+                            required
+                          />
+                        </div>
+                        <div className="control is-expanded">
+                          <input
+                            className="input"
+                            type="text"
+                            name="description"
+                            placeholder="Enter Place Description"
+                            onChange={this.handleChange.bind(this)}
+                            required
+                          />
+                        </div>
+                          <div className="control">
+                              <button
+                                className="button is-primary"
+                                type="submit"
+                                value="submit"
+                                onClick={this.handleSubmitOne.bind(this)} >
+                                Add another spot!
+                              </button>
+                          </div>
+                          <div className="control">
+                            <NavLink to="/tripViewer"
+                              activeClassName="active">
+                              <button
+                                className="button is-primary"
+                                type="submit"
+                                value="submit"
+                                onClick={this.handleSubmit.bind(this)} >
+                                Submit All
+                              </button>
+                            </NavLink>
+                          </div>
+                      </form>
+                      <div id="uploaded" className="control">
+                        <button 
+                          onClick={this.uploadWidget.bind(this)} 
+                          className="button is-secondary">
+                          Add Location Image
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
-        <input type="submit" value="Submit" />
-      </form>
-    </div>
-    )
+      )
     }
   }
   export default BuildSpot;
