@@ -1,5 +1,5 @@
 const path = require( 'path' );
-const { saveNewUser, saveNewTrip, getTrips, getSpots } = require( '../Db/index.js' );
+const { saveNewUser, saveNewTrip, getTrips, getSpots, getAllSpots } = require( '../Db/index.js' );
 const db = require( '../Db/schema.js' );
 const PORT = process.env.PORT || 3000;
 const express = require( 'express' );
@@ -90,6 +90,16 @@ app.get('/trips', (req, res) => {
       res.send(err);
     }
     res.send(trips);
+  });
+});
+
+app.get('/getAllSpots', (req, res) => {
+  // console.log('hii-----------req = ', req.body);
+  getAllSpots((err, spots) => {
+    if (err) {
+      res.send(err);
+    }
+    res.send(spots);
   });
 });
 
