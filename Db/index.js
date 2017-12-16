@@ -12,9 +12,6 @@ mongoose.Promise = require('bluebird');
 
 mongoose.connect(
   `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds059207.mlab.com:59207/heroku_6lrnwc21`,
-  'mongodb://localhost/3000/peri',
-  `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds141406.mlab.com:41406/peri`,
-
   {mongoUseClient: true});
 
 
