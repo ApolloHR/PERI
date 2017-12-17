@@ -11,13 +11,6 @@ mongoose.Promise = require('bluebird');
 
 
 mongoose.connect(
-<<<<<<< HEAD
-  `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds059546.mlab.com:59546/peri2`,
-  // 'mongodb://localhost/3000/peri',
-  // `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds141406.mlab.com:41406/peri`,
-  {mongoUseClient: true});
-=======
->>>>>>> Testing Travis
 
   `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds059546.mlab.com:59546/peri2`,
 
