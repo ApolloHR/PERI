@@ -31,7 +31,10 @@ let Nav = (props) => (
           <Link to="/cart" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Cart </Link>
         </p>
         <p className="level-item has-text-centered">
-          <a class="has-text-grey-dark" activeClassName="active" href="/auth/google" style={style.routes}> Login </a>
+          <a class="has-text-grey-dark" activeClassName="active" href="/auth/google" style={style.routes}> G-Login </a>
+        </p>
+        <p className="level-item has-text-centered">
+          <a class="has-text-grey-dark" activeClassName="active" href="/auth/facebook" style={style.routes}> FB-Login </a>
         </p>
       </div>
     </nav>
