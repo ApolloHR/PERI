@@ -169,5 +169,12 @@ app.post('/api/saveTrip', (req, res) => {
   });
 });
 
+
 app.use(express.static(path.join(__dirname, '../Client/dst')));
+
+app.get('/*', (req, res) => {
+  console.log(req._parsedOriginalUrl.path);
+  res.redirect('/');
+});
+
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
