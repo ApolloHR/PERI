@@ -17,7 +17,7 @@ const MyMapComponent = compose(
     defaultZoom={8}
     defaultCenter={{ lat: props.spots[0].lat, lng: props.spots[0].long }}
   >
-    {
+    { 
       props.spots.map( (spot, i) =>
         <Marker position={{ lat: spot.lat, lng: spot.long }} key={ i }/>
       )

@@ -42,7 +42,7 @@ class TripViewer extends React.Component {
       </div>
     )
 
-    console.log(this.props.spots);
+    console.log('tripviewer thispropsspots =', this.props.spots);
     return (
       <div>
         <MapContainer spots={this.props.spots}/>
