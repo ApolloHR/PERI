@@ -7,6 +7,6 @@ exports[`renders correctly 1`] = `
   href="/"
   onClick={[Function]}
 >
-   Home 
+   Home
 </a>
 `;
