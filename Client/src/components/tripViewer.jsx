@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { GoogleApiWrapper } from 'google-maps-react';
 import { NavLink } from 'react-router-dom';
 import { postTrip } from '../actions/tripsActions.js';
-import MapContainer from './map.jsx'
+import MapContainer from './map.jsx';
 
 @connect((store) => {
   return {
@@ -21,8 +21,10 @@ class TripViewer extends React.Component {
       container: {
         margin: '10%'
       }
-    }
+    };
+
     const { username, tripName, destination, description, spots } = this.props.spots;
+
     const trips = spots.map((spot, i) =>
       <div className="card block" key={i}>
         <div className="">
@@ -40,7 +42,7 @@ class TripViewer extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
 
     console.log('tripviewer thispropsspots =', this.props.spots);
     return (
@@ -77,7 +79,7 @@ class TripViewer extends React.Component {
         <br></br>
         <br></br>
       </div>
-    )
+    );
   }
 }
 
