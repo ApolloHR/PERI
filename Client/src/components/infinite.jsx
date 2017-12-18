@@ -32,6 +32,7 @@ class Infinite extends Component {
 
             if (resp.data) {
               var endOfData = resp.data.length;
+              resp.data.reverse();
               var toLoad = resp.data.slice(self.state.counter, self.state.counter + 4);
               if ((self.state.counter + 4) >= endOfData) {
                 self.setState({
