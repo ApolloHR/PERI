@@ -25,11 +25,9 @@ class BuildSpot extends React.Component {
     }
     let location = loc.split(' ');
     let direction = location[4];
-    let seconds = location[3];
-    let minutes = location[2];
-    let degrees = location[0];
-    seconds = seconds.slice(0, seconds.length-1);
-    minutes = minutes.slice(0, minutes.length-1);
+    let degrees = Number.parseFloat(location[0]);
+    let seconds = Number.parseFloat(location[3].slice(0, location[3].length-1));
+    let minutes = Number.parseFloat(location[2].slice(0, location[2].length-1));
     let dd = (seconds/3600) + (minutes/60) + degrees;    
     if (direction === 'S' || direction === 'W') {
       dd = dd*(-1);
