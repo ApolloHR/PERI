@@ -1,14 +1,6 @@
 export default function reducer(state={
   gallery: [],
   thumbnail: '',
-  tempSpot: {
-    spotName: '',
-    description: '',
-    long: 1,
-    lat: 1,
-    elevation: 1,
-    photo: ''
-  },
   tripInfo: {
     username: '',
     tripName: '',
@@ -16,6 +8,14 @@ export default function reducer(state={
     description: '',
     thumbnail: '',
     spots: []
+  },
+  tempSpot: {
+    spotName: '',
+    description: '',
+    long: 1,
+    lat: 1,
+    elevation: 1,
+    photo: ''
   },
 }, action) {
   switch (action.type) {

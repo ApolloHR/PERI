@@ -7,7 +7,7 @@ import MapContainer from './map.jsx'
 
 @connect((store) => {
   return {
-    spots: store.tripView.trip
+    spots: store.cloudinary.tripInfo
   }
 })
 
@@ -42,7 +42,7 @@ class TripViewer extends React.Component {
       </div>
     )
 
-    console.log(this.props.spots);
+    console.log('tripviewer thispropsspots =', this.props.spots);
     return (
       <div>
         <MapContainer spots={this.props.spots}/>

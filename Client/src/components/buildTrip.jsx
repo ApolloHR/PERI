@@ -63,7 +63,7 @@ class BuildTrip extends React.Component {
                       className="input" 
                       type="text" 
                       id="tripname" 
-                      name="tripname" 
+                      name="tripName" 
                       placeholder="Enter Trip Name" 
                       onChange={this.handleChange.bind(this)}
                     />
@@ -83,7 +83,7 @@ class BuildTrip extends React.Component {
                       className="input" 
                       type="text" 
                       id="tripdescription" 
-                      name="tripdescription" 
+                      name="description" 
                       placeholder="Enter Trip Description" 
                       onChange={this.handleChange.bind(this)}
                     />
