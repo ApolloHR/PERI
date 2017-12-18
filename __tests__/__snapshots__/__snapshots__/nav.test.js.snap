@@ -1,6 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`>>>N A V --- Test nav component renders Build Trip link 1`] = `
+<a
+  activeClassName="active"
+  class="has-text-grey-dark"
+  href="/buildTrip"
+  onClick={[Function]}
+>
+   Build Trip 
+</a>
+`;
+
+exports[`>>>N A V --- Test nav component renders Cart link 1`] = `
+<a
+  activeClassName="active"
+  class="has-text-grey-dark"
+  href="/cart"
+  onClick={[Function]}
+>
+   Cart 
+</a>
+`;
+
+exports[`>>>N A V --- Test nav component renders FB-Login link 1`] = `
+<a
+  activeClassName="active"
+  class="has-text-grey-dark"
+  href="/auth/facebook"
+  onClick={[Function]}
+>
+   FB-login 
+</a>
+`;
+
+exports[`>>>N A V --- Test nav component renders G-login link 1`] = `
+<a
+  activeClassName="active"
+  class="has-text-grey-dark"
+  href="/auth/google"
+  onClick={[Function]}
+>
+   G-login 
+</a>
+`;
+
+exports[`>>>N A V --- Test nav component renders home link 1`] = `
 <a
   activeClassName="active"
   class="has-text-grey-dark"
