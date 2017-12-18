@@ -41,14 +41,29 @@ passport.use(new GoogleStrategy({
 },
 function(userInfo, accessToken, refreshToken, profile, done) {
   process.nextTick(function () {
-    console.log('SESSION id line 33 server =', userInfo.sessionID);
-    db.User.findOne({'username.type': profile.displayName}, function(err, user) {
+    console.log('SESSION id line 44 server =', userInfo.sessionID);
+    db.User.findOne({'username': profile.emails[0].value}, function(err, user) {
       if (err) {
-        console.log('error line 36 server');
+        console.log('error line 47 server');
         return done(err);
       }
       if (user) {
-        console.log('found user line 49 server', user);
+        console.log('Found user line 49 server');
+
+        db.User.findOneAndUpdate({ 'username': profile.emails[0].value }, {'sessionID': userInfo.sessionID}, (err, doc) => {
+          if (err) {
+            console.log('error = ', err);
+          }
+          if (doc) {
+            console.log('Updated new sessionID succesfuly');
+          }
+
+        });
+        // user.save((err) => {
+        //   if (err) {
+        //     console.log('error line 56 server =', err);
+        //   }
+        // });
         return done(null, user);
       } else {
         console.log('LINE 52 CHECKING!!!!!');
@@ -74,6 +89,7 @@ app.get('/auth/google/callback',
   passport.authenticate('google', {
     successRedirect: '/',
     failureRedirect: '/auth/google' }));
+
 
 
 // FACEBOOK LOGIN
@@ -129,6 +145,7 @@ var ensureAuthenticated = (req, res, next) => {
 
 //GET ALL TRIPS
 app.get('/trips', (req, res) => {
+  console.log('REQ session id?? line 138 server =', req.sessionID);
   getTrips((err, trips) => {
     if (err) {
       res.send(err);
