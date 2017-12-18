@@ -21,7 +21,7 @@ class Infinite extends Component {
     var self = this;
 
     if (self.state.hasMoreItems) {
-      axios.get('/getAllSpots')
+      axios.get('/trips')
         .then(function(resp) {
           if (resp) {
             console.log('RESPPPONSE L28 infinite.jsx =', resp);
