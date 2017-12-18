@@ -27,6 +27,10 @@ export function postTrip(data) {
       });
   };
 }
+
+export function login(value) {
+  return { type: 'LOG_IN', payload: value };
+}
 // {type: "FETCH_TRIPS_SUCCESS", payload:[{
 //     username: 'nick',
 //     tripName: 'London 2017',
