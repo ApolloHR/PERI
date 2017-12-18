@@ -59,11 +59,6 @@ function(userInfo, accessToken, refreshToken, profile, done) {
           }
 
         });
-        // user.save((err) => {
-        //   if (err) {
-        //     console.log('error line 56 server =', err);
-        //   }
-        // });
         return done(null, user);
       } else {
         console.log('LINE 52 CHECKING!!!!!');
@@ -138,10 +133,20 @@ app.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
-var ensureAuthenticated = (req, res, next) => {
-  if (req.isAuthenticated()) { return next(); }
-  res.redirect('/login');
-};
+
+
+//GET req to see if user is logged in or not
+app.get('/checkSession', (req, res) => {
+  db.User.findOne({ sessionID: req.sessionID }, (err, user) => {
+    if (user) {
+      res.send(true);
+    } else {
+      res.send(false);
+    }
+  });
+});
+
+
 
 //GET ALL TRIPS
 app.get('/trips', (req, res) => {
