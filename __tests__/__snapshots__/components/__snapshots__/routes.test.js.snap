@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`>>>R O U T E S --- Snapshot +++capturing Snapshot from routes 1`] = `
+<div>
+  <div
+    className="container"
+  >
+    <nav
+      className="level"
+    >
+      <div
+        className="level-left"
+      >
+        <i
+          class="fa fa-ravelry fa-2x has-text-primary"
+          style={
+            Object {
+              "marginBottom": 10,
+              "marginTop": 20,
+            }
+          }
+        />
+      </div>
+      <div
+        className="level-right"
+      >
+        <p
+          className="level-item has-text-centered"
+        >
+          <a
+            activeClassName="active"
+            class="has-text-grey-dark"
+            href="/"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginLeft": 10,
+                "marginRight": 10,
+              }
+            }
+          >
+             Home 
+          </a>
+        </p>
+        <p
+          className="level-item has-text-centered"
+        >
+          <a
+            activeClassName="active"
+            class="has-text-grey-dark"
+            href="/buildTrip"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginLeft": 10,
+                "marginRight": 10,
+              }
+            }
+          >
+             Build Trip 
+          </a>
+        </p>
+        <p
+          className="level-item has-text-centered"
+        >
+          <a
+            activeClassName="active"
+            class="has-text-grey-dark"
+            href="/cart"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginLeft": 10,
+                "marginRight": 10,
+              }
+            }
+          >
+             Cart 
+          </a>
+        </p>
+        <p
+          className="level-item has-text-centered"
+        >
+          <a
+            activeClassName="active"
+            class="has-text-grey-dark"
+            href="/auth/google"
+            style={
+              Object {
+                "marginLeft": 10,
+                "marginRight": 10,
+              }
+            }
+          >
+             G-Login 
+          </a>
+        </p>
+        <p
+          className="level-item has-text-centered"
+        >
+          <a
+            activeClassName="active"
+            class="has-text-grey-dark"
+            href="/auth/facebook"
+            style={
+              Object {
+                "marginLeft": 10,
+                "marginRight": 10,
+              }
+            }
+          >
+             FB-Login 
+          </a>
+        </p>
+      </div>
+    </nav>
+  </div>
+</div>
+`;
