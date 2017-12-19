@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SkyLight from 'react-skylight';
 import Login from './login.jsx';
+import Invite from './invite.jsx';
+
 
 const style = {
   nav: {
@@ -13,33 +16,38 @@ const style = {
   }
 };
 
-let Nav = (props) => (
+class Nav extends React.Component {
 
-  <div className="container">
-    <nav className="level">
-      <div className="level-left">
-        <i className="fa fa-ravelry fa-2x has-text-primary" style={style.nav}></i>
+  render() {
+    return (
+      <div className="container">
+        <nav className="level">
+          <div className="level-left">
+            <i className="fa fa-ravelry fa-2x has-text-primary" style={style.nav}></i>
+          </div>
+          <div className="level-right">
+            <p className="level-item has-text-centered">
+              <Link to="/" className="has-text-grey-dark"activeClassName="active" style={style.routes}> Home </Link>
+            </p>
+            <p className="level-item has-text-centered">
+              <Link to="/buildTrip" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Build Trip </Link>
+            </p>
+            <p className="level-item has-text-centered">
+              <Link to="/cart" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Cart </Link>
+            </p>
+            <p onClick={() => this.simpleDialog.show()}>Invite    </p>
+            <SkyLight hideOnOverlayClicked ref={ref => this.simpleDialog = ref} title="Hi, I'm Bulbasaur">
+              <Invite />
+            </SkyLight>
+            <p className="level-item has-text-centered">
+              <a class="has-text-grey-dark" activeClassName="active" href="/auth/google" style={style.routes}> Login </a>
+            </p>
+          </div>
+        </nav>
       </div>
-      <div className="level-right">
-        <p className="level-item has-text-centered">
-          <Link to="/" className="has-text-grey-dark"activeClassName="active" style={style.routes}> Home </Link>
-        </p>
-        <p className="level-item has-text-centered">
-          <Link to="/buildTrip" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Build Trip </Link>
-        </p>
-        <p className="level-item has-text-centered">
-          <Link to="/cart" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Cart </Link>
-        </p>
-        <p className="level-item has-text-centered">
-          <a class="has-text-grey-dark" activeClassName="active" href="/auth/google" style={style.routes}> G-Login </a>
-        </p>
-        <p className="level-item has-text-centered">
-          <a class="has-text-grey-dark" activeClassName="active" href="/auth/facebook" style={style.routes}> FB-Login </a>
-        </p>
-      </div>
-    </nav>
-  </div>
+    );
+  }
+}
 
-);
 
 export default Nav;

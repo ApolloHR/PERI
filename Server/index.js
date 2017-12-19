@@ -13,6 +13,8 @@ const cookieParser = require( 'cookie-parser' );
 const session = require( 'express-session' );
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey('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');
 app.use( cookieParser());
 app.use( bodyParser.json());
 app.use( bodyParser.urlencoded({
@@ -34,6 +36,8 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
+var userLoggedIn;
+
 //GOOGLE LOGIN
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
@@ -51,7 +55,7 @@ function(userInfo, accessToken, refreshToken, profile, done) {
       }
       if (user) {
         console.log('Found user line 49 server');
-
+        userLoggedIn = profile.emails[0].value;
         db.User.findOneAndUpdate({ 'username': profile.emails[0].value }, {'sessionID': userInfo.sessionID}, (err, doc) => {
           if (err) {
             console.log('error = ', err);
@@ -63,7 +67,7 @@ function(userInfo, accessToken, refreshToken, profile, done) {
         });
         return done(null, user);
       } else {
-        console.log('LINE 52 CHECKING!!!!!');
+        userLoggedIn = profile.emails[0].value;
         var newUser = {
           username: profile.emails[0].value,
           sessionID: userInfo.sessionID
@@ -210,6 +214,21 @@ app.post('/upvote', (req, res) => {
       console.log('Upvoted succesfuly, now =', doc.upvotes);
       res.send(200, doc.upvotes);
     }
+  });
+});
+
+app.post('/invite', function(req, res) {
+  // console.log('EMAIL---line 82 SERVER/INDEX.JS REQ = ', req.body)
+  const msg = {
+    to: req.body.guest,
+    from: 'periapp@peri.com',
+    subject: `${userLoggedIn} has Invited You`,
+    text: `Hello Jedi Master. You have been invited to the PERI network by ${userLoggedIn} please visit travelperi.herokuapp.com to get inspired!`
+  };
+  console.log('REQ BODY line 228 server =', req);
+  sgMail.send(msg).then(function() {
+    res.send('sent success');
+    res.end();
   });
 });
 
