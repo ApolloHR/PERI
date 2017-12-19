@@ -19,7 +19,8 @@ const tripSchema = new Trip({
   destination: String,
   description: String,
   thumbnail: String,
-  spots: [{spotID: Number}] //save the spots ID in here
+  spots: [{spotID: Number}], //save the spots ID in here
+  upvotes: Number
 });
 
 const spotSchema = new Spot({
@@ -29,7 +30,8 @@ const spotSchema = new Spot({
   long: Number,
   lat: Number,
   elevation: Number,
-  photo: String
+  photo: String,
+  upvotes: Number
 });
 
 const forkedSchema = new Forked({

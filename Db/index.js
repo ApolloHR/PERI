@@ -55,7 +55,8 @@ const saveNewTrip = (data, cb) => {
         destination: data.destination,
         description: data.description,
         thumbnail: data.thumbnail,
-        spots: []
+        spots: [],
+        upvotes: 1
       });
 
       // Save the new trip
