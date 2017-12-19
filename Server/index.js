@@ -1,7 +1,7 @@
 const algoliasearch = require('algoliasearch');
 const path = require( 'path' );
-const { saveNewUser, saveNewTrip, getTrips, getSpots, getAllSpots } = require( '../Db/index.js' );
-const { saveTripsAlgolia } = require('../Db/algoliaSearch.js');
+const { saveNewUser, saveNewTrip, getTrips, getSpots, getAllSpots, getNewestTrip } = require( '../Db/index.js' );
+const { saveTripsAlgolia, saveTripAlgolia } = require('../Db/algoliaSearch.js');
 const db = require( '../Db/schema.js' );
 const express = require( 'express' );
 const PORT = process.env.PORT || 3000;
@@ -188,6 +188,13 @@ app.post('/api/saveTrip', (req, res) => {
     if (err) {
       res.send(err);
     } else {
+      getNewestTrip((err, trip) => {
+        if (err) {
+          console.log(err);
+        } else {
+          saveTripAlgolia(trip);
+        }
+      });
       res.send(status);
     }
   });
@@ -206,7 +213,7 @@ app.post('/upvote', (req, res) => {
   });
 });
 
-
+// SAVES ALL TRIP TO ALGOLIA
 saveTripsAlgolia();
 
 

@@ -21,7 +21,22 @@ const saveTripsAlgolia = () => {
   });
 };
 
+// add to the algolia db
+
+const saveTripAlgolia = (trip) => {
+  index.addObject({
+    objectID: trip._id,
+    username: trip.username,
+    tripName: trip.tripName,
+    description: trip.description,
+    thumbnail: trip.thumbnail,
+    spots: trip.spots
+  });
+};
+
 module.exports.saveTripsAlgolia = saveTripsAlgolia;
+module.exports.saveTripAlgolia = saveTripAlgolia;
+
 // Search for all the users
 // Search for all the trips
 // Search for all the spots
