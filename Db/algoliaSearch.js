@@ -3,7 +3,7 @@ const algoliasearch = require('algoliasearch');
 const { getTrips } = require('./index.js');
 
 const client = algoliasearch('GQA3LGUNKB', process.env.ALGOLIA_API);
-const index = client.initIndex('periTrips');
+const index = client.initIndex('periTrips2');
 
 const saveTripsAlgolia = () => {
   getTrips((err, trips) => {
@@ -13,6 +13,7 @@ const saveTripsAlgolia = () => {
         objectID: trip._id,
         username: trip.username,
         tripName: trip.tripName,
+        destination: trip.destination,
         description: trip.description,
         thumbnail: trip.thumbnail,
         spots: trip.spots
@@ -28,6 +29,7 @@ const saveTripAlgolia = (trip) => {
     objectID: trip._id,
     username: trip.username,
     tripName: trip.tripName,
+    destination: trip.destination,
     description: trip.description,
     thumbnail: trip.thumbnail,
     spots: trip.spots
