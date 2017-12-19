@@ -5,6 +5,7 @@ import Login from "./login.jsx";
 import OneTrip from "./oneTrip.jsx";
 import { fetchTrips } from "../actions/tripsActions";
 import Infinite from "./infinite.jsx";
+import Search from './search.jsx';
 
 @connect((store) => {
   return {
@@ -25,20 +26,7 @@ class Landing extends React.Component {
           <div className="hero-body">
             <div className="container">
               <div className="columns is-vcentered">
-                <div className="column main-search">
-                  <h1 className="title is-1 has-text-primary">PERI</h1>
-                  <h3 className="subtitle is-3">Travel that inspires</h3>
-                  <form>
-                    <div className="field is-grouped">
-                      <div className="control is-expanded">
-                        <input className="input is-large" type="text" placeholder="Find your next adventure..."/>
-                      </div>
-                    <div className="control">
-                      <button className="button is-primary is-large">Search</button>
-                    </div>
-                    </div>
-                  </form>
-                </div>
+                <Search/>
               </div>
             </div>
           </div>
