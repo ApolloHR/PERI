@@ -1,3 +1,7 @@
+//PHILLIP DEC 18 
+//I don't think we're using this file anymore? At least I'm not using it for anything
+//also uploadActions.js, which points to this file
+
 export default function reducer(state = {
   test: 'Google Maps FTW',
   uploadTrip: {},
