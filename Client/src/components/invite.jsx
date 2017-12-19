@@ -26,7 +26,7 @@ class Invite extends React.Component {
       console.log('sent email: ', success);
     }).catch(function(error) {
       console.log('error email not sent, line 49 invite.jsx: ', error);
-    }).then(this.setState({group: ''}));
+    });
   }
 
 

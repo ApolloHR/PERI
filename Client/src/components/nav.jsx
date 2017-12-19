@@ -35,7 +35,7 @@ class Nav extends React.Component {
             <p className="level-item has-text-centered">
               <Link to="/cart" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Cart </Link>
             </p>
-            <div onClick={() => this.simpleDialog.show()}>Invite</div>
+            <p onClick={() => this.simpleDialog.show()}>Invite    </p>
             <SkyLight hideOnOverlayClicked ref={ref => this.simpleDialog = ref} title="Hi, I'm Bulbasaur">
               <Invite />
             </SkyLight>
