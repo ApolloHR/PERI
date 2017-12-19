@@ -18,6 +18,7 @@ const tripSchema = new Trip({
   tripName: String,
   destination: String,
   description: String,
+  hashtag: String,
   thumbnail: String,
   spots: [{spotID: Number}], //save the spots ID in here
   upvotes: Number
