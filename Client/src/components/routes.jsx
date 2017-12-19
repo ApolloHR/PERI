@@ -7,6 +7,8 @@ import Cart from './cart.jsx';
 import TripViewer from './tripViewer.jsx';
 import AllTripInfo from './allTripInfo.jsx';
 import BuildSpot from './buildSpot.jsx';
+import Invite from './invite.jsx';
+
 
 
 let Routes = (props) => (
@@ -20,6 +22,7 @@ let Routes = (props) => (
       <Route path="/cart" component={Cart}/>
       <Route path="/tripViewer" component={TripViewer}/>
       <Route path="/allTripInfo" component={AllTripInfo}/>
+      <Route path="/invite" component={Invite}/>
     </div>
   </BrowserRouter>
 

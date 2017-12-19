@@ -9,7 +9,6 @@ class OneTripSpots extends React.Component {
     this.state = {
       upvotes: props.trip.upvotes
     };
-    console.log('In constructor', this.props);
     this.upvote = this.upvote.bind(this);
   }
 
@@ -19,7 +18,7 @@ class OneTripSpots extends React.Component {
       trip: context.props.trip
     })
       .then ((res) => {
-        console.log('RES.DATA =', res.data);
+        console.log('Upvote Successful =', res);
         context.setState({upvotes: res.data});
       })
       .catch((err) => {
