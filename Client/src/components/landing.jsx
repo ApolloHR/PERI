@@ -9,7 +9,8 @@ import Search from './search.jsx';
 
 @connect((store) => {
   return {
-    trips: store.trips
+    trips: store.trips,
+    search: store.search
   }
 })
 

@@ -4,9 +4,9 @@ import OneTripSpots from './oneTripSpots.jsx';
 
 let OneTripSpotsIntercept = ({trip}) => (
   <div  className="columns">
-    {trip.map((tripObj) => {
+    {trip.map((tripObj, i) => {
       return (
-        <div className="column">
+        <div className="column" key={i}>
           <OneTripSpots trip={tripObj} key={tripObj._id} />
         </div>
       );
