@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 let OneTrip = ({trip}) => (
   <div>
     <Link to={{pathname: '/allTripInfo', query: trip}}>
@@ -19,6 +18,7 @@ let OneTrip = ({trip}) => (
             <div className="is-size-7">{trip.spots.length + ' locations on this trip'}
             </div>
             <div className="is-size-7">{'Created by: ' + trip.username}</div>
+            <div className="is-size-7">{trip.hashtag}</div>
           </div>
         </div>
       </div>
