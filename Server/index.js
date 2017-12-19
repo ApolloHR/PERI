@@ -1,8 +1,9 @@
+const algoliasearch = require('algoliasearch');
 const path = require( 'path' );
 const { saveNewUser, saveNewTrip, getTrips, getSpots, getAllSpots } = require( '../Db/index.js' );
 const db = require( '../Db/schema.js' );
-const PORT = process.env.PORT || 3000;
 const express = require( 'express' );
+const PORT = process.env.PORT || 3000;
 const app = express();
 const server = require( 'http' ).createServer( app );
 const passport = require( 'passport' );
@@ -202,6 +203,20 @@ app.post('/upvote', (req, res) => {
       res.send(200, doc.upvotes);
     }
   });
+});
+
+const client = algoliasearch('GQA3LGUNKB', process.env.ALGOLIA_API);
+const index = client.initIndex('periTrips');
+
+index.addObject({
+  title: 'Trip to Japan',
+  breif: 'Breif',
+  objectID: '234u9ur4839r824',
+  authorName: 'authorName'
+}, function(err, content) {
+  if (err) {
+    console.log(err);
+  }
 });
 
 
