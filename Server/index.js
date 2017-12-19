@@ -191,6 +191,19 @@ app.post('/api/saveTrip', (req, res) => {
   });
 });
 
+app.post('/upvote', (req, res) => {
+  // console.log('DOES THE -ID EQUAL', req.body.trip._id)
+  db.Trip.findOneAndUpdate({ '_id': req.body.trip._id }, {$inc: {'upvotes': 2}}, (err, doc) => {
+    if (err) {
+      console.log('error = ', err);
+    }
+    if (doc) {
+      console.log('Upvoted succesfuly');
+      res.send(201);
+    }
+  });
+});
+
 
 app.use(express.static(path.join(__dirname, '../Client/dst')));
 

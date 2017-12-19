@@ -25,10 +25,6 @@ class Infinite extends Component {
         .then(function(resp) {
           if (resp) {
             console.log('RESPPPONSE L28 infinite.jsx =', resp);
-            // var tracks = self.state.tracks;
-            // resp.data.map(trip => {
-            //   tracks.push(trip);
-            // });
 
             if (resp.data) {
               var endOfData = resp.data.length;
