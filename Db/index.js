@@ -112,6 +112,16 @@ const saveNewTrip = (data, cb) => {
   });
 };
 
+const getNewestTrip = (cb) => {
+  Trip.findOne().sort({ field: 'asc', _id: -1 }).limit(1).exec((err, trip) => {
+    if (err) {
+      cb(err, null);
+    } else {
+      cb(null, trip);
+    }
+  });
+};
+
 const getTrips = (cb) => {
   Trip.find({}, (err, trips) => {
     if (err) {
@@ -147,3 +157,4 @@ module.exports.saveNewTrip = saveNewTrip;
 module.exports.getTrips = getTrips;
 module.exports.getSpots = getSpots;
 module.exports.getAllSpots = getAllSpots;
+module.exports.getNewestTrip = getNewestTrip;
