@@ -1,5 +1,8 @@
 {
   "name": "peri",
+   "jest": {
+    "setupTestFrameworkScriptFile": "./__tests__/testSetup.ts"
+    },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -30,7 +33,6 @@
     "cookie-parser": "~1.4.3",
     "dotenv": "^4.0.0",
     "ejs": "^2.5.7",
-    "enzyme": "^3.2.0",
     "eslint": "^4.13.1",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
@@ -42,13 +44,11 @@
     "passport-google-oauth": "^1.0.0",
     "passport-google-oauth2": "^0.1.6",
     "react": "^16.2.0",
-    "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.2.0",
     "react-google-maps": "^9.4.2",
     "react-infinite-scroller": "^1.1.2",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
-    "react-test-renderer": "^16.2.0",
     "recompose": "^0.26.0",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
@@ -61,10 +61,14 @@
   "devDependencies": {
     "babel-jest": "^21.2.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme-adapter-react-16": "^1.1.0",
     "eslint": "^4.13.1",
     "eslint-config-airbnb-standard": "^1.6.5",
     "eslint-plugin-react": "^7.5.1",
     "jest": "^21.2.1",
+    "jest-cli": "^22.0.0",
     "nodemon": "^1.12.5",
     "react-test-renderer": "^16.2.0"
   }

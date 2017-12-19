@@ -15,7 +15,7 @@ import { NavLink } from 'react-router-dom';
 })
 
 class BuildSpot extends React.Component {
-  
+
   convertToDecimal(loc) {
     //degrees, minutes, seconds ["79", "deg", "34'", "15.49"", "W"]
     //North and East are positive, South and West are negative
@@ -28,7 +28,7 @@ class BuildSpot extends React.Component {
     let degrees = Number.parseFloat(location[0]);
     let seconds = Number.parseFloat(location[3].slice(0, location[3].length-1));
     let minutes = Number.parseFloat(location[2].slice(0, location[2].length-1));
-    let dd = (seconds/3600) + (minutes/60) + degrees;    
+    let dd = (seconds/3600) + (minutes/60) + degrees;
     if (direction === 'S' || direction === 'W') {
       dd = dd*(-1);
     }
@@ -37,8 +37,8 @@ class BuildSpot extends React.Component {
     }
     console.log('decimalized geolocation =', dd);
     return dd;
-  };  
-  
+  };
+
   uploadWidget() {
     let _this = this;
     window.cloudinary.openUploadWidget({ cloud_name: "peri", theme: "white", cropping: 'server', cropping_show_back_button: true, cropping_aspect_ratio: 1, sources: ["local", "url", "camera", "google_photos", "facebook", "instagram"], show_powered_by: false, upload_preset: "uploadperi", tags:["users"]},
@@ -57,7 +57,7 @@ class BuildSpot extends React.Component {
       _this.props.dispatch(cloudinaryGallery(url));
     });
   }
-  
+
   handleChange(e) {
     let info = {...this.props.cloudinaryStore.tempSpot};
     info[e.target.name] = e.target.value;
@@ -74,10 +74,10 @@ class BuildSpot extends React.Component {
     e.preventDefault();
     let info = {...this.props.cloudinaryStore.tempSpot};
     info.photo = this.props.cloudinaryStore.gallery[this.props.cloudinaryStore.gallery.length-1];
-    console.log('buildSpot handleSubmit info =', info); 
-    this.props.dispatch(cloudinaryAddSpot(info));    
+    console.log('buildSpot handleSubmit info =', info);
+    this.props.dispatch(cloudinaryAddSpot(info));
   }
-  
+
   render() {
     return (
       <div>
@@ -90,6 +90,7 @@ class BuildSpot extends React.Component {
                   <div className="field is-grouped">
                     <form >
                       <div className="control is-expanded">
+                        <label class="label">Name for this Spot</label>
                         <input
                           className="input"
                           type="text"
@@ -100,6 +101,7 @@ class BuildSpot extends React.Component {
                         />
                       </div>
                       <div className="control is-expanded">
+                        <label class="label">Spot Description</label>
                         <input
                           className="input"
                           type="text"
@@ -132,8 +134,8 @@ class BuildSpot extends React.Component {
                         </div>
                     </form>
                     <div id="uploaded" className="control">
-                      <button 
-                        onClick={this.uploadWidget.bind(this)} 
+                      <button
+                        onClick={this.uploadWidget.bind(this)}
                         className="button is-secondary">
                         Add Location Image
                       </button>

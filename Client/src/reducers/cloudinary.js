@@ -6,6 +6,7 @@ export default function reducer(state={
     tripName: '',
     destination: '',
     description: '',
+    hashtag: '',
     thumbnail: '',
     spots: []
   },
@@ -21,7 +22,7 @@ export default function reducer(state={
   switch (action.type) {
     case "FETCH_GALLERY": {
       return {
-        ...state, 
+        ...state,
         gallery: [...state.gallery, action.payload]
       }
     }
@@ -38,7 +39,7 @@ export default function reducer(state={
       // let copy = state.tripInfo.spots.concat(action.payload);
       // let copy2 = [...state.tripInfo.spots, action.payload];
       return {
-        ...state, 
+        ...state,
         tripInfo: {
           ...state.tripInfo,
           spots: [...state.tripInfo.spots, action.payload]
