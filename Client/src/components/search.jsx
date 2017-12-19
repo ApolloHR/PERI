@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { InstantSearch } from 'react-instantsearch';
 import searchInput from '../actions/searchActions.js';
+import SearchAlgolia from './searchAlgolia.jsx';
 
 @connect((store) => {
   return {
@@ -12,6 +14,9 @@ class Search extends React.Component {
 
   handleSearch(e) {
     this.props.dispatch(searchInput(e.target.value));
+  }
+
+  handleAlgoliaSearch() {
   }
 
   render() {
@@ -26,6 +31,13 @@ class Search extends React.Component {
             <div className="control is-expanded">
               <input className="input is-large" type="text" placeholder="Find your next adventure..." value={search.search}
                 onChange={this.handleSearch.bind(this)}/>
+                <InstantSearch
+                  appId='GQA3LGUNKB'
+                  apiKey='86aba503ec3ea5f52735f79f8641d853'
+                  indexName='periTrips2'
+                >
+                  <SearchAlgolia/>
+                </InstantSearch>
             </div>
           <div className="control">
             <button className="button is-primary is-large">Search</button>
