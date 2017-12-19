@@ -1,9 +1,9 @@
-import reducer from '../../../Client/src/reducers/trips.js';
+import tripReducer from '../../../Client/src/reducers/trips.js';
 
 describe('>>>R E D U C E R --- Test trips reducers', () => {
   it('+++ reducer for trips', () => {
     let state = { allTrips: [], loggedIn: false };
-    state = reducer(state, {
+    state = tripReducer(state, {
       type: 'FETCH_TRIPS_SUCCESS',
       payload: ['New Zealand', 'Australia', 'South Korea', 'Bali']
     });

@@ -18,11 +18,11 @@ let Nav = (props) => (
   <div className="container">
     <nav className="level">
       <div className="level-left">
-        <i class="fa fa-ravelry fa-2x has-text-primary" style={style.nav}></i>
+        <i className="fa fa-ravelry fa-2x has-text-primary" style={style.nav}></i>
       </div>
       <div className="level-right">
         <p className="level-item has-text-centered">
-          <Link to="/" class="has-text-grey-dark"activeClassName="active" style={style.routes}> Home </Link>
+          <Link to="/" className="has-text-grey-dark"activeClassName="active" style={style.routes}> Home </Link>
         </p>
         <p className="level-item has-text-centered">
           <Link to="/buildTrip" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Build Trip </Link>
