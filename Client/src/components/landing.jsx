@@ -27,6 +27,7 @@ class Landing extends React.Component {
           <div className="hero-body">
             <div className="container">
               <div className="columns is-vcentered">
+              {console.log('hi', this.props.trips)}
                 <Search/>
               </div>
             </div>
