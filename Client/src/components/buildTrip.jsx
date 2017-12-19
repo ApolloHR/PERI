@@ -37,11 +37,11 @@ class BuildTrip extends React.Component {
   }
 
   handleSubmit(e) {
-    // e.preventDefault();    
+    // e.preventDefault();
     let data = this.props.cloudinaryStore.tripInfo;
     data.thumbnail = this.props.cloudinaryStore.thumbnail[0];
-    console.log('handleSubmit data =', data); 
-    this.props.dispatch(cloudinaryTripInfo(data));    
+    console.log('handleSubmit data =', data);
+    this.props.dispatch(cloudinaryTripInfo(data));
   }
 
   submitTrip() {
@@ -59,42 +59,56 @@ class BuildTrip extends React.Component {
               <div className="field is-grouped">
                 <form >
                   <div className="control is-expanded">
-                    <input 
-                      className="input" 
-                      type="text" 
-                      id="tripname" 
-                      name="tripName" 
-                      placeholder="Enter Trip Name" 
+                   <label class="label">Trip Name</label>
+                    <input
+                      className="input"
+                      type="text"
+                      id="tripname"
+                      name="tripName"
+                      placeholder="Enter Trip Name"
                       onChange={this.handleChange.bind(this)}
                     />
                   </div>
                   <div className="control is-expanded">
-                    <input 
-                      className="input" 
-                      type="text" 
-                      id="destination" 
-                      name="destination" 
-                      placeholder="Enter Destination" 
+                  <label class="label">Destination</label>
+                    <input
+                      className="input"
+                      type="text"
+                      id="destination"
+                      name="destination"
+                      placeholder="Enter Destination"
                       onChange={this.handleChange.bind(this)}
                     />
                   </div>
                   <div className="control is-expanded">
-                    <input 
-                      className="input" 
-                      type="text" 
-                      id="tripdescription" 
-                      name="description" 
-                      placeholder="Enter Trip Description" 
+                  <label class="label">Trip Description</label>
+                    <input
+                      className="input"
+                      type="text"
+                      id="tripdescription"
+                      name="description"
+                      placeholder="Enter Trip Description"
                       onChange={this.handleChange.bind(this)}
                     />
-                  </div>                    
+                  </div>
+                   <div className="control is-expanded">
+                  <label class="label">Add Hash Tags</label>
+                    <input
+                      className="input"
+                      type="text"
+                      id="hashtag"
+                      name="hashtag"
+                      placeholder="#Adventure #PERI"
+                      onChange={this.handleChange.bind(this)}
+                    />
+                  </div>
                   <div className="control">
-                    <NavLink to="/buildSpot" 
+                    <NavLink to="/buildSpot"
                       activeClassName="active">
-                      <button 
-                        className="button is-primary" 
-                        type="submit" 
-                        value="submit" 
+                      <button
+                        className="button is-primary"
+                        type="submit"
+                        value="submit"
                         onClick={this.handleSubmit.bind(this)} >
                         Submit
                       </button>
@@ -102,8 +116,8 @@ class BuildTrip extends React.Component {
                   </div>
                 </form>
                 <div id="uploaded" className="control">
-                  <button 
-                    onClick={this.uploadWidget.bind(this)} 
+                  <button
+                    onClick={this.uploadWidget.bind(this)}
                     className="button is-secondary">
                     Add Cover Image
                   </button>
