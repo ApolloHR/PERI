@@ -198,8 +198,8 @@ app.post('/upvote', (req, res) => {
       console.log('error = ', err);
     }
     if (doc) {
-      console.log('Upvoted succesfuly');
-      res.send(201);
+      console.log('Upvoted succesfuly, now =', doc.upvotes);
+      res.send(200, doc.upvotes);
     }
   });
 });

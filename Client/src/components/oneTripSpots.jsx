@@ -7,7 +7,7 @@ class OneTripSpots extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      upvotes: ''
     };
     this.upvote = this.upvote.bind(this);
   }
@@ -17,8 +17,9 @@ class OneTripSpots extends React.Component {
     axios.post('/upvote', {
       trip: context.props.trip
     })
-      .then ((response) => {
+      .then ((res) => {
         console.log(response);
+        context.setState({upvotes: res.data});
       })
       .catch((err) => {
         console.log(err);
@@ -28,25 +29,25 @@ class OneTripSpots extends React.Component {
   render() {
     return (
       <div>
-
-          <div className="card trip-card">
+        <div className="card trip-card">
+          <Link to={{pathname: '/allTripInfo', query: this.props.trip}}>
             <div className="card-image">
               <figure className="image is-4by3" style={{margin: 0}}>
                 <img src={this.props.trip.thumbnail} alt="Placeholder image"/>
               </figure>
             </div>
-            <div className="card-content">
-              <div className="media-content">
-                <div className="title is-6">{this.props.trip.destination}</div>
-                <div className="subtitle is-6">{this.props.trip.description}
-                </div>
-                <div className="subtitle is-6">{this.props.trip.spots.length} Spots
-                  <a class="button is-primary is-small" onClick={this.upvote}>Upvote</a>
-                </div>
+          </Link>
+          <div className="card-content">
+            <div className="media-content">
+              <div className="title is-6">{this.props.trip.destination}</div>
+              <div className="subtitle is-6">{this.props.trip.description}
+              </div>
+              <div className="subtitle is-6">{this.props.trip.spots.length} Spots
+                <a class="button is-primary is-small" onClick={this.upvote}>Upvote {this.props.trip.upvotes}</a>
               </div>
             </div>
           </div>
-
+        </div>
       </div>
     );
   }
