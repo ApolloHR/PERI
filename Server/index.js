@@ -1,8 +1,10 @@
+const algoliasearch = require('algoliasearch');
 const path = require( 'path' );
 const { saveNewUser, saveNewTrip, getTrips, getSpots, getAllSpots } = require( '../Db/index.js' );
+const { saveTripsAlgolia } = require('../Db/algoliaSearch.js');
 const db = require( '../Db/schema.js' );
-const PORT = process.env.PORT || 3000;
 const express = require( 'express' );
+const PORT = process.env.PORT || 3000;
 const app = express();
 const server = require( 'http' ).createServer( app );
 const passport = require( 'passport' );
@@ -203,6 +205,10 @@ app.post('/upvote', (req, res) => {
     }
   });
 });
+
+
+saveTripsAlgolia();
+
 
 
 app.use(express.static(path.join(__dirname, '../Client/dst')));
