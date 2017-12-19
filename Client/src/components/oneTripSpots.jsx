@@ -7,10 +7,14 @@ class OneTripSpots extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      upvotes: ''
+      upvotes: this.props
     };
     this.upvote = this.upvote.bind(this);
   }
+
+  // componentDidMount() {
+  //   upvoteCount = context.props.upvotes;
+  // }
 
   upvote() {
     var context = this;
@@ -19,6 +23,7 @@ class OneTripSpots extends React.Component {
     })
       .then ((res) => {
         console.log(response);
+        // upvote = context.props.upvotes + 1;
         context.setState({upvotes: res.data});
       })
       .catch((err) => {
