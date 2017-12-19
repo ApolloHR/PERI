@@ -152,7 +152,7 @@ app.get('/checkSession', (req, res) => {
 
 //GET ALL TRIPS
 app.get('/trips', (req, res) => {
-  console.log('REQ session id?? line 138 server =', req.sessionID);
+  // console.log('REQ session id?? line 138 server =', req.sessionID);
   getTrips((err, trips) => {
     if (err) {
       res.send(err);
@@ -202,7 +202,7 @@ app.post('/api/saveTrip', (req, res) => {
 
 app.post('/upvote', (req, res) => {
   // console.log('DOES THE -ID EQUAL', req.body.trip._id)
-  db.Trip.findOneAndUpdate({ '_id': req.body.trip._id }, {$inc: {'upvotes': 2}}, (err, doc) => {
+  db.Trip.findOneAndUpdate({ '_id': req.body.trip._id }, {$inc: {'upvotes': 2}}, {new: true}, (err, doc) => {
     if (err) {
       console.log('error = ', err);
     }
