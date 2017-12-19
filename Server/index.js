@@ -1,6 +1,7 @@
 const algoliasearch = require('algoliasearch');
 const path = require( 'path' );
 const { saveNewUser, saveNewTrip, getTrips, getSpots, getAllSpots } = require( '../Db/index.js' );
+const { saveTripsAlgolia } = require('../Db/algoliaSearch.js');
 const db = require( '../Db/schema.js' );
 const express = require( 'express' );
 const PORT = process.env.PORT || 3000;
@@ -205,19 +206,9 @@ app.post('/upvote', (req, res) => {
   });
 });
 
-const client = algoliasearch('GQA3LGUNKB', process.env.ALGOLIA_API);
-const index = client.initIndex('periTrips');
 
-index.addObject({
-  title: 'Trip to Japan',
-  breif: 'Breif',
-  objectID: '234u9ur4839r824',
-  authorName: 'authorName'
-}, function(err, content) {
-  if (err) {
-    console.log(err);
-  }
-});
+saveTripsAlgolia();
+
 
 
 app.use(express.static(path.join(__dirname, '../Client/dst')));
