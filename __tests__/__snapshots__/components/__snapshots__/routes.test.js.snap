@@ -12,7 +12,7 @@ exports[`>>>R O U T E S --- Snapshot +++capturing Snapshot from routes 1`] = `
         className="level-left"
       >
         <i
-          class="fa fa-ravelry fa-2x has-text-primary"
+          className="fa fa-ravelry fa-2x has-text-primary"
           style={
             Object {
               "marginBottom": 10,
@@ -29,7 +29,7 @@ exports[`>>>R O U T E S --- Snapshot +++capturing Snapshot from routes 1`] = `
         >
           <a
             activeClassName="active"
-            class="has-text-grey-dark"
+            className="has-text-grey-dark"
             href="/"
             onClick={[Function]}
             style={
