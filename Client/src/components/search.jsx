@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { InstantSearch } from 'react-instantsearch';
+import { InstantSearch } from 'react-instantsearch/dom';
 import searchInput from '../actions/searchActions.js';
 import SearchAlgolia from './searchAlgolia.jsx';
 
