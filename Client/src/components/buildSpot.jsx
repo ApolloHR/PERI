@@ -21,7 +21,7 @@ class BuildSpot extends React.Component {
     //North and East are positive, South and West are negative
     //if last element of array is South or West, multiple by -1
     if(!loc) {
-      return 1;
+      return null;
     }
     let location = loc.split(' ');
     let direction = location[4];
