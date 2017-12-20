@@ -17,6 +17,7 @@ class Infinite extends Component {
     };
   }
 
+
   loadItems(page) {
     var self = this;
 

@@ -3,7 +3,7 @@ import OneTripSpots from './oneTripSpots.jsx';
 
 
 let OneTripSpotsIntercept = ({trip}) => (
-  <div  className="columns">
+  <div className="columns">
     {trip.map((tripObj, i) => {
       return (
         <div className="column" key={i}>
