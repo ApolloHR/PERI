@@ -45,7 +45,7 @@ class OneTripSpots extends React.Component {
     const trip = this.props.trip;
     return (
       <div className="col-sm-3">
-        <div className="card trip-card">
+        <div className="card trip-card card-height">
           <Link to={{pathname: '/allTripInfo', query: trip}}>
             <div className="card-image">
               <figure className="image is-4by3" style={{margin: 0}}>

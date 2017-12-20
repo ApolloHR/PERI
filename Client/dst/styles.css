@@ -34,3 +34,16 @@
 #experience {
   padding-left: 15px;
 }
+
+.div.ais-SearchBox__wrapper {
+  max-width: 100%;
+}
+
+form.ais-SearchBox__root {
+  max-width: 100%;
+}
+
+input.ais-SearchBox__input {
+  font-size: 26px;
+  height: 54px;
+}

@@ -11,6 +11,7 @@ const CustomHits = connectHits(({ hits }) =>
 
       console.log('IM IN THE HIT===>  ', hit);
       return (<OneTripSpots trip={hit} key={hit.ObjectID}/>);
+
     }
 
     )}
