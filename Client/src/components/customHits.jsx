@@ -1,11 +1,11 @@
 import React from 'react';
 import { Highlight, InstantSearch } from 'react-instantsearch/dom';
-import { connectHits } from 'react-instantsearch/connectors';
+import { connectHits, connectInfiniteHits } from 'react-instantsearch/connectors';
 
 import HitComponent from './hitComponent.jsx';
 import OneTripSpots from './oneTripSpots.jsx';
 
-const CustomHits = connectHits(({ hits }) =>
+const CustomHits = connectInfiniteHits(({ hits }) =>
   <div className='row'>
     {hits.map(hit => {
 
