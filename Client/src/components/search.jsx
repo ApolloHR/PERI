@@ -42,13 +42,9 @@ class Search extends React.Component {
             <form>
               <div className="field is-grouped">
                 <div className="control is-expanded">
-                  <input className="input is-large" type="text" placeholder="Find your next adventure..." value={search.search}
-                    onChange={this.handleSearch.bind(this)}/>
                 <SearchBox translation={{ placeholder: 'Find your next adventure...'}}/>
                 </div>
-              <div className="control">
-                <button className="button is-primary is-large">Search</button>
-              </div>
+
               </div>
             </form>
           </div>
