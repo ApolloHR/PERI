@@ -31,6 +31,24 @@ class Cart extends React.Component {
     });
   }
 
+  clearCart() {
+    let data = this.props.props;
+    data = {
+      gallery: [],
+      thumbnail: '',
+      tripInfo: {
+        username: '',
+        tripName: '',
+        destination: '',
+        description: '',
+        hashtag: '',
+        thumbnail: '',
+        spots: []
+      }
+    };
+    this.props.dispatch(cartTripInfo(data));
+  }
+
   handleChange(e) {
     let info = this.props.props.tripInfo;
     info[e.target.name] = e.target.value;
@@ -43,6 +61,7 @@ class Cart extends React.Component {
     data.thumbnail = this.props.props.thumbnail[0];
     console.log('handleSubmit data =', data);
     this.props.dispatch(postTrip(data));
+    this.clearCart();
   }
 
   render() {
