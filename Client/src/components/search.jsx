@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { InstantSearch, SearchBox } from 'react-instantsearch/dom';
 import searchInput from '../actions/searchActions.js';
-import SearchAlgolia from './searchAlgolia.jsx';
 import CustomHits from './customHits.jsx';
 
 @connect((store) => {
@@ -24,30 +23,32 @@ class Search extends React.Component {
     const { search } = this.props;
     console.log(search.search);
     return (
-      <div className="column main-search">
-        <h1 className="title is-1 has-text-primary">PERI</h1>
-        <h3 className="subtitle is-3">Travel that inspires</h3>
+      <div>
+        <div className="column main-search">
+          <h1 className="title is-1 has-text-primary">PERI</h1>
+          <h3 className="subtitle is-3">Travel that inspires</h3>
+          <form>
+            <div className="field is-grouped">
+              <div className="control is-expanded">
+                <input className="input is-large" type="text" placeholder="Find your next adventure..." value={search.search}
+                  onChange={this.handleSearch.bind(this)}/>
+              </div>
+            <div className="control">
+              <button className="button is-primary is-large">Search</button>
+            </div>
+            </div>
+          </form>
+        </div>
         <InstantSearch
           appId='GQA3LGUNKB'
           apiKey='86aba503ec3ea5f52735f79f8641d853'
           indexName='periTrips2'
         >
           <SearchBox/>
-          <div className="container-fluid">
+          <div className="container">
             <CustomHits/>
           </div>
         </InstantSearch>
-        <form>
-          <div className="field is-grouped">
-            <div className="control is-expanded">
-              <input className="input is-large" type="text" placeholder="Find your next adventure..." value={search.search}
-                onChange={this.handleSearch.bind(this)}/>
-            </div>
-          <div className="control">
-            <button className="button is-primary is-large">Search</button>
-          </div>
-          </div>
-        </form>
       </div>
     );
   }

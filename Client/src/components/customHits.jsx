@@ -5,7 +5,7 @@ import { connectHits } from 'react-instantsearch/connectors';
 import HitComponent from './hitComponent.jsx';
 
 const CustomHits = connectHits(({ hits }) =>
-  <div className='rows'>
+  <div className='row'>
     {hits.map(hit =>
       <HitComponent hit={hit} key={hit.ObjectID}/>
     )}
