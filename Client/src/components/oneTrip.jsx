@@ -51,5 +51,5 @@ class OneTrip extends React.Component {
     );
   }
 }
-
+ 
 export default OneTrip;
