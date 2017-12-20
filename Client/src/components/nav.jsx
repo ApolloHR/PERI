@@ -23,19 +23,19 @@ class Nav extends React.Component {
       <div className="container">
         <nav className="level">
           <div className="level-left">
-            <i className="fa fa-ravelry fa-2x has-text-primary" style={style.nav}></i>
+            <Link to="/" className="has-text-grey-dark"activeClassName="active" style={style.routes}>
+              <i className="fa fa-ravelry fa-2x has-text-primary" style={style.nav}></i>
+            </Link>
           </div>
           <div className="level-right">
+
             <p className="level-item has-text-centered">
-              <Link to="/" className="has-text-grey-dark"activeClassName="active" style={style.routes}> Home </Link>
-            </p>
-            <p className="level-item has-text-centered">
-              <Link to="/buildTrip" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Build Trip </Link>
+              <Link to="/buildTrip" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Upload Trip </Link>
             </p>
             <p className="level-item has-text-centered">
               <Link to="/cart" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Cart </Link>
             </p>
-            <p onClick={() => this.simpleDialog.show()}>Invite    </p>
+            <p className="level-item has-text-centered" onClick={() => this.simpleDialog.show()}>Invite    </p>
             <SkyLight hideOnOverlayClicked ref={ref => this.simpleDialog = ref}>
               <Invite />
             </SkyLight>
