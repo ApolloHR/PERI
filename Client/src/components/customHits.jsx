@@ -1,15 +1,13 @@
 import React from 'react';
-
 import { Highlight, InstantSearch } from 'react-instantsearch/dom';
 import { connectHits } from 'react-instantsearch/connectors';
 
+import HitComponent from './hitComponent.jsx';
+
 const CustomHits = connectHits(({ hits }) =>
-  <div>
+  <div className='rows'>
     {hits.map(hit =>
-      <p key={hit.objectID}>
-        <Highlight attributeName="description" hit={hit} />
-        <img src={hit.thumbnail}/>
-      </p>
+      <HitComponent hit={hit} key={hit.ObjectID}/>
     )}
   </div>
 );

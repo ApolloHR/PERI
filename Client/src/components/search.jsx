@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { InstantSearch, SearchBox } from 'react-instantsearch/dom';
 import searchInput from '../actions/searchActions.js';
 import SearchAlgolia from './searchAlgolia.jsx';
-import CustomeHits from './customHits.jsx';
+import CustomHits from './customHits.jsx';
 
 @connect((store) => {
   return {
@@ -33,7 +33,9 @@ class Search extends React.Component {
           indexName='periTrips2'
         >
           <SearchBox/>
-          <CustomeHits/>
+          <div className="container-fluid">
+            <CustomHits/>
+          </div>
         </InstantSearch>
         <form>
           <div className="field is-grouped">
