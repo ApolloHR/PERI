@@ -15,3 +15,22 @@
 .trip-card {
   margin: 0% 0%;
 }
+
+.row.match-my-cols {
+    overflow: hidden;
+}
+
+.row.match-my-cols [class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
+.card-height {
+  height: 350px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#experience {
+  padding-left: 15px;
+}

@@ -44,7 +44,7 @@ class OneTripSpots extends React.Component {
   render() {
     const trip = this.props.trip;
     return (
-      <div>
+      <div className="col-sm-3">
         <div className="card trip-card">
           <Link to={{pathname: '/allTripInfo', query: trip}}>
             <div className="card-image">
