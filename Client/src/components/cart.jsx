@@ -56,7 +56,7 @@ class Cart extends React.Component {
     };
 
     const { username, tripName, destination, description, spots } = this.props.props.tripInfo;
-      const trips = spots.map((spot, i) => {
+      const trips = spots.map((spot, i) => 
         <div className="card block" key={i}>
           <div className="">
             <figure className="image" style={style.spot}>
@@ -73,7 +73,7 @@ class Cart extends React.Component {
             </div>
           </div>
         </div>
-      });
+      );
       console.log('tripviewer thispropsspots =', this.props.props);
       return (
         <div>
