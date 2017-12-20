@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HitComponent = (props) => {
   console.log('INSIDE HIT COMPONENT====> ', props);
   return (
     <div className="col-sm-3">
       <div >
-
+        <Link to={{pathname: '/allTripInfo'}}>
           <div className="card trip-card card-height">
             <div className="card-image">
               <figure className="image is-4by3" style={{margin: 0}}>
@@ -23,7 +24,7 @@ const HitComponent = (props) => {
               </div>
             </div>
           </div>
-
+        </Link>
       </div>
     </div>
 

@@ -16,6 +16,8 @@ const saveTripsAlgolia = () => {
         destination: trip.destination,
         description: trip.description,
         thumbnail: trip.thumbnail,
+        hashtag: trip.hashtag,
+        upvotes: trip.upvotes,
         spots: trip.spots
       });
     });
@@ -32,6 +34,8 @@ const saveTripAlgolia = (trip) => {
     destination: trip.destination,
     description: trip.description,
     thumbnail: trip.thumbnail,
+    upvotes: trip.upvotes,
+    hashtag: trip.hashtag,
     spots: trip.spots
   });
 };

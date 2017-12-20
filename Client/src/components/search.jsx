@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { InstantSearch, SearchBox } from 'react-instantsearch/dom';
+import { Link } from 'react-router-dom';
+
 import searchInput from '../actions/searchActions.js';
 import CustomHits from './customHits.jsx';
 
@@ -45,6 +47,7 @@ class Search extends React.Component {
           indexName='periTrips2'
         >
           <SearchBox/>
+          <h1 className="title has-text-grey-dark" id="experience">Experience</h1>
           <div className="container">
             <CustomHits/>
           </div>
