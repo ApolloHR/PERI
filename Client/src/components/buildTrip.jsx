@@ -1,10 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
 import { connect } from "react-redux";
-import { uploadTrip } from "../actions/uploadActions.js";
 import { cloudinaryThumbnail } from "../actions/cloudinary.js";
 import { cloudinaryTripInfo } from "../actions/cloudinary.js";
-import { fetchTrips } from "../actions/tripsActions";
 import { Link } from 'react-router-dom';
 
 @connect ((store) => {
@@ -42,9 +40,6 @@ class BuildTrip extends React.Component {
     data.thumbnail = this.props.cloudinaryStore.thumbnail[0];
     console.log('handleSubmit data =', data);
     this.props.dispatch(cloudinaryTripInfo(data));
-  }
-
-  submitTrip() {
   }
 
   render() {

@@ -13,7 +13,7 @@ const MyMapComponent = compose(
   withScriptjs,
   withGoogleMap
 )((props) => {
-  console.log(props);
+  console.log('map.jsx props =', props);
   return (
   <GoogleMap
     defaultZoom={8}
