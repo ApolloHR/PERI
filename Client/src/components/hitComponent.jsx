@@ -4,9 +4,9 @@ const HitComponent = (props) => {
   console.log('INSIDE HIT COMPONENT====> ', props);
   return (
     <div className="col-sm-3">
-      <div>
+      <div >
 
-          <div className="card trip-card">
+          <div className="card trip-card card-height">
             <div className="card-image">
               <figure className="image is-4by3" style={{margin: 0}}>
                 <img src={props.hit.thumbnail} alt="Placeholder image"/>
