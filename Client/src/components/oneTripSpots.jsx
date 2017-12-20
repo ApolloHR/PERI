@@ -26,23 +26,39 @@ class OneTripSpots extends React.Component {
       });
   }
 
+  parseHashtag (hashtag) {
+    let hidden = {color: 'white'};
+    let parsedTag = <div style={hidden}>#</div>;
+
+    if (hashtag) {
+      parsedTag = hashtag.split(' ').map(hash => {
+        if (hash[hash.length - 1] === ',') {
+          hash = hash.slice(0, hash.length - 1);
+        }
+        return <span>{hash + ' '}</span>;
+      });
+    }
+    return parsedTag;
+  }
+
   render() {
+    const trip = this.props.trip;
     return (
       <div>
         <div className="card trip-card">
-          <Link to={{pathname: '/allTripInfo', query: this.props.trip}}>
+          <Link to={{pathname: '/allTripInfo', query: trip}}>
             <div className="card-image">
               <figure className="image is-4by3" style={{margin: 0}}>
-                <img src={this.props.trip.thumbnail} alt="Placeholder image"/>
+                <img src={trip.thumbnail} alt="Placeholder image"/>
               </figure>
             </div>
           </Link>
           <div className="card-content">
             <div className="media-content">
-              <div className="title is-6">{this.props.trip.destination}</div>
-              <div className="subtitle is-6">{this.props.trip.description}
-              </div>
-              <div className="subtitle is-6">{this.props.trip.spots.length} Spots
+              <div className="title is-6">{trip.destination}</div>
+              <div className="subtitle is-6">{trip.description}</div>
+              <div className="subtitle is-6">{this.parseHashtag.call(this, trip.hashtag)}</div>
+              <div className="subtitle is-6">{trip.spots.length} Spots
                 <a class="button is-primary is-small" onClick={this.upvote}>Upvote {this.state.upvotes}</a>
               </div>
             </div>
