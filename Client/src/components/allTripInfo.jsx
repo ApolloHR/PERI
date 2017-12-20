@@ -19,6 +19,7 @@ let AllTripInfo = (props) => (
       </div>
     </div>
     <h3 class="title is-3">All Spots on This Trip:</h3>
+
     <OneSpot trip={props}/>
 
   </div>

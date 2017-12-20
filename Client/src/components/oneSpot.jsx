@@ -22,8 +22,9 @@ class OneSpot extends React.Component {
 
   componentDidMount() {
     var thisContext = this;
+
     axios.post('/spots', {
-      tripId: this.props.trip.location.query._id
+      tripId: this.props.trip.location.query.objectID
     })
       .then(function (response) {
         console.log(response);

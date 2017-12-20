@@ -45,11 +45,12 @@ class OneTrip extends React.Component {
                 }</div>
               </div>
             </div>
+            <div className="is-size-7">{'Created by: ' + trip.username}</div>
           </div>
         </Link>
       </div>
     );
   }
 }
- 
+
 export default OneTrip;
