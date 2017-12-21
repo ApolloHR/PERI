@@ -11,8 +11,8 @@ import { Link } from 'react-router-dom';
   }
 })
 
-class BuildTrip extends React.Component {
-
+class PostTrip extends React.Component {
+//name change test
   uploadWidget() {
     let _this = this;
     window.cloudinary.openUploadWidget({ cloud_name: "peri", theme: "white", cropping: 'server', cropping_show_back_button: true, cropping_aspect_ratio: 1, sources: ["local", "url", "camera", "google_photos", "facebook", "instagram"], show_powered_by: false, upload_preset: "uploadperi", tags:["users"]},
@@ -41,17 +41,17 @@ class BuildTrip extends React.Component {
     console.log('handleSubmit data =', data);
     this.props.dispatch(cloudinaryTripInfo(data));
   }
-
+//test
   render() {
     return (
   <div>
     <div className="container is-fluid">
       <div className="row">
         <div className="col-sm-6">
-          <p className="title">Build a Trip!</p>
+          <p className="title">Post a Trip!</p>
           <form >
             <div className="field">
-              <label class="label">Trip Name</label>
+              <label className="label">Trip Name</label>
               <p className="control">
                 <input
                   className="input"
@@ -64,7 +64,7 @@ class BuildTrip extends React.Component {
               </p>
             </div>
             <div className="field">
-              <label class="label">Destination</label>
+              <label className="label">Destination</label>
               <div className="control">
                 <input
                   className="input"
@@ -77,7 +77,7 @@ class BuildTrip extends React.Component {
               </div>
             </div>
             <div className="field">
-            <label class="label">Trip Description</label>
+            <label className="label">Trip Description</label>
               <p className="control">
                 <textarea
                   className="textarea"
@@ -90,7 +90,7 @@ class BuildTrip extends React.Component {
               </p>
             </div>
             <div className="field">
-              <label class="label">Add Hash Tags</label>
+              <label className="label">Add Hash Tags</label>
               <p className="control">
                 <input
                   className="input"
@@ -140,4 +140,4 @@ class BuildTrip extends React.Component {
   )
   }
 }
-export default BuildTrip;
+export default PostTrip;
