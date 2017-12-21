@@ -65,6 +65,10 @@ class Cart extends React.Component {
   }
 
   render() {
+
+    if(this.props.props.tripInfo.spots.length === 0) {
+      return <div>Your adventure has no destinations! Add some now!</div>
+    } else {
     const style = {
       spot: {
         margin: 0,
@@ -200,6 +204,7 @@ class Cart extends React.Component {
         </div>
       </div>
     )
+  }
   }
 }
 export default Cart;

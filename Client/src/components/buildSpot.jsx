@@ -140,6 +140,16 @@ class BuildSpot extends React.Component {
                         Add Location Image
                       </button>
                     </div>
+                    <div>
+                    {this.props.cloudinaryStore.gallery.map((spot) => {
+                    return (
+                      <figure class="image is-128x128">
+                        <img src={spot[0]}/>
+                      <p>{this.props.cloudinaryStore.tempSpot.spotName}</p>
+                      <p>{this.props.cloudinaryStore.tempSpot.description}</p>
+                      </figure>
+                    )})}
+                    </div>
                   </div>
                 </div>
               </div>
