@@ -23,20 +23,18 @@ let AllTripInfo = (props) => (
           </figure>
         </div>
       </div>
-    </div>
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            All Spots on This Trip:
-          </h1>
-          <a className="button is-primary">Add all spots</a>
+      <section className="hero">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title">
+              All Spots on This Trip:
+            </h1>
+            <a className="button is-primary">Add all spots</a>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <OneSpot trip={props}/>
-
+      </section>
+      <OneSpot trip={props}/>
+    </div>
   </div>
 );
 
