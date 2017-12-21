@@ -145,8 +145,8 @@ class BuildSpot extends React.Component {
                     return (
                       <figure class="image is-128x128">
                         <img src={spot[0]}/>
-                      <p>{this.props.cloudinaryStore.tempSpot.spotName}</p>
-                      <p>{this.props.cloudinaryStore.tempSpot.description}</p>
+                        <p>{this.props.cloudinaryStore.tempSpot.spotName}</p>
+                        <p>{this.props.cloudinaryStore.tempSpot.description}</p>
                       </figure>
                     )})}
                     </div>

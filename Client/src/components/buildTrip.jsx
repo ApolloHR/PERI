@@ -124,6 +124,13 @@ class BuildTrip extends React.Component {
               Add Cover Image
             </button>
           </div>
+          <div>
+            <figure class="image is-128x128">
+              <img src={this.props.cloudinaryStore.thumbnail}/>
+              <p>{this.props.cloudinaryStore.tripInfo.tripName}</p>
+              <p>{this.props.cloudinaryStore.tripInfo.description}</p>
+            </figure>
+          </div>
         </div>
       </div>
     </div>
