@@ -29,7 +29,7 @@ let AllTripInfo = (props) => (
             <h1 className="title">
               All Spots on This Trip:
             </h1>
-            <a className="button is-primary">Add all spots</a>
+            <a className="button is-primary">{'Add ' + props.location.query.spots.length + ' spot(s) to my trip'}</a>
           </div>
         </div>
       </section>

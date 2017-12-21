@@ -134,7 +134,8 @@ class UploadTrip extends React.Component {
             </figure>
           </div>
         </div>
-
+      </div>
+    </div>
   </div>
   )
   }
