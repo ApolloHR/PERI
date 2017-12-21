@@ -205,13 +205,25 @@ app.post('/api/saveTrip', (req, res) => {
 });
 
 app.post('/upvote', (req, res) => {
-  // console.log('DOES THE -ID EQUAL', req.body.trip._id)
-  db.Trip.findOneAndUpdate({ '_id': req.body.trip._id }, {$inc: {'upvotes': 2}}, {new: true}, (err, doc) => {
+  db.Trip.findOneAndUpdate({ '_id': req.body.trip.objectID }, {$inc: {'upvotes': 2}}, {new: true}, (err, doc) => {
     if (err) {
       console.log('error = ', err);
     }
     if (doc) {
       console.log('Upvoted succesfuly, now =', doc.upvotes);
+      saveTripsAlgolia();
+      res.send(200, doc.upvotes);
+    }
+  });
+});
+
+app.post('/getUpvote', (req, res) => {
+  db.Trip.findOne({ '_id': req.body.trip.objectID }, (err, doc) => {
+    if (err) {
+      console.log('error = ', err);
+    }
+    if (doc) {
+      console.log('Upvote GET succesful, =', doc.upvotes);
       res.send(200, doc.upvotes);
     }
   });
