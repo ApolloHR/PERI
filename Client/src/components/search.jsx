@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { InstantSearch, SearchBox } from 'react-instantsearch/dom';
+import { InstantSearch, SearchBox, SortBy, Stats } from 'react-instantsearch/dom';
 import { Link } from 'react-router-dom';
 
 import searchInput from '../actions/searchActions.js';
@@ -44,7 +44,6 @@ class Search extends React.Component {
                 <div className="control is-expanded">
                 <SearchBox translation={{ placeholder: 'Find your next adventure...'}}/>
                 </div>
-
               </div>
             </form>
           </div>
