@@ -16,13 +16,18 @@ import { NavLink } from 'react-router-dom';
 
 class BuildSpot extends React.Component {
 
+  getUserCoords() {
+    return navigator.geolocation.getCurrentPosition((position) => {
+      let pos = {'lat': position.coords.latitude, 'lng': position.coords.longitude};
+      console.log('pos =', pos);
+      return pos;
+    });
+  }
+
   convertToDecimal(loc) {
     //degrees, minutes, seconds ["79", "deg", "34'", "15.49"", "W"]
     //North and East are positive, South and West are negative
     //if last element of array is South or West, multiple by -1
-    if(!loc) {
-      return 0;
-    }
     let location = loc.split(' ');
     let direction = location[4];
     let degrees = Number.parseFloat(location[0]);
@@ -45,16 +50,31 @@ class BuildSpot extends React.Component {
     function(error, result) {
       if(error) {
         console.log("upload widget error =", error);
+      } else {
+        let url = result.map((e) => {
+          return e.url;
+        });
+        let info = {..._this.props.cloudinaryStore.tempSpot};
+        if(!result[0].image_metadata.GPSLatitude) {
+          let userGPS = window.navigator.geolocation.getCurrentPosition((position) => {
+            let pos = {'lat': position.coords.latitude, 'lng': position.coords.longitude};
+            console.log('pos =', pos);
+            return pos;
+          });
+          info.lat = userGPS.lat;
+          info.long = userGPS.lng;
+          console.log('no image loc! here is user GPS loc', userGPS);
+          console.log('no image loc! here is user info', info);
+          _this.props.dispatch(cloudinarySpotInfo(info));
+          _this.props.dispatch(cloudinaryGallery(url));
+        } else {
+          info.lat = _this.convertToDecimal(result[0].image_metadata.GPSLatitude);
+          info.long = _this.convertToDecimal(result[0].image_metadata.GPSLongitude);
+          info.elevation = result[0].image_metadata.elevation;
+          _this.props.dispatch(cloudinarySpotInfo(info));
+          _this.props.dispatch(cloudinaryGallery(url));
+        }
       }
-      let url = result.map((e) => {
-        return e.url;
-      })
-      let info = {..._this.props.cloudinaryStore.tempSpot};
-      info.lat = _this.convertToDecimal(result[0].image_metadata.GPSLatitude);
-      info.long = _this.convertToDecimal(result[0].image_metadata.GPSLongitude);
-      info.elevation = result[0].image_metadata.elevation;
-      _this.props.dispatch(cloudinarySpotInfo(info));
-      _this.props.dispatch(cloudinaryGallery(url));
     });
   }
 
