@@ -81,81 +81,83 @@ class BuildSpot extends React.Component {
   render() {
     return (
       <div>
-        <section className="hero">
-          <div className="hero-body">
-            <div className="container">
-              <div className="columns is-vcentered">
-                <div className="column main-search">
-                  <p className="title">Add a Place!</p>
-                  <div className="field is-grouped">
-                    <form >
-                      <div className="control is-expanded">
-                        <label class="label">Name for this Spot</label>
-                        <input
-                          className="input"
-                          type="text"
-                          name="spotName"
-                          placeholder="Enter Place Name"
-                          onChange={this.handleChange.bind(this)}
-                          required
-                        />
-                      </div>
-                      <div className="control is-expanded">
-                        <label class="label">Spot Description</label>
-                        <input
-                          className="input"
-                          type="text"
-                          name="description"
-                          placeholder="Enter Place Description"
-                          onChange={this.handleChange.bind(this)}
-                          required
-                        />
-                      </div>
-                        <div className="control">
-                            <button
-                              className="button is-primary"
-                              type="submit"
-                              value="submit"
-                              onClick={this.handleSubmitOne.bind(this)} >
-                              Add another spot!
-                            </button>
-                        </div>
-                        <div className="control">
-                          <NavLink to="/tripViewer"
-                            activeClassName="active">
-                            <button
-                              className="button is-primary"
-                              type="submit"
-                              value="submit"
-                              onClick={this.handleSubmit.bind(this)} >
-                              Submit All
-                            </button>
-                          </NavLink>
-                        </div>
-                    </form>
-                    <div id="uploaded" className="control">
-                      <button
-                        onClick={this.uploadWidget.bind(this)}
-                        className="button is-secondary">
-                        Add Location Image
-                      </button>
-                    </div>
-                    <div>
-                    {this.props.cloudinaryStore.gallery.map((spot) => {
-                    return (
-                      <figure class="image is-128x128">
-                        <img src={spot[0]}/>
-                        <p>{this.props.cloudinaryStore.tempSpot.spotName}</p>
-                        <p>{this.props.cloudinaryStore.tempSpot.description}</p>
-                      </figure>
-                    )})}
+        <div className="container is-fluid">
+          <div className="row">
+            <div className="col-sm-6">
+              <p className="title">Add a Place!</p>
+                <form >
+                  <div className="field">
+                    <div className="control is-expanded">
+                      <label class="label">Name for this Spot</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="spotName"
+                        placeholder="Enter Place Name"
+                        onChange={this.handleChange.bind(this)}
+                        required
+                      />
                     </div>
                   </div>
+                  <div class="field">
+                    <div className="control is-expanded">
+                      <label class="label">Spot Description</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="description"
+                        placeholder="Enter Place Description"
+                        onChange={this.handleChange.bind(this)}
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="field is-grouped">
+                    <div className="control">
+                        <button
+                          className="button is-primary"
+                          type="submit"
+                          value="submit"
+                          onClick={this.handleSubmitOne.bind(this)} >
+                          Add another spot!
+                        </button>
+                    </div>
+                    <div className="control">
+                      <NavLink to="/tripViewer"
+                        activeClassName="active">
+                        <button
+                          className="button is-primary"
+                          type="submit"
+                          value="submit"
+                          onClick={this.handleSubmit.bind(this)} >
+                          Submit All
+                        </button>
+                      </NavLink>
+                    </div>
+                  </div>
+                </form>
+                <div className="col-sm-6">
+                  <div id="uploaded" className="control">
+                    <button
+                      onClick={this.uploadWidget.bind(this)}
+                      className="button is-secondary">
+                      Add Location Image
+                    </button>
+                  </div>
+                  <div>
+                  {this.props.cloudinaryStore.gallery.map((spot) => {
+                  return (
+                    <figure class="image is-128x128">
+                      <img src={spot[0]}/>
+                      <p>{this.props.cloudinaryStore.tempSpot.spotName}</p>
+                      <p>{this.props.cloudinaryStore.tempSpot.description}</p>
+                    </figure>
+                  )})}
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
     )
   }
