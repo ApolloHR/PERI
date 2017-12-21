@@ -4,24 +4,37 @@ import OneSpot from './oneSpot.jsx';
 
 let AllTripInfo = (props) => (
   <div>
-    <div className="card">
-      <div className="">
-        <img src={props.location.query.thumbnail} alt="Placeholder image"/>
-      </div>
-      <div className="card-content">
-        <div className="media">
-          <div className="media-content">
-            <p className="title is-4">{props.location.query.tripName}</p>
-            <br></br>
-            <p className="subtitle is-6">{props.location.query.description}</p>
-          </div>
+    <div className="container">
+      <div className="columns">
+        <div className="column">
+          <p className="title is-size-2">{props.location.query.tripName}</p>
+          <p className="subtitle is-size-5">{props.location.query.destination}</p>
+          <hr/>
+          <p className="subtitle is-size-3">{props.location.query.description}</p>
+          <p className="subtitle is-size-6">Created by {props.location.query.username}</p>
+          <p className="subtitle is-size-6">{props.location.query.hashtag}</p>
+          <hr/>
+          <p className="subtitle is-size-6">{props.location.query.spots.length + ' spots on this trip'}</p>
+          <hr/>
+        </div>
+        <div className="column">
+          <figure className="image">
+            <img src={props.location.query.thumbnail} alt="Placeholder image"/>
+          </figure>
         </div>
       </div>
+      <section className="hero">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title">
+              All Spots on This Trip:
+            </h1>
+            <a className="button is-primary">Add all spots</a>
+          </div>
+        </div>
+      </section>
+      <OneSpot trip={props}/>
     </div>
-    <h3 class="title is-3">All Spots on This Trip:</h3>
-
-    <OneSpot trip={props}/>
-
   </div>
 );
 

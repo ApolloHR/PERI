@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
   }
 })
 
-class BuildTrip extends React.Component {
+class UploadTrip extends React.Component {
 
   uploadWidget() {
     let _this = this;
@@ -46,12 +46,11 @@ class BuildTrip extends React.Component {
     return (
   <div>
     <div className="container">
-      <div className="columns is-vcentered">
-        <div className="column">
+
           <p className="title">Build a Trip!</p>
           <form >
             <div className="field">
-              <label class="label">Trip Name</label>
+              <label className="label">Trip Name</label>
               <p className="control">
                 <input
                   className="input"
@@ -64,7 +63,7 @@ class BuildTrip extends React.Component {
               </p>
             </div>
             <div className="field">
-              <label class="label">Destination</label>
+              <label className="label">Destination</label>
               <div className="control">
                 <input
                   className="input"
@@ -77,7 +76,7 @@ class BuildTrip extends React.Component {
               </div>
             </div>
             <div className="field">
-            <label class="label">Trip Description</label>
+            <label className="label">Trip Description</label>
               <p className="control">
                 <textarea
                   className="textarea"
@@ -90,7 +89,7 @@ class BuildTrip extends React.Component {
               </p>
             </div>
             <div className="field">
-              <label class="label">Add Hash Tags</label>
+              <label className="label">Add Hash Tags</label>
               <p className="control">
                 <input
                   className="input"
@@ -132,10 +131,9 @@ class BuildTrip extends React.Component {
             </figure>
           </div>
         </div>
-      </div>
-    </div>
+
   </div>
   )
   }
 }
-export default BuildTrip;
+export default UploadTrip;
