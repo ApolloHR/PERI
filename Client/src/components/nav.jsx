@@ -33,7 +33,7 @@ class Nav extends React.Component {
               <Link to="/postTrip" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Post Trip </Link>
             </p>
             <p className="level-item has-text-centered">
-              <Link to="/cart" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Cart </Link>
+              <Link to="/planTrip" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Plan Trip </Link>
             </p>
             <p className="level-item has-text-centered invite-pop-up" onClick={() => this.simpleDialog.show()}> Invite
             </p>

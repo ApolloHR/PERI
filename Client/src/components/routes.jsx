@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Nav from './nav.jsx';
 import Landing from './landing.jsx';
 import PostTrip from './postTrip.jsx';
-import Cart from './cart.jsx';
+import PlanTrip from './planTrip.jsx';
 import TripViewer from './tripViewer.jsx';
 import AllTripInfo from './allTripInfo.jsx';
 import BuildSpot from './buildSpot.jsx';
@@ -19,7 +19,7 @@ let Routes = (props) => (
       <Route exact path="/" component={Landing}/>
       <Route path="/postTrip" component={PostTrip}/>
       <Route path="/buildSpot" component={BuildSpot}/>
-      <Route path="/cart" component={Cart}/>
+      <Route path="/planTrip" component={PlanTrip}/>
       <Route path="/tripViewer" component={TripViewer}/>
       <Route path="/allTripInfo" component={AllTripInfo}/>
       <Route path="/invite" component={Invite}/>
