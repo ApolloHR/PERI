@@ -9,12 +9,9 @@ const CustomHits = connectHits(({ hits }) =>
   <div className='row'>
     {hits.map(hit => {
 
-      // console.log('IM IN THE HIT===>  ', hit);
       return (<OneTripSpots trip={hit} key={hit.ObjectID}/>);
 
-    }
-
-    )}
+    })}
   </div>
 );
 

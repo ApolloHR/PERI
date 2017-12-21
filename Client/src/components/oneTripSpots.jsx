@@ -22,7 +22,7 @@ class OneTripSpots extends React.Component {
         context.setState({upvotes: res.data});
       })
       .catch((err) => {
-        console.log(err);
+        console.log('error =', err);
       });
   }
 
