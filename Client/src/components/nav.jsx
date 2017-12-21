@@ -36,10 +36,10 @@ class Nav extends React.Component {
               <Link to="/cart" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Cart </Link>
             </p>
             <p className="level-item has-text-centered invite-pop-up" onClick={() => this.simpleDialog.show()}> Invite
-              <SkyLight hideOnOverlayClicked ref={ref => this.simpleDialog = ref}>
-                <Invite />
-              </SkyLight>
             </p>
+            <SkyLight hideOnOverlayClicked ref={ref => this.simpleDialog = ref}>
+              <Invite />
+            </SkyLight>
             <p className="level-item has-text-centered">
               <a class="has-text-grey-dark" activeClassName="active" href="/auth/google" style={style.routes}> Login </a>
             </p>
