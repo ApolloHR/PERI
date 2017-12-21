@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
   }
 })
 
-class BuildTrip extends React.Component {
+class UploadTrip extends React.Component {
 
   uploadWidget() {
     let _this = this;
@@ -136,4 +136,4 @@ class BuildTrip extends React.Component {
   )
   }
 }
-export default BuildTrip;
+export default UploadTrip;

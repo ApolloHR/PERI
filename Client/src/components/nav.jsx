@@ -30,7 +30,7 @@ class Nav extends React.Component {
           <div className="level-right">
 
             <p className="level-item has-text-centered">
-              <Link to="/buildTrip" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Upload Trip </Link>
+              <Link to="/uploadTrip" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Upload Trip </Link>
             </p>
             <p className="level-item has-text-centered">
               <Link to="/cart" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Cart </Link>
