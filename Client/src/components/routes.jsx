@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Nav from './nav.jsx';
 import Landing from './landing.jsx';
-import BuildTrip from './buildTrip.jsx';
+import UploadTrip from './uploadTrip.jsx';
 import Cart from './cart.jsx';
 import TripViewer from './tripViewer.jsx';
 import AllTripInfo from './allTripInfo.jsx';
@@ -17,7 +17,7 @@ let Routes = (props) => (
     <div>
       <Nav />
       <Route exact path="/" component={Landing}/>
-      <Route path="/buildTrip" component={BuildTrip}/>
+      <Route path="/uploadTrip" component={UploadTrip}/>
       <Route path="/buildSpot" component={BuildSpot}/>
       <Route path="/cart" component={Cart}/>
       <Route path="/tripViewer" component={TripViewer}/>
