@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import { render } from "react-dom";
 import { connect } from "react-redux";
 import { cloudinaryThumbnail } from "../actions/cloudinary.js";
@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 })
 
 class UploadTrip extends React.Component {
-//name change test
+//name change
   uploadWidget() {
     let _this = this;
     window.cloudinary.openUploadWidget({ cloud_name: "peri", theme: "white", cropping: 'server', cropping_show_back_button: true, cropping_aspect_ratio: 1, sources: ["local", "url", "camera", "google_photos", "facebook", "instagram"], show_powered_by: false, upload_preset: "uploadperi", tags:["users"]},
@@ -41,13 +41,12 @@ class UploadTrip extends React.Component {
     console.log('handleSubmit data =', data);
     this.props.dispatch(cloudinaryTripInfo(data));
   }
-//test
+
   render() {
     return (
   <div>
-    <div className="container is-fluid">
-      <div className="row">
-        <div className="col-sm-6">
+    <div className="container">
+
           <p className="title">Build a Trip!</p>
           <form >
             <div className="field">
@@ -117,14 +116,12 @@ class UploadTrip extends React.Component {
               </p>
             </div>
           </form>
-          <div className="col-sm-6">
           <div id="uploaded" className="control">
             <button
               onClick={this.uploadWidget.bind(this)}
               className="button is-secondary">
               Add Cover Image
             </button>
-          </div>
           </div>
           <div>
             <figure class="image is-128x128">
@@ -139,4 +136,4 @@ class UploadTrip extends React.Component {
   )
   }
 }
-export default UploadTrip;
+export default UploadTrip;*/
