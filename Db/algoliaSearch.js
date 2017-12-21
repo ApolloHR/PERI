@@ -42,10 +42,3 @@ const saveTripAlgolia = (trip) => {
 
 module.exports.saveTripsAlgolia = saveTripsAlgolia;
 module.exports.saveTripAlgolia = saveTripAlgolia;
-
-// Search for all the users
-// Search for all the trips
-// Search for all the spots
-
-// pull in any mongoose dependencies
-
