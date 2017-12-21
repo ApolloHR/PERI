@@ -47,3 +47,9 @@ input.ais-SearchBox__input {
   font-size: 26px;
   height: 54px;
 }
+
+/*===== Nav =====*/
+
+.invite-pop-up {
+  padding: 0px 10px;
+}
