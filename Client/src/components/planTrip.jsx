@@ -1,4 +1,4 @@
-/*import React from 'react';
+import React from 'react';
 import { render } from "react-dom";
 import { connect } from 'react-redux';
 import { GoogleApiWrapper } from 'google-maps-react';
@@ -14,7 +14,7 @@ import MapContainer from './map.jsx';
   }
 })
 
-class Cart extends React.Component {
+class PlanTrip extends React.Component {
 
   uploadWidget() {
     let _this = this;
@@ -106,7 +106,7 @@ class Cart extends React.Component {
               <p className="title">Enter trip details</p>
               <form >
                 <div className="field">
-                  <label class="label">Trip Name</label>
+                  <label>Trip Name</label>
                   <p className="control">
                     <input
                       className="input"
@@ -119,7 +119,7 @@ class Cart extends React.Component {
                   </p>
                 </div>
                 <div className="field">
-                  <label class="label">Destination</label>
+                  <label>Destination</label>
                   <div className="control">
                     <input
                       className="input"
@@ -132,7 +132,7 @@ class Cart extends React.Component {
                   </div>
                 </div>
                 <div className="field">
-                <label class="label">Trip Description</label>
+                <label>Trip Description</label>
                   <p className="control">
                     <textarea
                       className="textarea"
@@ -145,7 +145,7 @@ class Cart extends React.Component {
                   </p>
                 </div>
                 <div className="field">
-                  <label class="label">Add Hash Tags</label>
+                  <label>Add Hash Tags</label>
                   <p className="control">
                     <input
                       className="input"
@@ -207,4 +207,13 @@ class Cart extends React.Component {
   }
   }
 }
-export default Cart; */
+export default PlanTrip;
+
+
+
+
+
+
+
+
+
