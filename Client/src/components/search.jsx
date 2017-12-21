@@ -49,21 +49,6 @@ class Search extends React.Component {
           </div>
           <h1 className="title has-text-grey-dark" id="experience">Experience</h1>
           <div className="container">
-            <div className="level">
-              <div className="level-left">
-                <Stats/>
-              </div>
-              <div className="level-left">
-                <SortBy
-                  defaultRefinement="periTrips2"
-                  items={[
-                    {value:'periTrips2', label:'Most Recent'},
-                    {value:'periTrips2_upvotes_desc', label:'Most Upvoted'},
-                    {value:'periTrips2_upvotes_asc', label:'Least Liked'},
-                  ]}
-                />
-              </div>
-            </div>
             <CustomHits/>
           </div>
         </InstantSearch>
