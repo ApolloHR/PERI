@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import InfiniteScroll from 'react-infinite-scroller';
 import axios from 'axios';
 import OneTripSpotsIntercept from './oneTripSpotsIntercept.jsx';
+import OneTripSpots from './oneTripSpots.jsx';
+
 
 
 class Infinite extends Component {
@@ -19,57 +21,35 @@ class Infinite extends Component {
 
 
   loadItems(page) {
-    var self = this;
+    var trips = this.props.trips;
 
-    if (self.state.hasMoreItems) {
-      axios.get('/trips')
-        .then(function(resp) {
-          if (resp) {
-            console.log('RESPPPONSE L28 infinite.jsx =', resp);
-
-            if (resp.data) {
-              var endOfData = resp.data.length;
-              resp.data.reverse();
-              var toLoad = resp.data.slice(self.state.counter, self.state.counter + 4);
-              if ((self.state.counter + 4) >= endOfData) {
-                self.setState({
-                  tracks: self.state.tracks.concat([toLoad]),
-                  counter: self.state.counter + 4,
-                  hasMoreItems: false
-                });
-              } else {
-                self.setState({
-                  tracks: self.state.tracks.concat([toLoad]),
-                  counter: self.state.counter + 4
-                });
-              }
-            }
-          }
+    if (this.state.hasMoreItems) {
+      var endOfData = this.props.trips.length;
+      trips.reverse();
+      var toLoad = trips.slice(this.state.counter, this.state.counter + 4);
+      if ((this.state.counter + 4) >= endOfData) {
+        this.setState({
+          tracks: this.state.tracks.concat([toLoad]),
+          counter: this.state.counter + 4,
+          hasMoreItems: false
         });
+      } else {
+        this.setState({
+          tracks: this.state.tracks.concat([toLoad]),
+          counter: this.state.counter + 4
+        });
+      }
     }
-    // .cath((error) => {
-    //   console.log('ERROR', error);
-    // });
   }
+
 
   render() {
     const loader = <div className="loader">Loading ...</div>;
 
-    // var items = [];
-    // this.state.tracks.map((track, i) => {
-    //   items.push(
-    //     <div className="track" key={i}>
-    //       <a href={track.photo} target="_blank">
-    //         <img src={track.photo} width="150" height="150" />
-    //         <p className="title">{track.spotName}</p>
-    //       </a>
-    //     </div>
-    //   );
-    // });
-    console.log('TRACKS ===', this.state.tracks);
+    console.log('state ===', this.state);
     var context = this;
 
-    if (this.state.tracks[0]) {
+    if (this.props.trips[0]) {
       return (
         <InfiniteScroll
           pageStart={0}
@@ -83,9 +63,9 @@ class Infinite extends Component {
             </div>
 
             <div>{
-              context.state.tracks.map((tripObj) => (
+              context.props.trips.map((tripObj) => (
                 <div>
-                  <OneTripSpotsIntercept trip={tripObj} />
+                  <OneTripSpots trip={tripObj} />
                 </div>))}
             </div>
           </div>
@@ -93,13 +73,6 @@ class Infinite extends Component {
       );
     } else {
       return (
-        <InfiniteScroll
-          pageStart={0}
-          loadMore={this.loadItems.bind(this)}
-          hasMore={this.state.hasMoreItems}
-          loader={loader}
-        >
-
           <div className="container">
             <div class="level">
               <h3 class="level-left title has-text-grey-dark">Experiences</h3>
@@ -109,7 +82,6 @@ class Infinite extends Component {
             </div>
 
           </div>
-        </InfiniteScroll>
       );
     }
   }
