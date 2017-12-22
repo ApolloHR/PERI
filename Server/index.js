@@ -47,7 +47,7 @@ passport.use(new GoogleStrategy({
 },
 function(userInfo, accessToken, refreshToken, profile, done) {
   process.nextTick(function () {
-    console.log('SESSION id line 44 server =', userInfo.sessionID);
+    console.log('google auth userInfo =', userInfo);
     db.User.findOne({'username': profile.emails[0].value}, function(err, user) {
       if (err) {
         console.log('error line 47 server');
@@ -265,7 +265,8 @@ saveTripsAlgolia();
 app.use(express.static(path.join(__dirname, '../Client/dst')));
 
 app.get('/*', (req, res) => {
-  console.log(req._parsedOriginalUrl.path);
+  console.log('homepage app.get req =', req);
+  console.log('homepage app.get res =', res);
   res.redirect('/');
 });
 

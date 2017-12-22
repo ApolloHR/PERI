@@ -21,7 +21,7 @@ class Landing extends React.Component {
   componentWillMount() {
     this.props.dispatch(fetchTrips());
     axios.get('/').then(function(response) {
-      console.log(response);
+      console.log('response in landing.jsx =', response);
     })
     .catch(function(error) {
       console.log(error);

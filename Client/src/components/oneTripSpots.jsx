@@ -42,7 +42,6 @@ class OneTripSpots extends React.Component {
 
   render() {
     const trip = this.props.trip;
-    console.log('LINE 46 ONTRIPSPOTS ===>', trip);
     return (
       <div className="col-sm-3">
         <div className="card trip-card card-height">
