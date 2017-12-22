@@ -135,6 +135,24 @@ app.get('/auth/facebook/callback',
 app.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
+
+  // req.session.destroy((err) => {
+  //   if(err) return next(err)
+  
+  //   req.logOut()
+  
+  //   res.sendStatus(200)
+  // })
+  
+  // or
+  
+  // app.get('/logout', function(req,res){
+  //  req.logOut();
+  //  req.session.destroy(function (err) {
+  //         res.redirect('/'); //Inside a callback… bulletproof!
+  //     });
+  // });
+
 });
 
 
