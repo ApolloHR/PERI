@@ -33,9 +33,7 @@ class Landing extends React.Component {
             </div>
           </div>
         </section>
-        <div className="container">
-          <Infinite />
-        </div>
+
       </div>
     )
   }
@@ -43,6 +41,9 @@ class Landing extends React.Component {
 
 export default Landing;
 
+       // <div className="container">
+         // <Infinite />
+        //</div>
 
 
 

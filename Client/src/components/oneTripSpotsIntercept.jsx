@@ -7,7 +7,7 @@ let OneTripSpotsIntercept = ({trip}) => (
     {trip.map((tripObj, i) => {
       return (
         <div className="" key={i}>
-          <OneTripSpots trip={tripObj} key={tripObj._id} />
+          <OneTripSpots trip={tripObj} key={tripObj.objectID} />
         </div>
       );
     })}
