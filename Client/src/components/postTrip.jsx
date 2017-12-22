@@ -117,15 +117,13 @@ class PostTrip extends React.Component {
               </p>
             </div>
           </form>
-          <div className="col-sm-6">
-          <div id="uploaded" className="control">
-            <button
-              onClick={this.uploadWidget.bind(this)}
-              className="button is-secondary">
-              Add Cover Image
-            </button>
-          </div>
-          </div>
+            <div id="uploaded" className="control">
+              <button
+                onClick={this.uploadWidget.bind(this)}
+                className="button is-secondary">
+                Add Cover Image
+              </button>
+            </div>
           <div>
             <figure class="image is-128x128">
               <img src={this.props.cloudinaryStore.thumbnail}/>
