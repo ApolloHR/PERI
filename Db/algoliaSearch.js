@@ -2,6 +2,7 @@ const algoliasearch = require('algoliasearch');
 
 const { getTrips } = require('./index.js');
 
+// ALGOLIA MOST RELEVANT
 const client = algoliasearch('GQA3LGUNKB', process.env.ALGOLIA_API);
 const index = client.initIndex('periTrips2');
 

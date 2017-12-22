@@ -211,7 +211,7 @@ app.post('/upvote', (req, res) => {
     }
     if (doc) {
       console.log('Upvoted succesfuly, now =', doc.upvotes);
-      saveTripsAlgolia();
+      saveTripAlgolia(doc);
       res.send(200, doc.upvotes);
     }
   });
@@ -246,6 +246,7 @@ app.post('/invite', function(req, res) {
 
 // SAVES ALL TRIP TO ALGOLIA
 saveTripsAlgolia();
+
 
 
 

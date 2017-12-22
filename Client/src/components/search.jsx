@@ -58,7 +58,7 @@ class Search extends React.Component {
                   defaultRefinement="periTrips2"
                   items={[
                     {value: 'periTrips2', label: 'Most Recent'},
-                    {value: 'periTrips2_upvotes_desc', label: 'Most Upvoted'},
+                    {value: 'upvotes_asc', label: 'Most Upvoted'},
                   ]}
                 />
               </div>
