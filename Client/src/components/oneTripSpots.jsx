@@ -30,11 +30,11 @@ class OneTripSpots extends React.Component {
     let parsedTag = <div style={hidden}>#</div>;
 
     if (hashtag) {
-      parsedTag = hashtag.split(' ').map(hash => {
+      parsedTag = hashtag.split(' ').map((hash, i) => {
         if (hash[hash.length - 1] === ',') {
           hash = hash.slice(0, hash.length - 1);
         }
-        return <span>{hash + ' '}</span>;
+        return <span key={i}>{hash + ' '}</span>;
       });
     }
     return parsedTag;
