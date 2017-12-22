@@ -18,8 +18,7 @@ class OneTripSpots extends React.Component {
       trip: context.props.trip
     })
       .then ((res) => {
-        console.log('Upvote Successful =', res);
-        context.setState({upvotes: res.data});
+        console.log('Saved to db');
       })
       .catch((err) => {
         console.log('error =', err);
@@ -43,6 +42,7 @@ class OneTripSpots extends React.Component {
 
   render() {
     const trip = this.props.trip;
+    console.log('LINE 46 ONTRIPSPOTS ===>', trip);
     return (
       <div className="col-sm-3">
         <div className="card trip-card card-height">
@@ -59,7 +59,7 @@ class OneTripSpots extends React.Component {
               <div className="subtitle is-6">{trip.description}</div>
               <div className="subtitle is-6">{this.parseHashtag.call(this, trip.hashtag)}</div>
               <div className="subtitle is-6">{trip.spots.length} Spots
-                <a class="button is-primary is-small" onClick={this.upvote}>Upvote {this.state.upvotes}</a>
+                <a class="button is-primary is-small" onClick={this.upvote}>Upvote {trip.upvotes}</a>
               </div>
             </div>
           </div>

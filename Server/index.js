@@ -1,7 +1,7 @@
 const algoliasearch = require('algoliasearch');
 const path = require( 'path' );
 const { saveNewUser, saveNewTrip, getTrips, getSpots, getAllSpots, getNewestTrip } = require( '../Db/index.js' );
-const { saveTripsAlgolia, saveTripAlgolia } = require('../Db/algoliaSearch.js');
+const { saveTripsAlgolia, saveTripAlgolia, updateUpvotesDB } = require('../Db/algoliaSearch.js');
 const db = require( '../Db/schema.js' );
 const express = require( 'express' );
 const PORT = process.env.PORT || 3000;
@@ -204,17 +204,29 @@ app.post('/api/saveTrip', (req, res) => {
   });
 });
 
+// app.post('/upvote', (req, res) => {
+//   db.Trip.findOneAndUpdate({ '_id': req.body.trip.objectID }, {$inc: {'upvotes': 2}}, {new: true}, (err, doc) => {
+//     if (err) {
+//       console.log('error = ', err);
+//     }
+//     if (doc) {
+//       console.log('Upvoted succesfuly, now =', doc.upvotes);
+//       saveTripAlgolia(doc);
+//       res.send(200, doc.upvotes);
+//     }
+//   });
+// });
+
 app.post('/upvote', (req, res) => {
-  db.Trip.findOneAndUpdate({ '_id': req.body.trip.objectID }, {$inc: {'upvotes': 2}}, {new: true}, (err, doc) => {
+
+  updateUpvotesDB(req.body.trip, (err, success) => {
     if (err) {
-      console.log('error = ', err);
-    }
-    if (doc) {
-      console.log('Upvoted succesfuly, now =', doc.upvotes);
-      saveTripsAlgolia();
-      res.send(200, doc.upvotes);
+      res.send(500);
+    } else {
+      res.send(200);
     }
   });
+
 });
 
 app.post('/getUpvote', (req, res) => {
@@ -246,6 +258,7 @@ app.post('/invite', function(req, res) {
 
 // SAVES ALL TRIP TO ALGOLIA
 saveTripsAlgolia();
+
 
 
 

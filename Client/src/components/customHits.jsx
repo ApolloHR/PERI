@@ -17,8 +17,8 @@ const CustomHits = connectHits(({ hits }) => {
     <div>
 
       <div className='row'>
-        {hits.map(hit => {
-          return (<OneTripSpots trip={hit} key={hit.ObjectID}/>);
+        {hits.map((hit, i) => {
+          return (<OneTripSpots trip={hit} key={i}/>);
         }
         )}
       </div>

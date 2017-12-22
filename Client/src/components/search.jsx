@@ -14,13 +14,6 @@ import CustomHits from './customHits.jsx';
 
 class Search extends React.Component {
 
-  handleSearch(e) {
-    this.props.dispatch(searchInput(e.target.value));
-  }
-
-  handleAlgoliaSearch() {
-  }
-
   render() {
     const { search } = this.props;
     console.log(search.search);
@@ -58,7 +51,7 @@ class Search extends React.Component {
                   defaultRefinement="periTrips2"
                   items={[
                     {value: 'periTrips2', label: 'Most Recent'},
-                    {value: 'periTrips2_upvotes_desc', label: 'Most Upvoted'},
+                    {value: 'upvotes_asc', label: 'Most Upvoted'},
                   ]}
                 />
               </div>
