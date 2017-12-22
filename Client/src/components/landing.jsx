@@ -6,6 +6,8 @@ import OneTrip from "./oneTrip.jsx";
 import { fetchTrips } from "../actions/tripsActions";
 import Infinite from "./infinite.jsx";
 import Search from './search.jsx';
+import axios from 'axios';
+ 
 
 @connect((store) => {
   return {
