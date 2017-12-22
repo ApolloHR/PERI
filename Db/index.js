@@ -1,7 +1,9 @@
 //  REQUIRE
 const mongoose = require('mongoose');
+const algoliasearch = require('algoliasearch');
 
 const { User, Trip, Spot, Fork } = require('./schema.js');
+// const { updateUpvote } = require('./algoliaSearch.js');
 
 // FOR .ENV VARIABLES
 require('dotenv').config();
@@ -151,9 +153,30 @@ const getAllSpots = (cb) => { //Rework to Trips when enough trips for infinite s
   });
 };
 
+const updateUpvotesDB = (data, cb) => {
+  Trip.findOne({'_id': data.objectID}, (err, trip) => {
+    if (err) {
+      cb(err, null);
+    } else {
+      let oldTrip = Object.assign({}, trip);
+      trip.upvotes++;
+      console.log('Does this line rune 162');
+      updateUpvote(oldTrip, trip);
+      Trip.save((err) => {
+        if (err) {
+          cb(err, null);
+        } else {
+          cb(null, true);
+        }
+      });
+    }
+  });
+};
+
 module.exports.saveNewUser = saveNewUser;
 module.exports.saveNewTrip = saveNewTrip;
 module.exports.getTrips = getTrips;
 module.exports.getSpots = getSpots;
 module.exports.getAllSpots = getAllSpots;
 module.exports.getNewestTrip = getNewestTrip;
+module.exports.updateUpvotesDB = updateUpvotesDB;

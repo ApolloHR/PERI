@@ -18,8 +18,7 @@ class OneTripSpots extends React.Component {
       trip: context.props.trip
     })
       .then ((res) => {
-        console.log('Upvote Successful =', res);
-        context.setState({upvotes: res.data});
+        console.log('Saved to db');
       })
       .catch((err) => {
         console.log('error =', err);

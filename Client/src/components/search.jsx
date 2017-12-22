@@ -14,13 +14,6 @@ import CustomHits from './customHits.jsx';
 
 class Search extends React.Component {
 
-  handleSearch(e) {
-    this.props.dispatch(searchInput(e.target.value));
-  }
-
-  handleAlgoliaSearch() {
-  }
-
   render() {
     const { search } = this.props;
     console.log(search.search);
