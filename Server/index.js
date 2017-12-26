@@ -281,19 +281,20 @@ saveTripsAlgolia();
 app.use(express.static(path.join(__dirname, '../Client/dst')));
 
 app.get('/*', (req, res) => {
-  console.log('server req session passport sessionID', req.session.passport.user.sessionID);
+  console.log('server req session passport sessionID', req.session.passport.user);
   // console.log('homepage app.get res =', res);
   let seshID = req.session.passport.user.sessionID;
   res.send(seshID);
   res.redirect('/');
 });
 
-app.get('/isLoggedIn', (req, res) => {
-  console.log('server req session passport sessionID', req.session.passport.user.sessionID);
+app.post('/isLoggedIn', (req, res) => {
+  console.log('server req session passport sessionID', req.session.passport.user);
   // console.log('homepage app.get res =', res);
-  let seshID = req.session.passport.user.sessionID;
+  let seshID = req.session.passport.user;
   res.send(seshID);
   res.redirect('/');
+  res.end();
 });
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
