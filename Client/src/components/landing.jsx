@@ -4,13 +4,17 @@ import { render } from 'react-dom';
 import Login from "./login.jsx";
 import OneTrip from "./oneTrip.jsx";
 import { fetchTrips } from "../actions/tripsActions";
+import { login } from "../actions/login";
 import Infinite from "./infinite.jsx";
 import Search from './search.jsx';
+import axios from 'axios';
+ 
 
 @connect((store) => {
   return {
     trips: store.trips,
-    search: store.search
+    search: store.search,
+    auth: store.login
   }
 })
 
@@ -18,6 +22,25 @@ class Landing extends React.Component {
 
   componentWillMount() {
     this.props.dispatch(fetchTrips());
+    this.isLoggedIn();
+  }
+
+  isLoggedIn() {
+    let _this = this;
+    axios.post('/isLoggedIn',{
+
+    }).then(response => {
+      console.log('response in landing.jsx =', response);
+      console.log('auth store in landing =', _this.props.auth);
+      if(response.data.sessionID) {
+        let creds = response.data;
+        _this.props.dispatch(login(creds));
+        //error here? TypeError: (0 , _login3.login)
+      }
+    })
+    .catch(error => {
+      console.log(error);
+    });
   }
 
   render () {

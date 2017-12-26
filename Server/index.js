@@ -37,7 +37,6 @@ passport.deserializeUser(function(id, done) {
 });
 
 var userLoggedIn;
-
 //GOOGLE LOGIN
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
@@ -47,7 +46,6 @@ passport.use(new GoogleStrategy({
 },
 function(userInfo, accessToken, refreshToken, profile, done) {
   process.nextTick(function () {
-    console.log('SESSION id line 44 server =', userInfo.sessionID);
     db.User.findOne({'username': profile.emails[0].value}, function(err, user) {
       if (err) {
         console.log('error line 47 server');
@@ -137,6 +135,24 @@ app.get('/auth/facebook/callback',
 app.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
+
+  // req.session.destroy((err) => {
+  //   if(err) return next(err)
+  
+  //   req.logOut()
+  
+  //   res.sendStatus(200)
+  // })
+  
+  // or
+  
+  // app.get('/logout', function(req,res){
+  //  req.logOut();
+  //  req.session.destroy(function (err) {
+  //         res.redirect('/'); //Inside a callback… bulletproof!
+  //     });
+  // });
+
 });
 
 
@@ -265,8 +281,20 @@ saveTripsAlgolia();
 app.use(express.static(path.join(__dirname, '../Client/dst')));
 
 app.get('/*', (req, res) => {
-  console.log(req._parsedOriginalUrl.path);
+  console.log('server req session passport sessionID', req.session.passport.user);
+  // console.log('homepage app.get res =', res);
+  let seshID = req.session.passport.user.sessionID;
+  res.send(seshID);
   res.redirect('/');
+});
+
+app.post('/isLoggedIn', (req, res) => {
+  console.log('server req session passport sessionID', req.session.passport.user);
+  // console.log('homepage app.get res =', res);
+  let seshID = req.session.passport.user;
+  res.send(seshID);
+  res.redirect('/');
+  res.end();
 });
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
