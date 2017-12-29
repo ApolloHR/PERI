@@ -1,4 +1,5 @@
 import React from 'react';
+import algoliasearch from 'algoliasearch';
 import { connect } from 'react-redux';
 import { InstantSearch, SearchBox, SortBy, Stats } from 'react-instantsearch/dom';
 import { Link } from 'react-router-dom';
@@ -12,7 +13,12 @@ import CustomHits from './customHits.jsx';
   }
 })
 
+
+
 class Search extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     const { search } = this.props;
@@ -22,6 +28,7 @@ class Search extends React.Component {
         maxWidth: '100%'
       }
     }
+
     return (
       <div>
         <InstantSearch

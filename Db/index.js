@@ -154,21 +154,30 @@ const getAllSpots = (cb) => { //Rework to Trips when enough trips for infinite s
 };
 
 const updateUpvotesDB = (data, cb) => {
-  Trip.findOne({'_id': data.objectID}, (err, trip) => {
+  Trip.findOne({'_id': data._id}, (err, trip) => {
     if (err) {
       cb(err, null);
     } else {
       let oldTrip = Object.assign({}, trip);
       trip.upvotes++;
-      console.log('Does this line rune 162');
       updateUpvote(oldTrip, trip);
-      Trip.save((err) => {
+      trip.save((err) => {
         if (err) {
           cb(err, null);
         } else {
-          cb(null, true);
+          cb(null, trip.upvotes);
         }
       });
+    }
+  });
+};
+
+const getOneTrip = (data, cb) => {
+  Trip.findOne({'_id': data.objectID}, (err, trip) => {
+    if (err) {
+      cb(err, null);
+    } else {
+      cb(null, trip);
     }
   });
 };
@@ -180,3 +189,4 @@ module.exports.getSpots = getSpots;
 module.exports.getAllSpots = getAllSpots;
 module.exports.getNewestTrip = getNewestTrip;
 module.exports.updateUpvotesDB = updateUpvotesDB;
+module.exports.getOneTrip = getOneTrip;
