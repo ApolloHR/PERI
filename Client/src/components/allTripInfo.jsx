@@ -6,7 +6,14 @@ class AllTripInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      trip: {}
+      tripName: '',
+      destination: '',
+      description: '',
+      username: '',
+      hashtag: '',
+      spots: [],
+      thumbnail: '',
+      upvotes: 0
     };
   }
 
@@ -16,8 +23,16 @@ class AllTripInfo extends React.Component {
     })
       .then((response) => {
         console.log('hit the server! ', response.data);
+        const { tripName, destination, description, username, hashtag, spots, thumbnail, upvotes } = response.data
         this.setState({
-          trip: response.data
+          tripName: tripName,
+          destination: destination,
+          description: description,
+          username: username,
+          hashtag: hashtag,
+          spots: spots,
+          thumbnail: thumbnail,
+          upvotes: upvotes
         });
       })
       .catch((error) => {
@@ -29,25 +44,29 @@ class AllTripInfo extends React.Component {
 
     const { query } = this.props.location;
 
+    const { tripName, destination, description, username, hashtag, spots, thumbnail, upvotes } = this.state
+
+    console.log('checking spots: ', this.state);
+
     return (
       <div>
         <div className="container">
           <div className="columns">
             <div className="column">
-              <p className="title is-size-2">{query.tripName}</p>
-              <p className="subtitle is-size-5">{query.destination}</p>
-              <a className="button is-primary">Upvote {query.upvotes}</a>
+              <p className="title is-size-2">{ tripName }</p>
+              <p className="subtitle is-size-5">{ destination }</p>
+              <a className="button is-primary">Upvote { upvotes }</a>
               <hr/>
-              <p className="subtitle is-size-3">{query.description}</p>
-              <p className="subtitle is-size-6">Created by {query.username}</p>
-              <p className="subtitle is-size-6">{query.hashtag}</p>
+              <p className="subtitle is-size-3">{ description }</p>
+              <p className="subtitle is-size-6">Created by { username }</p>
+              <p className="subtitle is-size-6">{ hashtag }</p>
               <hr/>
-              <p className="subtitle is-size-6">{query.spots.length + ' spots on this trip'}</p>
+              <p className="subtitle is-size-6">{ spots.length + ' spots on this trip' }</p>
               <hr/>
             </div>
             <div className="column">
               <figure className="image">
-                <img src={query.thumbnail} alt="Placeholder image"/>
+                <img src={ thumbnail } alt="Placeholder image"/>
               </figure>
             </div>
           </div>
@@ -57,11 +76,11 @@ class AllTripInfo extends React.Component {
                 <h1 className="title">
                   All Spots on This Trip:
                 </h1>
-                <a className="button is-primary">{'Add ' + query.spots.length + ' spot(s) to my trip'}</a>
+                <a className="button is-primary">{ 'Add ' + spots.length + ' spot(s) to my trip' }</a>
               </div>
             </div>
           </section>
-          <OneSpot trip={this.props}/>
+          <OneSpot trip={ this.props }/>
         </div>
       </div>
     );
