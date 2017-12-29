@@ -160,7 +160,6 @@ const updateUpvotesDB = (data, cb) => {
     } else {
       let oldTrip = Object.assign({}, trip);
       trip.upvotes++;
-      console.log('Does this line rune 162');
       updateUpvote(oldTrip, trip);
       Trip.save((err) => {
         if (err) {
@@ -173,6 +172,16 @@ const updateUpvotesDB = (data, cb) => {
   });
 };
 
+const getOneTrip = (data, cb) => {
+  Trip.findOne({'_id': data.objectID}, (err, trip) => {
+    if (err) {
+      cb(err, null);
+    } else {
+      cb(null, trip);
+    }
+  });
+};
+
 module.exports.saveNewUser = saveNewUser;
 module.exports.saveNewTrip = saveNewTrip;
 module.exports.getTrips = getTrips;
@@ -180,3 +189,4 @@ module.exports.getSpots = getSpots;
 module.exports.getAllSpots = getAllSpots;
 module.exports.getNewestTrip = getNewestTrip;
 module.exports.updateUpvotesDB = updateUpvotesDB;
+module.exports.getOneTrip = getOneTrip;

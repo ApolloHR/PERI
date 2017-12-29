@@ -1,6 +1,7 @@
 const algoliasearch = require('algoliasearch');
 const path = require( 'path' );
-const { saveNewUser, saveNewTrip, getTrips, getSpots, getAllSpots, getNewestTrip } = require( '../Db/index.js' );
+const { saveNewUser, saveNewTrip, getTrips, getSpots, getAllSpots, getNewestTrip,
+  getOneTrip } = require( '../Db/index.js' );
 const { saveTripsAlgolia, saveTripAlgolia, updateUpvotesDB } = require('../Db/algoliaSearch.js');
 const db = require( '../Db/schema.js' );
 const express = require( 'express' );
@@ -138,14 +139,14 @@ app.get('/logout', function(req, res) {
 
   // req.session.destroy((err) => {
   //   if(err) return next(err)
-  
+
   //   req.logOut()
-  
+
   //   res.sendStatus(200)
   // })
-  
+
   // or
-  
+
   // app.get('/logout', function(req,res){
   //  req.logOut();
   //  req.session.destroy(function (err) {
@@ -269,6 +270,18 @@ app.post('/invite', function(req, res) {
   sgMail.send(msg).then(function() {
     res.send('sent success');
     res.end();
+  });
+});
+
+app.post('/getOneTrip', (req, res) => {
+  console.log('Sever checking getOneTrip Route: ', req.body);
+  getOneTrip(req.body.trip, (err, trip) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(trip);
+    }
+
   });
 });
 

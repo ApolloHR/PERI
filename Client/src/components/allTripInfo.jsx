@@ -1,10 +1,30 @@
 import React from 'react';
+import axios from 'axios';
 import OneSpot from './oneSpot.jsx';
 
 class AllTripInfo extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      trip: {}
+    };
   }
+
+  componentDidMount() {
+    axios.post('/getOneTrip', {
+      trip: this.props.location.query
+    })
+      .then((response) => {
+        console.log('hit the server! ', response.data);
+        this.setState({
+          trip: response.data
+        });
+      })
+      .catch((error) => {
+        console.log('no server in sight');
+      });
+  }
+
   render() {
 
     const { query } = this.props.location;
@@ -16,6 +36,7 @@ class AllTripInfo extends React.Component {
             <div className="column">
               <p className="title is-size-2">{query.tripName}</p>
               <p className="subtitle is-size-5">{query.destination}</p>
+              <a className="button is-primary">Upvote {query.upvotes}</a>
               <hr/>
               <p className="subtitle is-size-3">{query.description}</p>
               <p className="subtitle is-size-6">Created by {query.username}</p>
