@@ -12,19 +12,6 @@ class OneTripSpots extends React.Component {
     this.upvote = this.upvote.bind(this);
   }
 
-  upvote() {
-    var context = this;
-    axios.post('/upvote', {
-      trip: context.props.trip
-    })
-      .then ((res) => {
-        console.log('Saved to db');
-      })
-      .catch((err) => {
-        console.log('error =', err);
-      });
-  }
-
   parseHashtag (hashtag) {
     let hidden = {color: 'white'};
     let parsedTag = <div style={hidden}>#</div>;
@@ -57,8 +44,9 @@ class OneTripSpots extends React.Component {
               <div className="title is-6">{trip.destination}</div>
               <div className="subtitle is-6">{trip.description}</div>
               <div className="subtitle is-6">{this.parseHashtag.call(this, trip.hashtag)}</div>
-              <div className="subtitle is-6">{trip.spots.length} Spots
-                <a class="button is-primary is-small" onClick={this.upvote}>Upvote {trip.upvotes}</a>
+              <div className="level">
+                <div className="subtitle is-6 level-left">{trip.spots.length} Spots</div>
+                <div className="subtitle is-6 level-right">Upvote {trip.upvotes}</div>
               </div>
             </div>
           </div>

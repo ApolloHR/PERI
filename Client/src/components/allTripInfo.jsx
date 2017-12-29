@@ -6,6 +6,7 @@ class AllTripInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      _id: '',
       tripName: '',
       destination: '',
       description: '',
@@ -23,8 +24,9 @@ class AllTripInfo extends React.Component {
     })
       .then((response) => {
         console.log('hit the server! ', response.data);
-        const { tripName, destination, description, username, hashtag, spots, thumbnail, upvotes } = response.data
+        const { _id, tripName, destination, description, username, hashtag, spots, thumbnail, upvotes } = response.data;
         this.setState({
+          _id: _id,
           tripName: tripName,
           destination: destination,
           description: description,
@@ -40,13 +42,21 @@ class AllTripInfo extends React.Component {
       });
   }
 
+  upvote() {
+    axios.post('/upvote', {
+      _id: this.state._id
+    })
+      .then ((response) => {
+        this.setState({ upvotes: response.data.upvotes });
+      })
+      .catch((error) => {
+        console.log('error =', error);
+      });
+  }
+
   render() {
 
-    const { query } = this.props.location;
-
-    const { tripName, destination, description, username, hashtag, spots, thumbnail, upvotes } = this.state
-
-    console.log('checking spots: ', this.state);
+    const { tripName, destination, description, username, hashtag, spots, thumbnail, upvotes } = this.state;
 
     return (
       <div>
@@ -55,7 +65,7 @@ class AllTripInfo extends React.Component {
             <div className="column">
               <p className="title is-size-2">{ tripName }</p>
               <p className="subtitle is-size-5">{ destination }</p>
-              <a className="button is-primary">Upvote { upvotes }</a>
+              <a className="button is-primary" onClick={ this.upvote.bind(this) }>Upvote { upvotes }</a>
               <hr/>
               <p className="subtitle is-size-3">{ description }</p>
               <p className="subtitle is-size-6">Created by { username }</p>

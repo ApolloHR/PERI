@@ -43,7 +43,6 @@ const saveTripAlgolia = (trip) => {
 };
 
 const updateUpvote = (trip, trip2) => {
-  console.log('HELLO WORLD===>', trip._doc._id);
   let data = trip._doc;
   let newTrip = {
     objectID: data._id,
@@ -70,7 +69,7 @@ const updateUpvote = (trip, trip2) => {
 };
 
 const updateUpvotesDB = (data, cb) => {
-  db.Trip.findOne({'_id': data.objectID}, (err, trip) => {
+  db.Trip.findOne({'_id': data._id}, (err, trip) => {
     if (err) {
       cb(err, null);
     } else {
@@ -82,7 +81,7 @@ const updateUpvotesDB = (data, cb) => {
         if (err) {
           cb(err, null);
         } else {
-          cb(null, true);
+          cb(null, trip.upvotes);
         }
       });
     }

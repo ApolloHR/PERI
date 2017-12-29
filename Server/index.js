@@ -221,33 +221,18 @@ app.post('/api/saveTrip', (req, res) => {
   });
 });
 
-// app.post('/upvote', (req, res) => {
-//   db.Trip.findOneAndUpdate({ '_id': req.body.trip.objectID }, {$inc: {'upvotes': 2}}, {new: true}, (err, doc) => {
-//     if (err) {
-//       console.log('error = ', err);
-//     }
-//     if (doc) {
-//       console.log('Upvoted succesfuly, now =', doc.upvotes);
-//       saveTripAlgolia(doc);
-//       res.send(200, doc.upvotes);
-//     }
-//   });
-// });
-
 app.post('/upvote', (req, res) => {
-
-  updateUpvotesDB(req.body.trip, (err, success) => {
+  updateUpvotesDB(req.body, (err, trip) => {
     if (err) {
-      res.send(500);
+      res.sendStatus(500);
     } else {
-      res.send(200);
+      res.send({ upvotes: trip });
     }
   });
-
 });
 
 app.post('/getUpvote', (req, res) => {
-  db.Trip.findOne({ '_id': req.body.trip.objectID }, (err, doc) => {
+  db.Trip.findOne({ '_id': req.body }, (err, doc) => {
     if (err) {
       console.log('error = ', err);
     }
