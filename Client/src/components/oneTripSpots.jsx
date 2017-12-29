@@ -9,7 +9,6 @@ class OneTripSpots extends React.Component {
     this.state = {
       upvotes: props.trip.upvotes
     };
-    this.upvote = this.upvote.bind(this);
   }
 
   parseHashtag (hashtag) {
