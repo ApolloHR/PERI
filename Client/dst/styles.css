@@ -134,3 +134,8 @@ div.card.trip-card.card-height {
 #label {
   padding: 0px;
 }
+
+/*===== OneSpot =====*/
+#mapid {
+  height: 100%;
+}
