@@ -54,6 +54,10 @@ input.ais-SearchBox__input {
   padding: 0px 10px;
 }
 
+.nav-pos-1 {
+  position: fixed;
+}
+
 /*===== Post Trip =====*/
 
 #label {
