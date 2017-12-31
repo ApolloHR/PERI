@@ -15,18 +15,18 @@ const MyMapComponent = compose(
 )((props) => {
   console.log('map.jsx props =', props);
   return (
-  <GoogleMap
-    defaultZoom={8}
-    defaultCenter={{ lat: props.spots.spots[0].lat, lng: props.spots.spots[0].long }}
-  >
-    { 
-      props.spots.spots.map( (spot, i) =>
-        <Marker position={{ lat: spot.lat, lng: spot.long }} key={ i }/>
-      )
-    }
-  </GoogleMap>
-  )
-})
+    <GoogleMap
+      defaultZoom={8}
+      defaultCenter={{ lat: props.spots.spots[0].lat, lng: props.spots.spots[0].long }}
+    >
+      {
+        props.spots.spots.map( (spot, i) =>
+          <Marker position={{ lat: spot.lat, lng: spot.long }} key={ i }/>
+        )
+      }
+    </GoogleMap>
+  );
+});
 
 export default MyMapComponent;
 

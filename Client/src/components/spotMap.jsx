@@ -8,16 +8,16 @@ const SpotMap = compose(
     // googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
     googleMapURL: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCXBfFMVmtAzLxzykJh74QKlFPDV9IYLDI&libraries=geometry,drawing,places',
     loadingElement: <div style={{ height: '100%' }} />,
-    containerElement: <div style={{ height: '400px' }} />,
+    containerElement: <div style={{ height: '90%' }} />,
     mapElement: <div style={{ height: '100%' }} />,
   }),
   withScriptjs,
   withGoogleMap
 )( (props) => (
+
   <GoogleMap
-    defaultZoom={8}
-    defaultCenter={{ lat: props.spots.lat, lng: props.spots.long }}
-  > <div>{console.log('lat:', props.spots.lat, 'lng:', props.spots.long)}</div>
+    defaultZoom={13}
+    defaultCenter={{ lat: props.spots.lat, lng: props.spots.long }}>
     {
       <Marker position={{ lat: props.spots.lat, lng: props.spots.long }}/>
     }

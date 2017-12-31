@@ -1,11 +1,11 @@
 import React from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { render } from 'react-dom';
 import MapContainer from './map.jsx';
 import SpotMap from './spotMap.jsx';
-import { connect } from "react-redux";
-import { render } from "react-dom";
-import { addSpotToCart } from "../actions/cart.js";
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+import { addSpotToCart } from '../actions/cart.js';
+
 
 @connect((store) => {
   return {
@@ -17,10 +17,7 @@ class OneSpot extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      spots: [],
-      lat: 51.505,
-      lng: -0.09,
-      zoom: 13,
+      spots: []
     };
   }
 
@@ -73,31 +70,13 @@ class OneSpot extends React.Component {
                               Add to my Trip!
                             </button>
                           </div>
-                          <div class="modal">
-                            <div class="modal-background"></div>
-                            <div class="modal-content">
-                              <SpotMap spots={spot}/>
-                            </div>
-                            <button class="modal-close is-large" aria-label="close">Map me</button>
-                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="column">
-                  <Map id="mapid" center={[spot.lat, spot.long]} zoom={13}>
-                    <TileLayer
-                      attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-                      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
-                    <Marker position={[spot.lat, spot.long]}>
-                      <Popup>
-                        <span>
-                          {spot.spotName} <br /> Easily customizable.
-                        </span>
-                      </Popup>
-                    </Marker>
-                  </Map>
+                  <SpotMap spots={spot}/>
                 </div>
               </div>
             </div>
