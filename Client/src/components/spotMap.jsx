@@ -2,6 +2,7 @@
 import React from 'react';
 import { compose, withProps } from 'recompose';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import { InfoBox } from 'react-google-maps/lib/components/addons/InfoBox';
 
 const MapComponent = compose(
   withProps({
@@ -20,7 +21,18 @@ const MapComponent = compose(
         defaultCenter={{ lat: 35.68921388888889, lng: 139.69170833333334 }}
       >
         {props.spots.map( spot => (
-          <Marker position={{ lat: spot.lat, lng: spot.long }}/>
+          <Marker
+            position={{ lat: spot.lat, lng: spot.long }}
+            onClick={props.markerClick.bind(this, spot)}
+          >
+            {<InfoBox>
+              <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>
+                <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>
+                  Hello, Kaohsiung!
+                </div>
+              </div>
+            </InfoBox>}
+          </Marker>
         ))}
       </GoogleMap>
     </div>
@@ -32,12 +44,21 @@ class SpotMap extends React.Component {
     super(props);
   }
 
+
+  markerClick(spot) {
+    console.log('I got clicked');
+    console.log(spot);
+  }
+
   render() {
     const spotList = this.props.spots || [];
 
     return (
       <div>
-        <MapComponent spots={spotList}/>
+        <MapComponent
+          spots={spotList}
+          markerClick={this.markerClick.bind(this)}
+        />
       </div>
     );
   }
