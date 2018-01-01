@@ -26,9 +26,9 @@ const MapComponent = compose(
             onClick={props.markerClick.bind(this, spot)}
           >
             {<InfoBox>
-              <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>
-                <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>
-                  Hello, Kaohsiung!
+              <div className="infoBox-popup-box">
+                <div className="infoBox-popup-content">{spot.spotName}
+                  <img className="image is-64x64" src={spot.photo}/>
                 </div>
               </div>
             </InfoBox>}

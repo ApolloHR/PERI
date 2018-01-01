@@ -140,3 +140,12 @@ div.card.trip-card.card-height {
   height: 100%;
 }
 
+.infoBox-popup-box {
+  background-color: #fff;
+  padding: 12px;
+}
+
+.infoBox-popup-content {
+  font-size: 16px;
+  color: #000;
+}
