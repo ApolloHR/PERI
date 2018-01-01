@@ -135,11 +135,8 @@ div.card.trip-card.card-height {
   padding: 0px;
 }
 
-/*===== OneSpot leaflet map only=====*/
+/*===== OneSpot leaflet map only =====*/
 #mapid {
   height: 100%;
 }
 
-#spot-map {
-  padding: 10px;
-}

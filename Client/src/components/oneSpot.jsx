@@ -45,12 +45,12 @@ class OneSpot extends React.Component {
     const position = [this.state.lat, this.state.lng]
     return (
       <div>
-        {this.state.spots.map((spot) => {
-          console.log('each spot!!!', spot)
-          return (
-            <div className="container">
-              <div className="columns">
-                <div className="column">
+        <div className="container">
+          <div className="columns">
+            <div className="column">
+              {this.state.spots.map((spot) => {
+                console.log('each spot!!!', spot)
+                return (
                   <div className="card">
                     <figure className="image" >
                       <img src={spot.photo} alt="Placeholder image"/>
@@ -74,14 +74,14 @@ class OneSpot extends React.Component {
                       </div>
                     </div>
                   </div>
+                  );
+                })}
                 </div>
                 <div className="column">
-                  <SpotMap spots={spot}/>
+                  <SpotMap spots={this.state.spots}/>
                 </div>
               </div>
             </div>
-          );
-        })}
       </div>
     );
   }
