@@ -182,6 +182,16 @@ const getOneTrip = (data, cb) => {
   });
 };
 
+const getProfile = (data, cb) => {
+  Trip.find({'username': data}, (err, trips) => {
+    if (err) {
+      cb(err, null);
+    } else {
+      cb(null, trips);
+    }
+  });
+};
+
 module.exports.saveNewUser = saveNewUser;
 module.exports.saveNewTrip = saveNewTrip;
 module.exports.getTrips = getTrips;
@@ -190,3 +200,4 @@ module.exports.getAllSpots = getAllSpots;
 module.exports.getNewestTrip = getNewestTrip;
 module.exports.updateUpvotesDB = updateUpvotesDB;
 module.exports.getOneTrip = getOneTrip;
+module.exports.getProfile = getProfile;
