@@ -1,4 +1,3 @@
-//Created by Raymond, Re-purposed by Benji
 import React from 'react';
 import { compose, withProps } from 'recompose';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
@@ -14,18 +13,22 @@ const MapComponent = compose(
   withScriptjs,
   withGoogleMap
 )( (props) => {
+
+  let newLat = (props.spots.length > 0) ? props.spots[0].lat : 0;
+  let newLng = (props.spots.length > 0) ? props.spots[0].long : 0;
+
   return (
     <div>
       <GoogleMap
         defaultZoom={10}
-        defaultCenter={{ lat: 35.68921388888889, lng: 139.69170833333334 }}
+        defaultCenter={{ lat: newLat, lng: newLng }}
       >
-        {props.spots.map( spot => (
+        {props.spots.map( (spot, index) => (
           <Marker
             position={{ lat: spot.lat, lng: spot.long }}
-            onClick={props.markerClick.bind(this, spot)}
+            onClick={props.markerClick.bind(this, spot, index)}
           >
-            {<InfoBox>
+            {<InfoBox options={{pixelOffset: new google.maps.Size(-40, -150)}} >
               <div className="infoBox-popup-box">
                 <div className="infoBox-popup-content">{spot.spotName}
                   <img className="image is-64x64" src={spot.photo}/>
@@ -44,14 +47,27 @@ class SpotMap extends React.Component {
     super(props);
   }
 
-
-  markerClick(spot) {
+  markerClick(spot, index) {
     console.log('I got clicked');
     console.log(spot);
+    const obj = {};
+    obj[index] = true;
+    if (this.state === null) {
+      this.setState(obj);
+    }
+    if (this.state[index]) {
+      obj[index] = false;
+      this.setState(obj);
+    }
+    if (!this.state[index]) {
+      this.setState(obj);
+    }
+    console.log('after', this.state);
   }
 
   render() {
     const spotList = this.props.spots || [];
+
 
     return (
       <div>

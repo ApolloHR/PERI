@@ -149,3 +149,16 @@ div.card.trip-card.card-height {
   font-size: 16px;
   color: #000;
 }
+
+.spot-map {
+  margin: 10px;
+  display: inline-block;
+  width: 50%;
+  height: 60%;
+  position: fixed;
+  top: 30%;
+}
+.spot-list {
+  display: inline-block;
+  width: 50%;
+}

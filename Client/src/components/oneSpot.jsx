@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import { Sticky, StickyContainer } from 'react-sticky';
 import { connect } from 'react-redux';
 import { render } from 'react-dom';
-import MapContainer from './map.jsx';
 import SpotMap from './spotMap.jsx';
 import { addSpotToCart } from '../actions/cart.js';
 
@@ -42,50 +42,46 @@ class OneSpot extends React.Component {
   }
 
   render () {
-    const position = [this.state.lat, this.state.lng]
     return (
       <div>
         <div className="container">
-          <div className="columns">
-            <div className="column">
-              {this.state.spots.map((spot) => {
-                console.log('each spot!!!', spot)
-                return (
-                  <div className="card">
-                    <figure className="image" >
-                      <img src={spot.photo} alt="Placeholder image"/>
-                    </figure>
-                    <div className="card-content">
-                      <div className="media">
-                        <div className="media-content">
-                          <p className="title is-4">{spot.spotName}</p>
-                          <br></br>
-                          <p className="subtitle is-6">{spot.description}</p>
-                          <div className="control">
-                            <button
-                              className="button is-primary"
-                              type="submit"
-                              value={JSON.stringify(spot)}
-                              onClick={this.addToCart.bind(this)} >
-                              Add to my Trip!
-                            </button>
-                          </div>
+          <div className="spot-list">
+            {this.state.spots.map((spot) => {
+              console.log('each spot!!!', spot)
+              return (
+                <div className="card">
+                  <figure className="image" >
+                    <img src={spot.photo} alt="Placeholder image"/>
+                  </figure>
+                  <div className="card-content">
+                    <div className="media">
+                      <div className="media-content">
+                        <p className="title is-4">{spot.spotName}</p>
+                        <br></br>
+                        <p className="subtitle is-6">{spot.description}</p>
+                        <div className="control">
+                          <button
+                            className="button is-primary"
+                            type="submit"
+                            value={JSON.stringify(spot)}
+                            onClick={this.addToCart.bind(this)} >
+                            Add to my Trip!
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
-                  );
-                })}
                 </div>
-                <div className="column">
-                  <SpotMap spots={this.state.spots}/>
-                </div>
-              </div>
-            </div>
+              );
+            })}
+          </div>
+          <div className="spot-map">
+            <SpotMap spots={this.state.spots}/>
+          </div>
+        </div>
       </div>
     );
   }
 }
-
 
 export default OneSpot;
