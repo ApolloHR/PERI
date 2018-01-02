@@ -22,23 +22,25 @@ class Landing extends React.Component {
 
   componentWillMount() {
     this.props.dispatch(fetchTrips());
+    console.log('isLoggedIn componentwillmount =');
     this.isLoggedIn();
   }
 
   isLoggedIn() {
     let _this = this;
-    axios.post('/isLoggedIn',{
+    axios.post('/isLoggedIn', {}).then(response => {
+      console.log('response.data success =', response.data);
+      console.log('response.data.sessionID in landing.jsx =', response.data.sessionID);
+      console.log('this.props in landing =', _this.props);
+      console.log('login in landing =', login);
 
-    }).then(response => {
-      console.log('response in landing.jsx =', response);
-      console.log('auth store in landing =', _this.props.auth);
       if(response.data.sessionID) {
         let creds = response.data;
         _this.props.dispatch(login(creds));
-        //error here? TypeError: (0 , _login3.login)
       }
     })
     .catch(error => {
+      console.log('response failure =');
       console.log(error);
     });
   }

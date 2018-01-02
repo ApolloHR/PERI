@@ -15,6 +15,7 @@ const session = require( 'express-session' );
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 const sgMail = require('@sendgrid/mail');
+const morgan = require('morgan');
 sgMail.setApiKey('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');
 app.use( cookieParser());
 app.use( bodyParser.json());
@@ -23,6 +24,7 @@ app.use( bodyParser.urlencoded({
 }));
 app.use( passport.initialize());
 app.use( passport.session());
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 app.use(session({secret: 'hellofuturebenji',
   saveUninitialized: true,
   resave: true}));
@@ -283,7 +285,7 @@ app.get('/*', (req, res) => {
   // console.log('homepage app.get res =', res);
   let seshID = req.session.passport.user.sessionID;
   res.send(seshID);
-  res.redirect('/');
+  // res.redirect('/');
 });
 
 app.post('/isLoggedIn', (req, res) => {
@@ -291,8 +293,8 @@ app.post('/isLoggedIn', (req, res) => {
   // console.log('homepage app.get res =', res);
   let seshID = req.session.passport.user;
   res.send(seshID);
-  res.redirect('/');
-  res.end();
+  // res.redirect('/');
+  // res.end();
 });
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));

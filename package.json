@@ -1,8 +1,8 @@
 {
   "name": "peri",
-   "jest": {
+  "jest": {
     "setupTestFrameworkScriptFile": "./__tests__/testSetup.ts"
-    },
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -40,6 +40,7 @@
     "google-maps-react": "^1.1.2",
     "mongodb": "^3.0.0-rc0",
     "mongoose": "^4.13.6",
+    "morgan": "^1.9.0",
     "passport": "~0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-google-oauth": "^1.0.0",
