@@ -4,7 +4,7 @@ const { getTrips } = require('./index.js');
 const db = require('./schema.js');
 
 // ALGOLIA MOST RELEVANT
-const client = algoliasearch('GQA3LGUNKB', process.env.ALGOLIA_API);
+const client = algoliasearch('NH6N5P5OH8', process.env.ALGOLIA_API);
 const index = client.initIndex('periTrips2');
 
 const saveTripsAlgolia = () => {

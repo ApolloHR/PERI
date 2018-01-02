@@ -32,8 +32,8 @@ class Search extends React.Component {
     return (
       <div>
         <InstantSearch
-          appId='GQA3LGUNKB'
-          apiKey='86aba503ec3ea5f52735f79f8641d853'
+          appId='NH6N5P5OH8'
+          apiKey='f0e90c174d07dbbcec7820fc3e8d04fb'
           indexName='periTrips2'
         >
           <div className="column main-search">
