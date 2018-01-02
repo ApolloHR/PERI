@@ -1,14 +1,15 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 import { render } from 'react-dom';
-import Login from "./login.jsx";
-import OneTrip from "./oneTrip.jsx";
-import { fetchTrips } from "../actions/tripsActions";
-import { login } from "../actions/login";
-import Infinite from "./infinite.jsx";
-import Search from './search.jsx';
 import axios from 'axios';
- 
+import Login from './login.jsx';
+import OneTrip from './oneTrip.jsx';
+import { fetchTrips } from '../actions/tripsActions';
+import { login } from '../actions/login';
+import Infinite from './infinite.jsx';
+import Search from './search.jsx';
+import Profile from './profile.jsx';
+
 
 @connect((store) => {
   return {
@@ -48,10 +49,11 @@ class Landing extends React.Component {
   render () {
     return (
       <div>
-        <section className="hero">
-          <div className="hero-body">
-            <div className="container">
-              <div className="columns is-vcentered">
+      <Profile />
+        <section className='hero'>
+          <div className='hero-body'>
+            <div className='container'>
+              <div className='columns is-vcentered'>
 
                 <Search/>
               </div>
@@ -66,7 +68,7 @@ class Landing extends React.Component {
 
 export default Landing;
 
-       // <div className="container">
+       // <div className='container'>
          // <Infinite />
         //</div>
 
@@ -81,34 +83,34 @@ export default Landing;
     // });
     // console.log('this props cloudinaryGallery =', this.props.cloudinaryGallery)
 
-/* <CloudinaryContext cloudName="peri">
-  <Image publicId="users.json" type="list"></Image>
+/* <CloudinaryContext cloudName='peri'>
+  <Image publicId='users.json' type='list'></Image>
 </CloudinaryContext>
  */
-  /* <div className="gallery">
-    <CloudinaryContext cloudName="peri">
+  /* <div className='gallery'>
+    <CloudinaryContext cloudName='peri'>
       {
         this.props.cloudinaryGallery.map(data => {
           return (
-            <div className="responsive" key={data.public_id}>
-              <div className="img">
-                <a target="_blank" href={`https://res.cloudinary.com/peri/image/upload/${data.public_id}.jpg`}>
+            <div className='responsive' key={data.public_id}>
+              <div className='img'>
+                <a target='_blank' href={`https://res.cloudinary.com/peri/image/upload/${data.public_id}.jpg`}>
                   <Image publicId={`${data.public_id}.jpg`}>
                     <Transformation
-                      crop="scale"
-                      width="300"
-                      height="300"
-                      dpr="auto"
-                      responsive_placeholder="blank"
+                      crop='scale'
+                      width='300'
+                      height='300'
+                      dpr='auto'
+                      responsive_placeholder='blank'
                     />
                   </Image>
                 </a>
-              <div className="desc">Created at {data.created_at}</div>
+              <div className='desc'>Created at {data.created_at}</div>
             </div>
             </div>
           )
         })
       }
     </CloudinaryContext>
-    <div className="clearfix"></div>
+    <div className='clearfix'></div>
   </div> */
