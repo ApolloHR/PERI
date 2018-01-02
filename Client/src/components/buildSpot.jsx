@@ -140,13 +140,13 @@ class BuildSpot extends React.Component {
                   </div>
                   <div class="field is-grouped">
                     <div className="control">
-                        <button
-                          className="button is-primary"
-                          type="submit"
-                          value="submit"
-                          onClick={this.handleSubmitOne.bind(this)} >
-                          Add another spot!
-                        </button>
+                      <button
+                        className="button is-primary"
+                        type="submit"
+                        value="submit"
+                        onClick={this.handleSubmitOne.bind(this)} >
+                        Add another spot!
+                      </button>
                     </div>
                     <div className="control">
                       <NavLink to="/tripViewer"
