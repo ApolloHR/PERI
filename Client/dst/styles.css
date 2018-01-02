@@ -48,6 +48,54 @@ input.ais-SearchBox__input {
   height: 54px;
 }
 
+ul.ais-Pagination__root {
+  text-align: center;
+  width: 100%;
+  border: none;
+  box-shadow:none;
+}
+
+.ais-Pagination__root .ais-Pagination__item {
+  display: inline-block;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 3px;
+  margin: 1px;
+  border-color: #ddd;
+  background: transparent;
+}
+
+.ais-Pagination__item .ais-Pagination__itemLink {
+  display: block;
+  color: #000000;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+
+}
+
+.ais-Pagination__item.ais-Pagination__itemSelected.ais-Pagination__itemPage {
+  background: #22d0b2;
+  width: 37px;
+}
+
+.ais-Pagination__item.ais-Pagination__itemPage {
+  width: 37px;
+}
+
+.ais-Pagination__itemLink .ais-Pagination__itemLinkDisabled {
+ width: 37px;
+}
+
+.ais-Pagination__item.ais-Pagination__itemSelected.ais-Pagination__itemPage .ais-Pagination__itemLink {
+  color: #FFFFFF;
+  border-color: #22d0b2;
+}
+
+.ais-Pagination__itemDisabled {
+  visibility: hidden;
+}
+
 /*===== Nav =====*/
 
 .invite-pop-up {
