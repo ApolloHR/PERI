@@ -1,6 +1,14 @@
 import React from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { addTripToCart } from '../actions/cart.js';
 import OneSpot from './oneSpot.jsx';
+
+@connect((store) => {
+  return {
+    cart: store.cart
+  }
+})
 
 class AllTripInfo extends React.Component {
   constructor(props) {
@@ -23,7 +31,6 @@ class AllTripInfo extends React.Component {
       trip: this.props.location.query
     })
       .then((response) => {
-        console.log('hit the server! ', response.data);
         const { _id, tripName, destination, description, username, hashtag, spots, thumbnail, upvotes } = response.data;
         this.setState({
           _id: _id,
@@ -54,10 +61,21 @@ class AllTripInfo extends React.Component {
       });
   }
 
+  addTripToCart() {
+    const thisContext = this;
+    axios.post('/spots', {
+      tripId: this.props.location.query.objectID
+    })
+      .then(function (response) {
+      thisContext.props.dispatch(addTripToCart(response.data));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
   render() {
-
     const { tripName, destination, description, username, hashtag, spots, thumbnail, upvotes } = this.state;
-
     return (
       <div>
         <div className="container">
@@ -86,7 +104,10 @@ class AllTripInfo extends React.Component {
                 <h1 className="title">
                   All Spots on This Trip:
                 </h1>
-                <a className="button is-primary">{ 'Add ' + spots.length + ' spot(s) to my trip' }</a>
+                <button
+                  className="button is-primary"
+                  onClick={this.addTripToCart.bind(this)}
+                >{ 'Add ' + spots.length + ' spot(s) to my trip' }</button>
               </div>
             </div>
           </section>

@@ -1,12 +1,10 @@
 import React from 'react';
-import { render } from "react-dom";
 import { connect } from 'react-redux';
-import { GoogleApiWrapper } from 'google-maps-react';
 import { Link } from 'react-router-dom';
+import Sticky from 'react-sticky-el';
+import SpotMap from './spotMap.jsx';
 import { postTrip } from '../actions/tripsActions.js';
-import { cartThumbnail } from "../actions/cart.js";
-import { cartTripInfo } from "../actions/cart.js";
-import MapContainer from './map.jsx';
+import { cartThumbnail, cartTripInfo } from "../actions/cart.js";
 
 @connect((store) => {
   return {
@@ -75,7 +73,6 @@ class PlanTrip extends React.Component {
   }
 
   render() {
-
     if(this.props.props.tripInfo.spots.length === 0) {
       return <div>Your adventure has no destinations! Add some now!</div>
     } else {
@@ -87,7 +84,6 @@ class PlanTrip extends React.Component {
         margin: '10%'
       }
     };
-
     const { username, tripName, destination, description, spots } = this.props.props.tripInfo;
       const trips = spots.map((spot, i) =>
         <div className="card block" key={i}>
@@ -107,6 +103,7 @@ class PlanTrip extends React.Component {
           </div>
         </div>
       );
+      const setToggle = spots.map( oneSpot => true );
       console.log('tripviewer thispropsspots =', this.props.props);
       return (
         <div>
@@ -192,16 +189,15 @@ class PlanTrip extends React.Component {
             </div>
           </div>
         </div>
-        <div>
-          <MapContainer spots={this.props.props.tripInfo}/>
-          <div className="container">
-            <section className="hero">
-              <div className="hero-body">
-                <div className="">
-                  <h3 className="title has-text-centered">{ tripName }</h3>
-                </div>
-              </div>
-            </section>
+        <section className="hero">
+          <div className="hero-body">
+            <div className="">
+              <h3 className="title has-text-centered">Spots Added To This Trip:</h3>
+            </div>
+          </div>
+        </section>
+        <div className="container">
+          <div className="spot-list">
             <br></br>
             <div className="">
               <div className="block">
@@ -209,8 +205,11 @@ class PlanTrip extends React.Component {
               </div>
             </div>
           </div>
-          <br></br>
-          <br></br>
+          <div className="spot-map">
+            <Sticky>
+              <SpotMap spots={spots} setToggle={setToggle}/>
+            </Sticky>
+          </div>
         </div>
       </div>
     )

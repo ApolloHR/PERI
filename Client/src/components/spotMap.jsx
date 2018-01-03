@@ -13,17 +13,16 @@ const MapComponent = compose(
   withScriptjs,
   withGoogleMap
 )( (props) => {
-  console.log('it got passed', props.setToggle);
-  let newLat = (props.spots.length > 0) ? props.spots[0].lat : 0;
-  let newLng = (props.spots.length > 0) ? props.spots[0].long : 0;
+  // let newLat = (props.spots.length > 0) ? props.spots[0].lat : 0;
+  // let newLng = (props.spots.length > 0) ? props.spots[0].long : 0;
   let toggleAll = (props.setToggle.length > 0) ? true : false;
   return (
     <div>
       <GoogleMap
         defaultZoom={10}
-        defaultCenter={{ lat: newLat, lng: newLng }}
+        defaultCenter={{ lat: 0, lng: 0 }}
       >
-        {props.spots.map( (spot, index) => (
+        {props.spots.reverse().map( (spot, index) => (
           <Marker
             position={{ lat: spot.lat, lng: spot.long }}
             onClick={props.markerClick.bind(this, spot, index)}
