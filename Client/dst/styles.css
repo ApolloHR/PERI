@@ -151,14 +151,15 @@ div.card.trip-card.card-height {
 }
 
 .spot-map {
-  margin: 10px;
-  display: inline-block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
   width: 50%;
-  height: 60%;
-  position: fixed;
-  top: 30%;
+  padding: 0px;
+  margin: 0px;
 }
 .spot-list {
-  display: inline-block;
+  display: block;
   width: 50%;
 }

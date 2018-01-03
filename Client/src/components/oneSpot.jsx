@@ -1,11 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import { Sticky, StickyContainer } from 'react-sticky';
+import Sticky from 'react-sticky-el';
 import { connect } from 'react-redux';
 import { render } from 'react-dom';
 import SpotMap from './spotMap.jsx';
 import { addSpotToCart } from '../actions/cart.js';
-
 
 @connect((store) => {
   return {
@@ -42,6 +41,7 @@ class OneSpot extends React.Component {
   }
 
   render () {
+    const setToggle = this.state.spots.map( oneSpot => true );
     return (
       <div>
         <div className="container">
@@ -76,7 +76,9 @@ class OneSpot extends React.Component {
             })}
           </div>
           <div className="spot-map">
-            <SpotMap spots={this.state.spots}/>
+          <Sticky>
+            <SpotMap spots={this.state.spots} setToggle={setToggle}/>
+          </Sticky>
           </div>
         </div>
       </div>
