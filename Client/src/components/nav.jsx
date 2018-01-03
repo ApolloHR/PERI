@@ -27,7 +27,6 @@ const style = {
 class Nav extends React.Component {
 
   render() {
-console.log('BENJIIIIIIII', this.props.auth)
     if (!this.props.auth.loggedIn) {
       return (
         <div className="container">

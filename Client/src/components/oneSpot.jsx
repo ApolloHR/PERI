@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import MapContainer from './map.jsx';
+import Sticky from 'react-sticky-el';
+import { connect } from 'react-redux';
+import { render } from 'react-dom';
 import SpotMap from './spotMap.jsx';
-import { connect } from "react-redux";
-import { render } from "react-dom";
-import { addSpotToCart } from "../actions/cart.js";
+import { addSpotToCart } from '../actions/cart.js';
 
 @connect((store) => {
   return {
@@ -41,55 +41,49 @@ class OneSpot extends React.Component {
   }
 
   render () {
+    const setToggle = this.state.spots.map( oneSpot => true );
     return (
       <div>
-        {this.state.spots.map((spot) => {
-          return (
-            <div className="container">
-              <div className="columns">
-                <div className="column">
-                  <div className="card">
-                    <figure className="image" >
-                      <img src={spot.photo} alt="Placeholder image"/>
-                    </figure>
-                    <div className="card-content">
-                      <div className="media">
-                        <div className="media-content">
-                          <p className="title is-4">{spot.spotName}</p>
-                          <br></br>
-                          <p className="subtitle is-6">{spot.description}</p>
-                          <div className="control">
-                            <button
-                              className="button is-primary"
-                              type="submit"
-                              value={JSON.stringify(spot)}
-                              onClick={this.addToCart.bind(this)} >
-                              Add to my Trip!
-                            </button>
-                          </div>
-                          <div class="modal">
-                            <div class="modal-background"></div>
-                            <div class="modal-content">
-                              <SpotMap spots={spot}/>
-                            </div>
-                            <button class="modal-close is-large" aria-label="close">Map me</button>
-                          </div>
+        <div className="container">
+          <div className="spot-list">
+            {this.state.spots.map((spot) => {
+              console.log('each spot!!!', spot)
+              return (
+                <div className="card">
+                  <figure className="image" >
+                    <img src={spot.photo} alt="Placeholder image"/>
+                  </figure>
+                  <div className="card-content">
+                    <div className="media">
+                      <div className="media-content">
+                        <p className="title is-4">{spot.spotName}</p>
+                        <br></br>
+                        <p className="subtitle is-6">{spot.description}</p>
+                        <div className="control">
+                          <button
+                            className="button is-primary"
+                            type="submit"
+                            value={JSON.stringify(spot)}
+                            onClick={this.addToCart.bind(this)} >
+                            Add to my Trip!
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="column">
-                map of spot will go here
-                </div>
-              </div>
-            </div>
-          );
-        })}
+              );
+            })}
+          </div>
+          <div className="spot-map">
+          <Sticky>
+            <SpotMap spots={this.state.spots} setToggle={setToggle}/>
+          </Sticky>
+          </div>
+        </div>
       </div>
     );
   }
 }
-
 
 export default OneSpot;

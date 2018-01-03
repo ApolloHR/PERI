@@ -125,12 +125,40 @@ div.card.trip-card.card-height {
 
 .nav-pos-1 {
   position: fixed;
-  background-color: white;
-  top: 0;
 }
+
 
 /*===== Post Trip =====*/
 
 #label {
   padding: 0px;
+}
+
+/*===== OneSpot leaflet map only =====*/
+#mapid {
+  height: 100%;
+}
+
+.infoBox-popup-box {
+  background-color: #fff;
+  padding: 12px;
+}
+
+.infoBox-popup-content {
+  font-size: 16px;
+  color: #000;
+}
+
+.spot-map {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 50%;
+  padding: 0px;
+  margin: 0px;
+}
+.spot-list {
+  display: block;
+  width: 50%;
 }
