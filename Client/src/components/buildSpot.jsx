@@ -162,26 +162,25 @@ class BuildSpot extends React.Component {
                     </div>
                   </div>
                 </form>
-                <div className="col-sm-6">
-                  <div id="uploaded" className="control">
-                    <button
-                      onClick={this.uploadWidget.bind(this)}
-                      className="button is-secondary">
-                      Add Location Image
-                    </button>
-                  </div>
-                  <div>
-                  {this.props.cloudinaryStore.gallery.map((spot) => {
-                  return (
-                    <figure class="image is-128x128">
-                      <img src={spot[0]}/>
-                      <p>{this.props.cloudinaryStore.tempSpot.spotName}</p>
-                      <p>{this.props.cloudinaryStore.tempSpot.description}</p>
-                    </figure>
-                  )})}
-                </div>
-              </div>
             </div>
+            <div className="col-sm-6">
+              <div id="uploaded" className="control">
+                <button
+                  onClick={this.uploadWidget.bind(this)}
+                  className="button is-secondary uploadSpotButton">
+                  Add Location Image
+                </button>
+              </div>
+
+              <div>
+              {this.props.cloudinaryStore.gallery.map((spot) => {
+              return (
+                <figure>
+                  <img src={spot[0]} className="uploadSpotImage"/>
+                </figure>
+              )})}
+            </div>
+          </div>
           </div>
         </div>
       </div>

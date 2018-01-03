@@ -13,9 +13,17 @@ import { Link } from 'react-router-dom';
 })
 
 class PostTrip extends React.Component {
-//name change test
+  constructor(props) {
+    super(props);
+    this.state = {
+      clicked: false,
+    }
+  }
+
+  //name change test
   uploadWidget() {
     let _this = this;
+    this.setState({ clicked: true });
     window.cloudinary.openUploadWidget({ cloud_name: "peri", theme: "white", cropping: 'server', cropping_show_back_button: true, cropping_aspect_ratio: 1, sources: ["local", "url", "camera", "google_photos", "facebook", "instagram"], show_powered_by: false, upload_preset: "uploadperi", tags:["users"]},
     function(error, result) {
       if(error) {
@@ -52,99 +60,113 @@ class PostTrip extends React.Component {
   }
 //test
   render() {
+
+    // if clicked is false then display this component
+    let rightSection
+    if (this.state.clicked === false) {
+      rightSection =
+        <div id="uploaded" className="control uploadImage">
+          <button
+            onClick={this.uploadWidget.bind(this)}
+            className="button is-secondary uploadButton">
+            Add Cover Image
+          </button>
+        </div>
+    } else if (this.state.clicked === true) {
+      rightSection =
+       <figure className="image">
+          <img src={this.props.cloudinaryStore.thumbnail} className="uploadImagePicture"/>
+          <p className="title">{this.props.cloudinaryStore.tripInfo.tripName}</p>
+          <p className="subtile">{this.props.cloudinaryStore.tripInfo.description}</p>
+        </figure>
+    }
+    // if clicked is true then display the picture only
+
     return (
-  <div>
-    <div className="container is-fluid">
-      <div className="row">
-        <div className="col-sm-6">
-          <p className="title">Post a Trip!</p>
-          <form >
-            <div className="field">
-              <label>Trip Name</label>
-              <p className="control">
-                <input
-                  className="input"
-                  type="text"
-                  id="tripname"
-                  name="tripName"
-                  placeholder="Enter Trip Name"
-                  onChange={this.handleChange.bind(this)}
-                />
-              </p>
+      <div>
+        <div className="container is-fluid">
+          <div className="row">
+            <div className="col-sm-6">
+              <p className="title">Post a Trip!</p>
+              <form >
+                <div className="field">
+                  <label>Trip Name</label>
+                  <p className="control">
+                    <input
+                      className="input"
+                      type="text"
+                      id="tripname"
+                      name="tripName"
+                      placeholder="Enter Trip Name"
+                      onChange={this.handleChange.bind(this)}
+                    />
+                  </p>
+                </div>
+                <div className="field">
+                  <label>Destination</label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type="text"
+                      id="destination"
+                      name="destination"
+                      placeholder="Enter Destination"
+                      onChange={this.handleChange.bind(this)}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                <label>Trip Description</label>
+                  <p className="control">
+                    <textarea
+                      className="textarea"
+                      type="text"
+                      id="tripdescription"
+                      name="description"
+                      placeholder="Enter Trip Description"
+                      onChange={this.handleChange.bind(this)}
+                    />
+                  </p>
+                </div>
+                <div className="field">
+                  <label>Add Hash Tags</label>
+                  <p className="control">
+                    <input
+                      className="input"
+                      type="text"
+                      id="hashtag"
+                      name="hashtag"
+                      placeholder="#Adventure #PERI"
+                      onChange={this.handleChange.bind(this)}
+                    />
+                  </p>
+                </div>
+                <div id="submitbutton" className="field is-grouped">
+                  <p className="control">
+                    <Link to="/buildSpot"
+                      activeClassName="active">
+                      <button
+                        className="button is-primary"
+                        type="submit"
+                        value="submit"
+                        onClick={this.handleSubmit.bind(this)} >
+                        Submit
+                      </button>
+                    </Link>
+                  </p>
+                </div>
+              </form>
             </div>
-            <div className="field">
-              <label>Destination</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="text"
-                  id="destination"
-                  name="destination"
-                  placeholder="Enter Destination"
-                  onChange={this.handleChange.bind(this)}
-                />
-              </div>
+            <div className="col-sm-6">
+              {rightSection}
             </div>
-            <div className="field">
-            <label>Trip Description</label>
-              <p className="control">
-                <textarea
-                  className="textarea"
-                  type="text"
-                  id="tripdescription"
-                  name="description"
-                  placeholder="Enter Trip Description"
-                  onChange={this.handleChange.bind(this)}
-                />
-              </p>
-            </div>
-            <div className="field">
-              <label>Add Hash Tags</label>
-              <p className="control">
-                <input
-                  className="input"
-                  type="text"
-                  id="hashtag"
-                  name="hashtag"
-                  placeholder="#Adventure #PERI"
-                  onChange={this.handleChange.bind(this)}
-                />
-              </p>
-            </div>
-            <div id="submitbutton" className="field is-grouped">
-              <p className="control">
-                <Link to="/buildSpot"
-                  activeClassName="active">
-                  <button
-                    className="button is-primary"
-                    type="submit"
-                    value="submit"
-                    onClick={this.handleSubmit.bind(this)} >
-                    Submit
-                  </button>
-                </Link>
-              </p>
-            </div>
-          </form>
-            <div id="uploaded" className="control">
-              <button
-                onClick={this.uploadWidget.bind(this)}
-                className="button is-secondary">
-                Add Cover Image
-              </button>
-            </div>
-          <div>
-            <figure class="image is-128x128">
-              <img src={this.props.cloudinaryStore.thumbnail}/>
-              <p>{this.props.cloudinaryStore.tripInfo.tripName}</p>
-              <p>{this.props.cloudinaryStore.tripInfo.description}</p>
-            </figure>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  )
+    )
   }
 }
 export default PostTrip;
+
+// on click make the grey background disappear and display the cloudinary image
+//

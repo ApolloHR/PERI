@@ -291,11 +291,7 @@ app.post('/getProfile', (req, res) => {
 app.use(express.static(path.join(__dirname, '../Client/dst')));
 
 app.get('/*', (req, res) => {
-  console.log('server req session passport sessionID', req.session.passport.user);
-  // console.log('homepage app.get res =', res);
-  let seshID = req.session.passport.user.sessionID;
-  res.send(seshID);
-  // res.redirect('/');
+  res.redirect('/');
 });
 
 app.post('/isLoggedIn', (req, res) => {
