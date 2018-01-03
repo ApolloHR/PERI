@@ -113,6 +113,8 @@ ul.ais-Pagination__root {
 
 .nav-pos-1 {
   position: fixed;
+  background-color: white;
+  top: 0;
 }
 
 /*===== Post Trip =====*/
