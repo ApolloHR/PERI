@@ -22,6 +22,7 @@ import Profile from './profile.jsx';
 class Landing extends React.Component {
 
   componentWillMount() {
+    console.log('this.props.store', this.props.auth)
     this.props.dispatch(fetchTrips());
     console.log('isLoggedIn componentwillmount =');
     this.isLoggedIn();
@@ -49,7 +50,6 @@ class Landing extends React.Component {
   render () {
     return (
       <div>
-      <Profile />
         <section className='hero'>
           <div className='hero-body'>
             <div className='container'>
