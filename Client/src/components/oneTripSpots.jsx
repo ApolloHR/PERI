@@ -49,13 +49,13 @@ class OneTripSpots extends React.Component {
           </Link>
           <div className="card-content">
             <div className="content">
-              <div className="title is-5">{trip.tripName}</div>
-              <div className="subtitle is-6">Destination is {trip.destination}</div>
-              <div className="subtitle is-6">{trip.spots.length} {numSpots}</div>
-              <div className="subtitle is-6">{trip.upvotes}
+              <div className="subtitle is-6" id="trip-description">{trip.destination}</div>
+              <div className="title is-6" id="new-title">{trip.tripName}</div>
+              <span className="subtitle is-6" id="trip-description">{trip.upvotes}
                 <i class="fa fa-arrow-up" aria-hidden="true" style={{paddingLeft: '5px', color: '#22d0b2'}}></i>
-              </div>
-              <div className="subtitle is-6">{this.parseHashtag.call(this, trip.hashtag)}</div>
+              </span>
+              <span className="subtitle is-6" id="trip-description" style={{paddingLeft: '15px'}}>{trip.spots.length} {numSpots}</span>
+              <div className="subtitle is-6" id="hash-description">{this.parseHashtag.call(this, trip.hashtag)}</div>
             </div>
           </div>
         </div>
