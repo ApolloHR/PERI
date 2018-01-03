@@ -73,9 +73,9 @@ class OneSpot extends React.Component {
             })}
           </div>
           <div className="spot-map">
-          <Sticky>
-            <SpotMap spots={this.state.spots} setToggle={setToggle}/>
-          </Sticky>
+            <Sticky>
+              <SpotMap spots={this.state.spots} setToggle={setToggle}/>
+            </Sticky>
           </div>
         </div>
       </div>

@@ -27,10 +27,11 @@ export default function reducer(state={
       }
     }
     case "ADD_TRIPTOCART": {
+      const oldSpots = [...state.tripInfo.spots]
       return {...state,
         tripInfo: {
           ...state.tripInfo,
-          spots: [...state.tripInfo.spots].concat(action.payload)
+          spots: action.payload.concat(oldSpots)
         }
       }
     }
