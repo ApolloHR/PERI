@@ -189,17 +189,14 @@ class PlanTrip extends React.Component {
             </div>
           </div>
         </div>
-
-            <section className="hero">
-              <div className="hero-body">
-                <div className="">
-                  <h3 className="title has-text-centered">Spots Added To This Trip:</h3>
-                </div>
-              </div>
-            </section>
-
+        <section className="hero">
+          <div className="hero-body">
+            <div className="">
+              <h3 className="title has-text-centered">Spots Added To This Trip:</h3>
+            </div>
+          </div>
+        </section>
         <div className="container">
-
           <div className="spot-list">
             <br></br>
             <div className="">
@@ -207,10 +204,6 @@ class PlanTrip extends React.Component {
                 {trips}
               </div>
             </div>
-
-
-          <br></br>
-          <br></br>
           </div>
           <div className="spot-map">
             <Sticky>
