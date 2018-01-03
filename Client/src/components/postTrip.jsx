@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 
 @connect ((store) => {
   return {
-    cloudinaryStore: store.cloudinary
+    cloudinaryStore: store.cloudinary,
+    auth: store.login
   }
 })
 
@@ -35,11 +36,19 @@ class PostTrip extends React.Component {
   }
 
   handleSubmit(e) {
-    // e.preventDefault();
-    let data = this.props.cloudinaryStore.tripInfo;
-    data.thumbnail = this.props.cloudinaryStore.thumbnail[0];
-    console.log('handleSubmit data =', data);
-    this.props.dispatch(cloudinaryTripInfo(data));
+    if(this.props.auth.loggedIn === false) {
+      //render "You must be logged in to perform that action"
+      e.preventDefault();
+      let msg = document.createElement('P');
+      let message = document.createTextNode("You must be logged in to perform that action.");
+      msg.appendChild(message);
+      document.getElementById("submitbutton").appendChild(msg);
+    } else if (this.props.auth.loggedIn === true) {
+      let data = this.props.cloudinaryStore.tripInfo;
+      data.thumbnail = this.props.cloudinaryStore.thumbnail[0];
+      console.log('handleSubmit data =', data);
+      this.props.dispatch(cloudinaryTripInfo(data));
+    }
   }
 //test
   render() {
@@ -102,7 +111,7 @@ class PostTrip extends React.Component {
                 />
               </p>
             </div>
-            <div className="field is-grouped">
+            <div id="submitbutton" className="field is-grouped">
               <p className="control">
                 <Link to="/buildSpot"
                   activeClassName="active">
