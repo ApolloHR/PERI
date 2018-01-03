@@ -38,7 +38,7 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-var userLoggedIn;
+
 //GOOGLE LOGIN
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
@@ -55,7 +55,6 @@ function(userInfo, accessToken, refreshToken, profile, done) {
       }
       if (user) {
         console.log('Found user line 49 server');
-        userLoggedIn = profile.emails[0].value;
         db.User.findOneAndUpdate({ 'username': profile.emails[0].value }, {'sessionID': userInfo.sessionID}, (err, doc) => {
           if (err) {
             console.log('error = ', err);
@@ -67,10 +66,10 @@ function(userInfo, accessToken, refreshToken, profile, done) {
         });
         return done(null, user);
       } else {
-        userLoggedIn = profile.emails[0].value;
         var newUser = {
           username: profile.emails[0].value,
-          sessionID: userInfo.sessionID
+          sessionID: userInfo.sessionID,
+          fullName: profile.displayName
         };
         saveNewUser(newUser);
         return done(null, newUser);
@@ -249,8 +248,8 @@ app.post('/invite', function(req, res) {
   const msg = {
     to: req.body.guest,
     from: 'periapp@peri.com',
-    subject: `${userLoggedIn} has Invited You`,
-    text: `Hello Jedi Master. You have been invited to the PERI network by ${userLoggedIn} please visit travelperi.herokuapp.com to get inspired!`
+    subject: `FIXX THIS TO USERNAME has Invited You`,
+    text: `Hello Jedi Master. You have been invited to the PERI network by USERNAME.  please visit travelperi.herokuapp.com to get inspired!`
   };
   console.log('REQ BODY line 228 server =', req);
   sgMail.send(msg).then(function() {

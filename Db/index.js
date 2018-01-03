@@ -26,10 +26,10 @@ db.once('openUri', () => {
 });
 
 const saveNewUser = (data) => {
-
   const newUser = new User({
     username: data.username,
-    sessionID: data.sessionID
+    sessionID: data.sessionID,
+    fullName: data.fullName
   });
 
   newUser.save((err) => {
@@ -183,11 +183,11 @@ const getOneTrip = (data, cb) => {
 };
 
 const getProfile = (data, cb) => {
-  Trip.find({'username': data}, (err, trips) => {
+  User.findOne({'username': data}, (err, profile) => {
     if (err) {
       cb(err, null);
     } else {
-      cb(null, trips);
+      cb(null, profile);
     }
   });
 };

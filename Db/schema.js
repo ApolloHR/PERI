@@ -11,6 +11,7 @@ const userSchema = new User({
     unique: true
   },
   sessionID: String,
+  fullName: String
 });
 
 const tripSchema = new Trip({
