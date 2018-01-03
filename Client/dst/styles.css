@@ -27,8 +27,12 @@
 
 .card-height {
   height: 380px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+div.card-content {
+  padding-left: 0px;
 }
 
 div.subtitle.is-6 {
@@ -104,6 +108,14 @@ ul.ais-Pagination__root {
 .ais-Pagination__itemDisabled {
   visibility: hidden;
 }
+
+div.card.trip-card.card-height {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: none;
+}
+
+
 
 /*===== Nav =====*/
 
