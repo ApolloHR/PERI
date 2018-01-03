@@ -28,6 +28,15 @@ class OneTripSpots extends React.Component {
 
   render() {
     const trip = this.props.trip;
+
+    let numSpots;
+
+    if (trip.spots.length === 1) {
+      numSpots = 'spot';
+    } else {
+      numSpots = 'spots';
+    }
+
     return (
       <div className="col-sm-3">
         <div className="card trip-card card-height">
@@ -39,14 +48,12 @@ class OneTripSpots extends React.Component {
             </div>
           </Link>
           <div className="card-content">
-            <div className="media-content">
-              <div className="title is-6">{trip.destination}</div>
-              <div className="subtitle is-6">{trip.description}</div>
+            <div className="content">
+              <div className="title is-5">{trip.tripName}</div>
+              <div className="subtitle is-6">Destination is {trip.destination}</div>
+              <div className="subtitle is-6">{trip.spots.length} {numSpots}</div>
+              <div className="subtitle is-6">{trip.upvotes} upvotes</div>
               <div className="subtitle is-6">{this.parseHashtag.call(this, trip.hashtag)}</div>
-              <div className="level">
-                <div className="subtitle is-6 level-left">{trip.spots.length} Spots</div>
-                <div className="subtitle is-6 level-right">Upvote {trip.upvotes}</div>
-              </div>
             </div>
           </div>
         </div>
