@@ -76,8 +76,8 @@ class PostTrip extends React.Component {
       rightSection =
        <figure className="image">
           <img src={this.props.cloudinaryStore.thumbnail} className="uploadImagePicture"/>
-          <p>{this.props.cloudinaryStore.tripInfo.tripName}</p>
-          <p>{this.props.cloudinaryStore.tripInfo.description}</p>
+          <p className="title">{this.props.cloudinaryStore.tripInfo.tripName}</p>
+          <p className="subtile">{this.props.cloudinaryStore.tripInfo.description}</p>
         </figure>
     }
     // if clicked is true then display the picture only
