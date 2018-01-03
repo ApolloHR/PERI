@@ -119,13 +119,19 @@ div.card.trip-card.card-height {
 
 .uploadImage {
   background-color: grey;
-  height: 559px;
+  height: 500px;
   width: 488px;
 }
 
 .uploadButton {
   margin-top: 50%;
   margin-left: 35%;
+}
+
+.uploadImagePicture {
+  height: 500px;
+  width: 388px;
+  margin-top: 20%;
 }
 
 

@@ -65,7 +65,7 @@ class PostTrip extends React.Component {
     let rightSection
     if (this.state.clicked === false) {
       rightSection =
-        <div id="uploaded" className="control">
+        <div id="uploaded" className="control uploadImage">
           <button
             onClick={this.uploadWidget.bind(this)}
             className="button is-secondary uploadButton">
@@ -75,7 +75,7 @@ class PostTrip extends React.Component {
     } else if (this.state.clicked === true) {
       rightSection =
        <figure className="image">
-          <img src={this.props.cloudinaryStore.thumbnail}/>
+          <img src={this.props.cloudinaryStore.thumbnail} className="uploadImagePicture"/>
           <p>{this.props.cloudinaryStore.tripInfo.tripName}</p>
           <p>{this.props.cloudinaryStore.tripInfo.description}</p>
         </figure>
@@ -157,7 +157,7 @@ class PostTrip extends React.Component {
                 </div>
               </form>
             </div>
-            <div className="col-sm-6 uploadImage">
+            <div className="col-sm-6">
               {rightSection}
             </div>
           </div>
