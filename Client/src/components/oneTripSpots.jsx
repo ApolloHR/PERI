@@ -52,7 +52,7 @@ class OneTripSpots extends React.Component {
               <div className="title is-5">{trip.tripName}</div>
               <div className="subtitle is-6">Destination is {trip.destination}</div>
               <div className="subtitle is-6">{trip.spots.length} {numSpots}</div>
-              <div className="subtitle is-6">{trip.upvotes} upvotes</div>
+              <div className="subtitle is-6">{trip.upvotes} <i className="fa fa-thumbs-o-up" aria-hidden="true"></i></div>
               <div className="subtitle is-6">{this.parseHashtag.call(this, trip.hashtag)}</div>
             </div>
           </div>
