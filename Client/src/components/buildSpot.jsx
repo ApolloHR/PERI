@@ -167,7 +167,7 @@ class BuildSpot extends React.Component {
               <div id="uploaded" className="control">
                 <button
                   onClick={this.uploadWidget.bind(this)}
-                  className="button is-secondary">
+                  className="button is-secondary uploadSpotButton">
                   Add Location Image
                 </button>
               </div>
@@ -175,10 +175,8 @@ class BuildSpot extends React.Component {
               <div>
               {this.props.cloudinaryStore.gallery.map((spot) => {
               return (
-                <figure class="image is-128x128">
-                  <img src={spot[0]}/>
-
-
+                <figure>
+                  <img src={spot[0]} className="uploadSpotImage"/>
                 </figure>
               )})}
             </div>

@@ -134,6 +134,17 @@ div.card.trip-card.card-height {
   margin-top: 20%;
 }
 
+/*=====Build Spot====*/
+
+.uploadSpotImage {
+  margin: 10px;
+}
+
+.uploadSpotButton {
+  width: 100%;
+  margin: 10px;
+}
+
 
 /*===== Nav =====*/
 
