@@ -14,6 +14,14 @@ import CustomHits from './customHits.jsx';
 class UserSearch extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      searchClicked: false
+    }
+    this.hasBeenClicked = this.hasBeenClicked.bind(this);
+  }
+
+  hasBeenClicked() {
+    this.setState({searchClicked: true})
   }
 
   render() {
@@ -25,35 +33,53 @@ class UserSearch extends React.Component {
       }
     }
     // console.log('this.props.store', this.props.auth)
-
-    return (
-      <div>
-        <InstantSearch
-          appId='NH6N5P5OH8'
-          apiKey='f0e90c174d07dbbcec7820fc3e8d04fb'
-          indexName='users'
-        >
-          <div className="column main-search">
-            <h3 className="subtitle is-3">Search for a User</h3>
-            <form>
-              <div className="field is-grouped">
-                <div className="control is-expanded">
-                <SearchBox
-                  translation={{ placeholder: 'Find your next adventure...'}}
-                  defaultRefinement={this.props.auth.creds.username}
-                />
+    if (!this.state.searchClicked) {
+      return (
+        <div>
+          <InstantSearch
+            appId='NH6N5P5OH8'
+            apiKey='f0e90c174d07dbbcec7820fc3e8d04fb'
+            indexName='users'
+          >
+            <button onClick={this.hasBeenClicked} >Search For Friends</button>
+            <h1 className="title has-text-grey-dark" id="experience">{this.props.auth.creds.username} Trips</h1>
+            <div className="container">
+              <CustomHits/>
+              <Pagination/>
+            </div>
+          </InstantSearch>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <InstantSearch
+            appId='NH6N5P5OH8'
+            apiKey='f0e90c174d07dbbcec7820fc3e8d04fb'
+            indexName='users'
+          >
+            <div className="column main-search">
+              <h3 className="subtitle is-3">Search for a User</h3>
+              <form>
+                <div className="field is-grouped">
+                  <div className="control is-expanded">
+                  <SearchBox
+                    translation={{ placeholder: 'Find your next adventure...'}}
+                    defaultRefinement={this.props.auth.creds.username}
+                  />
+                  </div>
                 </div>
-              </div>
-            </form>
-          </div>
-          <h1 className="title has-text-grey-dark" id="experience">{this.props.auth.creds.username} Trips</h1>
-          <div className="container">
-            <CustomHits/>
-            <Pagination/>
-          </div>
-        </InstantSearch>
-      </div>
-    );
+              </form>
+            </div>
+            <h1 className="title has-text-grey-dark" id="experience">{this.props.auth.creds.username} Trips</h1>
+            <div className="container">
+              <CustomHits/>
+              <Pagination/>
+            </div>
+          </InstantSearch>
+        </div>
+      );
+    }
   }
 }
 
