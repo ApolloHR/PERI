@@ -28,7 +28,6 @@ class Profile extends React.Component {
 
     axios.post('/getProfile', {data})
       .then((res) => {
-        console.log('WHATtt it actually worked??!! res ==', res);
         context.setState({
           userProfile: res.data,
           profileFound: true
