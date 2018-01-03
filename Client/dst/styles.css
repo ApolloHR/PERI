@@ -115,6 +115,18 @@ div.card.trip-card.card-height {
     color: none;
 }
 
+/*=====Post a Trip=====*/
+
+.uploadImage {
+  background-color: grey;
+  height: 559px;
+  width: 488px;
+}
+
+.uploadButton {
+  margin-top: 50%;
+  margin-left: 35%;
+}
 
 
 /*===== Nav =====*/
