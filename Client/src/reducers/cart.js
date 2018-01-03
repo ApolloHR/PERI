@@ -19,11 +19,18 @@ export default function reducer(state={
       return {...state, tripInfo: action.payload}
     }
     case "ADD_SPOTTOCART": {
-      return {
-        ...state, 
+      return {...state,
         tripInfo: {
           ...state.tripInfo,
           spots: [...state.tripInfo.spots, action.payload]
+        }
+      }
+    }
+    case "ADD_TRIPTOCART": {
+      return {...state,
+        tripInfo: {
+          ...state.tripInfo,
+          spots: [...state.tripInfo.spots].concat(action.payload)
         }
       }
     }

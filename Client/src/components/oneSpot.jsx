@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import Sticky from 'react-sticky-el';
 import { connect } from 'react-redux';
-import { render } from 'react-dom';
 import SpotMap from './spotMap.jsx';
 import { addSpotToCart } from '../actions/cart.js';
 
@@ -27,16 +26,15 @@ class OneSpot extends React.Component {
       tripId: this.props.trip.location.query.objectID
     })
       .then(function (response) {
-        console.log(response);
         thisContext.setState({spots: response.data});
       })
+
       .catch(function (error) {
         console.log(error);
       });
   }
 
   addToCart(e) {
-    console.log('add to cart bind this e =', e.target.value);
     this.props.dispatch(addSpotToCart(JSON.parse(e.target.value)));
   }
 
@@ -47,7 +45,6 @@ class OneSpot extends React.Component {
         <div className="container">
           <div className="spot-list">
             {this.state.spots.map((spot) => {
-              console.log('each spot!!!', spot)
               return (
                 <div className="card">
                   <figure className="image" >

@@ -4,6 +4,12 @@ export function addSpotToCart(data) {
   };
 }
 
+export function addTripToCart(data) {
+  return {
+    type: 'ADD_TRIPTOCART', payload: data
+  };
+}
+
 export function cartThumbnail(data) {
   // insert function that takes the parameter from buildTrip form and sets the new payload
   return {
