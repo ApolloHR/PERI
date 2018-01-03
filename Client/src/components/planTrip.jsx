@@ -10,7 +10,8 @@ import MapContainer from './map.jsx';
 
 @connect((store) => {
   return {
-    props: store.cart
+    props: store.cart,
+    auth: store.login
   }
 })
 
@@ -57,11 +58,20 @@ class PlanTrip extends React.Component {
 
   handleSubmit(e) {
     // e.preventDefault();
-    let data = this.props.props.tripInfo;
-    data.thumbnail = this.props.props.thumbnail[0];
-    console.log('handleSubmit data =', data);
-    this.props.dispatch(postTrip(data));
-    this.clearCart();
+    if(this.props.auth.loggedIn === false) {
+      //render "You must be logged in to perform that action"
+      e.preventDefault();
+      let msg = document.createElement('P');
+      let message = document.createTextNode("You must be logged in to perform that action.");
+      msg.appendChild(message);
+      document.getElementById("submitbutton").appendChild(msg);
+    } else if (this.props.auth.loggedIn === true) {
+      let data = this.props.props.tripInfo;
+      data.thumbnail = this.props.props.thumbnail[0];
+      console.log('handleSubmit data =', data);
+      this.props.dispatch(postTrip(data));
+      this.clearCart();
+    }
   }
 
   render() {
@@ -157,7 +167,7 @@ class PlanTrip extends React.Component {
                     />
                   </p>
                 </div>
-                <div className="field is-grouped">
+                <div id="submitbutton" className="field is-grouped">
                   <p className="control">
                     <Link to="/"
                       activeClassName="active">
