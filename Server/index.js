@@ -1,7 +1,6 @@
 const algoliasearch = require('algoliasearch');
 const path = require( 'path' );
-const { saveNewUser, saveNewTrip, getTrips, getSpots, getAllSpots, getNewestTrip,
-  getOneTrip } = require( '../Db/index.js' );
+const { saveNewUser, saveNewTrip, getTrips, getSpots, getAllSpots, getNewestTrip, getOneTrip, getProfile } = require( '../Db/index.js' );
 const { saveTripsAlgolia, saveTripAlgolia, updateUpvotesDB } = require('../Db/algoliaSearch.js');
 const db = require( '../Db/schema.js' );
 const express = require( 'express' );
@@ -275,6 +274,18 @@ app.post('/getOneTrip', (req, res) => {
 // SAVES ALL TRIP TO ALGOLIA
 saveTripsAlgolia();
 
+//Get all trips for specific user for Profile.jsx
+app.post('/getProfile', (req, res) => {
+  console.log('Sever checking getProfile Route: ', req.body.data);
+  getProfile(req.body.data, (err, profile) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(profile);
+    }
+
+  });
+});
 
 
 
@@ -291,6 +302,7 @@ app.get('/*', (req, res) => {
 app.post('/isLoggedIn', (req, res) => {
   console.log('server req session passport sessionID', req.session.passport.user);
   // console.log('homepage app.get res =', res);
+  // console.log('req.session.passport.user------------', req.session.passport.user.username);
   let seshID = req.session.passport.user;
   res.send(seshID);
   // res.redirect('/');

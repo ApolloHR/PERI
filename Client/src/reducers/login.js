@@ -9,7 +9,7 @@ export default function reducer(
       return {...state, allTrips: action.payload}
     }
     case "USER_LOGIN": {
-      return {...state, loggedIn: true}
+      return {...state, loggedIn: true, creds: action.payload}
     }
   }
   return state
