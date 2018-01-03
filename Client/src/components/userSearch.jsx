@@ -6,7 +6,8 @@ import CustomHits from './customHits.jsx';
 
 @connect((store) => {
   return {
-    search: store.search
+    search: store.search,
+    auth: store.login
   }
 })
 
@@ -23,6 +24,7 @@ class UserSearch extends React.Component {
         maxWidth: '100%'
       }
     }
+    // console.log('this.props.store', this.props.auth)
 
     return (
       <div>
@@ -37,15 +39,15 @@ class UserSearch extends React.Component {
               <div className="field is-grouped">
                 <div className="control is-expanded">
                 <SearchBox
-                  translation={{ placeholder: 'Find your next adventure...'}} defaultRefinement='thep'
+                  translation={{ placeholder: 'Find your next adventure...'}}
+                  defaultRefinement={this.props.auth.creds.username}
                 />
                 </div>
               </div>
             </form>
           </div>
-          <h1 className="title has-text-grey-dark" id="experience">User's Trips</h1>
+          <h1 className="title has-text-grey-dark" id="experience">{this.props.auth.creds.username} Trips</h1>
           <div className="container">
-
             <CustomHits/>
             <Pagination/>
           </div>

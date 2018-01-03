@@ -8,7 +8,6 @@ import { fetchTrips } from '../actions/tripsActions';
 import { login } from '../actions/login';
 import Infinite from './infinite.jsx';
 import Search from './search.jsx';
-import Profile from './profile.jsx';
 
 
 @connect((store) => {
@@ -22,7 +21,7 @@ import Profile from './profile.jsx';
 class Landing extends React.Component {
 
   componentWillMount() {
-    console.log('this.props.store', this.props.auth)
+    // console.log('this.props.store', this.props.auth)
     this.props.dispatch(fetchTrips());
     console.log('isLoggedIn componentwillmount =');
     this.isLoggedIn();

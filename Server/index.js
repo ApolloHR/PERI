@@ -302,6 +302,7 @@ app.get('/*', (req, res) => {
 app.post('/isLoggedIn', (req, res) => {
   console.log('server req session passport sessionID', req.session.passport.user);
   // console.log('homepage app.get res =', res);
+  // console.log('req.session.passport.user------------', req.session.passport.user.username);
   let seshID = req.session.passport.user;
   res.send(seshID);
   // res.redirect('/');
