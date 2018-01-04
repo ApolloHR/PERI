@@ -23,18 +23,30 @@ class MarkerItem extends React.Component {
       >
         {<InfoBox options={
           {
-            pixelOffset: new google.maps.Size(-40, -150),
+            pixelOffset: new google.maps.Size(-125, -130),
             disableAutoPan: false,
             visible: this.state.isVisible,
             maxWidth: 0,
-            closeBoxURL: ''
+            closeBoxURL: '',
+            boxStyle: {
+              padding: '0px 0px 0px 0px',
+              width: '250px',
+              height: '64px'
+            },
+            infoBoxClearance: new google.maps.Size(1, 1),
+            isHidden: false,
+            pane: 'floatPane',
+            enableEventPropagation: false
           }
         }
         >
-          <div className="infoBox-popup-box">
-            <div className="infoBox-popup-content">{spot.spotName}
-              <img className="image is-64x64" src={spot.photo}/>
+          <div className="info-box-wrap">
+            <img className="image is-64x64" src={spot.photo}/>
+            <div className="info-box-text-wrap">
+              <h6 className="spotname">{spot.spotName}</h6>
+              <p className="description">{spot.description}</p>
             </div>
+            <div class="action-btns"></div>
           </div>
         </InfoBox>}
       </Marker>
