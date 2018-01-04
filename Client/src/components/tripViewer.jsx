@@ -3,14 +3,13 @@ import { connect } from 'react-redux';
 import { GoogleApiWrapper } from 'google-maps-react';
 import { NavLink } from 'react-router-dom';
 import { postTrip } from '../actions/tripsActions.js';
-import MapContainer from './map.jsx';
+import SpotMap from './spotMap.jsx';
 
 @connect((store) => {
   return {
     spots: store.cloudinary.tripInfo
   }
 })
-
 
 class TripViewer extends React.Component {
   render () {
@@ -47,7 +46,7 @@ class TripViewer extends React.Component {
     console.log('tripviewer thispropsspots =', this.props.spots);
     return (
       <div>
-        <MapContainer spots={this.props.spots}/>
+        <SpotMap spots={this.props.spots}/>
         <div className="container">
           <section className="hero">
             <div className="hero-body">

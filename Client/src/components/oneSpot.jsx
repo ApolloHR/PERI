@@ -15,20 +15,19 @@ class OneSpot extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      spots: []
+      spots: [],
+      setToggle: []
     };
   }
 
   componentDidMount() {
     var thisContext = this;
-
     axios.post('/spots', {
       tripId: this.props.trip.location.query.objectID
     })
       .then(function (response) {
         thisContext.setState({spots: response.data});
       })
-
       .catch(function (error) {
         console.log(error);
       });
@@ -39,7 +38,6 @@ class OneSpot extends React.Component {
   }
 
   render () {
-    const setToggle = this.state.spots.map( oneSpot => true );
     return (
       <div>
         <div className="container">
@@ -74,7 +72,7 @@ class OneSpot extends React.Component {
           </div>
           <div className="spot-map">
             <Sticky>
-              <SpotMap spots={this.state.spots} setToggle={setToggle}/>
+              <SpotMap spots={this.state.spots}/>
             </Sticky>
           </div>
         </div>

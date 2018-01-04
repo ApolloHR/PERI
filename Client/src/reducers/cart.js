@@ -1,6 +1,7 @@
 export default function reducer(state={
   gallery: [],
   thumbnail: '',
+  markerToggle: [],
   tripInfo: {
     username: '',
     tripName: '',
@@ -8,7 +9,7 @@ export default function reducer(state={
     description: '',
     hashtag: '',
     thumbnail: '',
-    spots: []
+    spots: [],
   },
 }, action) {
   switch (action.type) {
@@ -36,5 +37,6 @@ export default function reducer(state={
       }
     }
   }
+
   return state
 }
