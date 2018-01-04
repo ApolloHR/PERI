@@ -154,6 +154,59 @@
         "photo": "http://static.asiawebdirect.com/m/phuket/portals/phiphi-phuket-com/homepage/beaches/phi-phi-leh/pagePropertiesImage/koh-phiphi-leh.jpg"
       }
     ]
+  },
+  {
+    "username": "huynh.r.k@gmail.com",
+    "tripName": "Kathmandu trip to the mountains",
+    "destination": "Kathmandu",
+    "description": "Traveling around the mountains and doing some awesome hikes",
+    "hashtag": "#everst, #Kathmandu, #TheLife, #travel",
+    "thumbnail": "http://www.bravofly.com/offers/flights/bravofly/img/kathmandu.jpg",
+    "spots": [
+      {
+        "spotName": "bhaktapur temple",
+        "description": "Some ancient temples, pretty cool to look at",
+        "long": 85.4298,
+        "lat": 27.6710,
+        "elevation": 32,
+        "photo": "http://nepaltravels.com/wp-content/uploads/2017/03/bhaktapur-durbar.jpg"
+      },
+      {
+        "spotName": "Base Camp",
+        "description": "Hikng a week up to base camp!",
+        "long": 86.8528,
+        "lat": 28.0026,
+        "elevation": 0,
+        "photo": "https://d3hne3c382ip58.cloudfront.net/resized/750x420/everest-base-camp-trek-tour-2-17499_1514908748.JPG"
+      }
+    ]
+  },
+  {
+    "username": "theNickChapman@gmail.com",
+    "tripName": "Beautiful Iceland",
+    "destination": "Iceland",
+    "description": "Beautiful scenery",
+    "hashtag": "#photography, #travel, #iceland, #nordic",
+    "thumbnail": "http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Iceland/iceland-main-AP-xlarge.jpg",
+    "spots": [
+      {
+        "spotName": "Skaftafell water fall",
+        "description": "Got some great shots here. The hike to it was pretty difficult make sure you wear proper equipment!",
+        "long": -16.9752,
+        "lat": 64.0704,
+        "elevation": 32,
+        "photo": "https://iceland.nordicvisitor.com/images/1/iceland/summer/svartifoss_skaftafell_summer_south_nv_002.jpg"
+      },
+      {
+        "spotName": "Jökulsárlón",
+        "description": "Some beautiful iceburgs to look at!",
+        "long": -16.2306,
+        "lat": 64.0784,
+        "elevation": 0,
+        "photo": "https://cdn.getyourguide.com/img/tour_img-846332-70.jpg"
+      }
+    ]
   }
 
 ]
+
