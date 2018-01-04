@@ -46,4 +46,3 @@ module.exports.User = mongoose.model('User', userSchema);
 module.exports.Trip = mongoose.model('Trip', tripSchema);
 module.exports.Spot = mongoose.model('Spot', spotSchema);
 module.exports.Fork = mongoose.model('Fork', forkedSchema);
-

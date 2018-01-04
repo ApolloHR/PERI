@@ -10,9 +10,6 @@ import BuildSpot from './buildSpot.jsx';
 import Invite from './invite.jsx';
 import Profile from './profile.jsx';
 
-
-
-
 let Routes = (props) => (
 
   <BrowserRouter>

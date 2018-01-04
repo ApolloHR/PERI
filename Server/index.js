@@ -38,7 +38,6 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-
 //GOOGLE LOGIN
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
@@ -136,27 +135,7 @@ app.get('/auth/facebook/callback',
 app.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
-
-  // req.session.destroy((err) => {
-  //   if(err) return next(err)
-
-  //   req.logOut()
-
-  //   res.sendStatus(200)
-  // })
-
-  // or
-
-  // app.get('/logout', function(req,res){
-  //  req.logOut();
-  //  req.session.destroy(function (err) {
-  //         res.redirect('/'); //Inside a callback… bulletproof!
-  //     });
-  // });
-
 });
-
-
 
 //GET req to see if user is logged in or not
 app.get('/checkSession', (req, res) => {
@@ -169,11 +148,8 @@ app.get('/checkSession', (req, res) => {
   });
 });
 
-
-
 //GET ALL TRIPS
 app.get('/trips', (req, res) => {
-  // console.log('REQ session id?? line 138 server =', req.sessionID);
   getTrips((err, trips) => {
     if (err) {
       res.send(err);
@@ -183,7 +159,6 @@ app.get('/trips', (req, res) => {
 });
 
 app.get('/getAllSpots', (req, res) => {
-  // console.log('hii-----------req = ', req.body);
   getAllSpots((err, spots) => {
     if (err) {
       res.send(err);
@@ -193,12 +168,10 @@ app.get('/getAllSpots', (req, res) => {
 });
 
 app.post('/spots', (req, res) => {
-  // console.log('REQ TRIP ID', req.body)
   getSpots(req.body.tripId, (err, spots) => {
     if (err) {
       console.log('error line 128 server =', error);
     }
-    // console.log('SPOTS server l131 =', spots)
     res.send(spots);
   });
 });
@@ -244,7 +217,6 @@ app.post('/getUpvote', (req, res) => {
 });
 
 app.post('/invite', function(req, res) {
-  // console.log('EMAIL---line 82 SERVER/INDEX.JS REQ = ', req.body)
   const msg = {
     to: req.body.guest,
     from: 'periapp@peri.com',
@@ -286,8 +258,6 @@ app.post('/getProfile', (req, res) => {
   });
 });
 
-
-
 app.use(express.static(path.join(__dirname, '../Client/dst')));
 
 app.get('/*', (req, res) => {
@@ -296,12 +266,8 @@ app.get('/*', (req, res) => {
 
 app.post('/isLoggedIn', (req, res) => {
   console.log('server req session passport sessionID', req.session.passport.user);
-  // console.log('homepage app.get res =', res);
-  // console.log('req.session.passport.user------------', req.session.passport.user.username);
   let seshID = req.session.passport.user;
   res.send(seshID);
-  // res.redirect('/');
-  // res.end();
 });
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));

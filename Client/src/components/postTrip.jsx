@@ -20,7 +20,6 @@ class PostTrip extends React.Component {
     }
   }
 
-  //name change test
   uploadWidget() {
     let _this = this;
     this.setState({ clicked: true });

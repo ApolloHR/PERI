@@ -3,7 +3,6 @@ import algoliasearch from 'algoliasearch';
 import { connect } from 'react-redux';
 import { InstantSearch, SearchBox, SortBy, Stats, Pagination } from 'react-instantsearch/dom';
 import { Link } from 'react-router-dom';
-
 import searchInput from '../actions/searchActions.js';
 import CustomHits from './customHits.jsx';
 
@@ -12,8 +11,6 @@ import CustomHits from './customHits.jsx';
     search: store.search
   }
 })
-
-
 
 class Search extends React.Component {
   constructor(props) {
