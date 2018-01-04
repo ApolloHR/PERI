@@ -2,14 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-// @connect((store) => {
-//   return {
-//     login: store.login
-//   }
-// }, )
-
 class Login extends React.Component {
-
 
   render () {
     return (
@@ -22,7 +15,6 @@ class Login extends React.Component {
       </div>
     );
   }
-  // <div>{this.props.login.google}</div>
 }
 
 export default Login;

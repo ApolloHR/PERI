@@ -55,7 +55,6 @@ class UserSearch extends React.Component {
         maxWidth: '100%'
       }
     }
-    // console.log('this.props.store', this.props.auth)
     if (!this.state.searchClicked) {
       return (
         <div>

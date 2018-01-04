@@ -217,12 +217,3 @@ class PlanTrip extends React.Component {
   }
 }
 export default PlanTrip;
-
-
-
-
-
-
-
-
-
