@@ -3,23 +3,23 @@
     "username": "huynh.r.k@gmail.com",
     "tripName": "vacation in bali",
     "destination": "Bali",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "",
+    "description": "Vacay from the snow!",
+    "hashtag": "#FunTimes, #BeachDays",
     "thumbnail": "https://goo.gl/oQQDss",
     "spots": [
       {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 8.3405,
-        "lat": 115.0920,
+        "spotName": "Relaxing on Ocean Beach",
+        "description": "Beatiful place to spend a day!",
+        "long": 115.092,
+        "lat": -8.3405,
         "elevation": 32,
         "photo": "https://goo.gl/fdc8y3"
       },
       {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 8.3403,
-        "lat": 115.0921,
+        "spotName": "Day 2 Beach",
+        "description": "Just 4 blocks from the town",
+        "long": 115.092,
+        "lat": -8.5405,
         "elevation": 52,
         "photo": "https://goo.gl/WXtpYx"
       }
@@ -27,600 +27,133 @@
   },
   {
     "username": "thebkr7@gmail.com",
-    "tripName": "vacation in New Zealand",
+    "tripName": "Vacation in New Zealand",
     "destination": "New Zealand",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "",
+    "description": "A dream come true",
+    "hashtag": "#BestTrip, #EscapeCold, #WhalePetting",
     "thumbnail": "https://goo.gl/kYsq8u",
     "spots": [
       {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 40.9006,
-        "lat": 174.8860,
+        "spotName": "Views for Days",
+        "description": "Feel like you are ontop of the world!",
+        "long": 174.8860,
+        "lat": -40.9006,
         "elevation": 32,
-        "photo": "https://goo.gl/kYsq8u"
+        "photo": "https://news.experienceoz.com.au/wp-content/uploads/2016/04/Milford-Sound-3-Rob-Suisted.jpg"
       },
       {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 40.9006,
-        "lat": 174.8860,
+        "spotName": "Epic Kayaking Trip ",
+        "description": "I pet a whale!!!",
+        "long": 175.8860,
+        "lat": -41.9006,
         "elevation": 52,
-        "photo": "https://goo.gl/kYsq8u"
+        "photo": "https://www.southerndiscoveries.co.nz/wp-content/uploads/2016/07/DSC2537-edited-RGB.jpg"
       }
     ]
   },
   {
     "username": "theNickChapman@gmail.com",
-    "tripName": "vacation in Australia",
+    "tripName": "I Did a Thing!!",
     "destination": "Australia",
     "description": "vacay after the bootcamp!",
     "hashtag": "#vacay #goodlife",
-    "thumbnail": "https://goo.gl/b2DPgh",
+    "thumbnail": "http://www.goflying.net/wp-content/uploads/2015/11/FB_IMG_1447580749332.jpg",
     "spots": [
       {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 25.2744,
-        "lat": 133.7751,
+        "spotName": "Bush Pilot Lessons",
+        "description": "Flew around the outback",
+        "long": 133.7751,
+        "lat": -25.2744,
         "elevation": 32,
-        "photo": "https://goo.gl/b2DPgh"
+        "photo": "https://ssl.c.photoshelter.com/img-get/I0000aKRIMzdV6WE/s/800/700/21042618.jpg"
       },
       {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 25.2744,
-        "lat": 133.7751,
+        "spotName": "Rough landing",
+        "description": "After landing we saw some amazing wildlife",
+        "long": 135.7751,
+        "lat": -24.2744,
         "elevation": 52,
-        "photo": "https://goo.gl/b2DPgh"
+        "photo": "http://dicklang.com.au/wp-content/uploads/2013/11/dick_long-300x240.jpg"
       }
     ]
   },
   {
     "username": "thePhilster@gmail.com",
-    "tripName": "Motherland of South Korea",
+    "tripName": "South Korea Food",
     "destination": "South Korea",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay, #goodlife",
-    "thumbnail": "https://goo.gl/t7xeio",
+    "description": "Traveling the World",
+    "hashtag": "#Food, #SoFull, #Cereal",
+    "thumbnail": "https://d3hne3c382ip58.cloudfront.net/files/uploads/bookmundi/resized/cmsfeatured/holidays-to-south-korea-1504262469-1000X561.jpg",
     "spots": [
       {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 35.9078,
-        "lat": 127.7669,
+        "spotName": "Best Food in Seoul",
+        "description": "Meat, Meat and more Meat",
+        "long": 127.024612,
+        "lat": 37.5326,
         "elevation": 32,
-        "photo": "https://goo.gl/t7xeio"
+        "photo": "http://www.seriouseats.com/images/2014/09/20140721-LA-korean-bbq-honey-pig-farley-elliott.jpg"
       },
       {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 35.9078,
-        "lat": 127.7669,
+        "spotName": "View of the City",
+        "description": "The capitals courtyard",
+        "long": 126.024612,
+        "lat": 37.5326,
         "elevation": 52,
-        "photo": "https://goo.gl/t7xeio"
-      }
-    ]
-  },
-  {
-    "username": "huynh.r.k@gmail.com",
-    "tripName": "vacation in bali",
-    "destination": "Bali",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay, #goodlife",
-    "thumbnail": "https://goo.gl/HCgNo1",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 8.3405,
-        "lat": 115.0920,
-        "elevation": 32,
-        "photo": "https://goo.gl/fdc8y3"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 8.3403,
-        "lat": 115.0921,
-        "elevation": 52,
-        "photo": "https://goo.gl/WXtpYx"
-      }
-    ]
-  },
-  {
-    "username": "thebkr7@gmail.com",
-    "tripName": "vacation in New Zealand",
-    "destination": "New Zealand",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay, #goodlife",
-    "thumbnail": "https://goo.gl/kYsq8u",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 40.9006,
-        "lat": 174.8860,
-        "elevation": 32,
-        "photo": "https://goo.gl/kYsq8u"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 40.9006,
-        "lat": 174.8860,
-        "elevation": 52,
-        "photo": "https://goo.gl/kYsq8u"
-      }
-    ]
-  },
-  {
-    "username": "theNickChapman@gmail.com",
-    "tripName": "vacation in Australia",
-    "destination": "Australia",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay #goodlife",
-    "thumbnail": "https://goo.gl/b2DPgh",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 25.2744,
-        "lat": 133.7751,
-        "elevation": 32,
-        "photo": "https://goo.gl/b2DPgh"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 25.2744,
-        "lat": 133.7751,
-        "elevation": 52,
-        "photo": "https://goo.gl/b2DPgh"
+        "photo": "https://cdn.images.dailystar.co.uk/dynamic/204/photos/619000/north-korea-1069619.jpg"
       }
     ]
   },
   {
     "username": "thePhilster@gmail.com",
-    "tripName": "Motherland of South Korea",
-    "destination": "South Korea",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay #adventure",
-    "thumbnail": "https://goo.gl/t7xeio",
+    "tripName": "Italy Trip",
+    "destination": "Italy",
+    "description": "Great People, Great Food",
+    "hashtag": "#Food, #Cereal",
+    "thumbnail": "https://www.roughguides.com/wp-content/uploads/2012/11/SIM-452542-1680x1050.jpg",
     "spots": [
       {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 35.9078,
-        "lat": 127.7669,
+        "spotName": "Venice",
+        "description": "Had the best time here!",
+        "long": 12.3155,
+        "lat": 45.44,
         "elevation": 32,
-        "photo": "https://goo.gl/t7xeio"
+        "photo": "http://newmedia.thomson.co.uk/live/vol/3/8c06dfa8e2bca680cf3957f39c9452861788d53a/1080x608/web/EUROPEMEDITERRANEANITALYCON_ITAITALIANCITIESVENICERES_000655.jpg"
       },
       {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 35.9078,
-        "lat": 127.7669,
+        "spotName": "Colosseum Ruins",
+        "description": "Amazing seeing Roman history",
+        "long": 12.4964,
+        "lat": 41.9028,
         "elevation": 52,
-        "photo": "https://goo.gl/t7xeio"
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/5/53/Colosseum_in_Rome%2C_Italy_-_April_2007.jpg"
       }
     ]
   },
   {
-    "username": "huynh.r.k@gmail.com",
-    "tripName": "vacation in bali",
-    "destination": "Bali",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay #adventure",
-    "thumbnail": "https://goo.gl/oQQDss",
+    "username": "thebkrcanbefound@gmail.com",
+    "tripName": "Thailand Beachs",
+    "destination": "Thailand",
+    "description": "Best Beaches Around",
+    "hashtag": "#Brunt, #Relaxing, #TheLife",
+    "thumbnail": "http://www.telegraph.co.uk/content/dam/Travel/Destinations/Asia/Thailand/Phuket/phuket-beaches-railaybeach-xlarge.jpg",
     "spots": [
       {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 8.3405,
-        "lat": 115.0920,
+        "spotName": "Snorkeling",
+        "description": "Whale Shark Encounter",
+        "long": 98.8373,
+        "lat": 8.0120,
         "elevation": 32,
-        "photo": "https://goo.gl/fdc8y3"
+        "photo": "https://thumbs-prod.si-cdn.com/pQHw1O9rkPOET104LCrcsczNuEg=/800x600/filters:no_upscale()/https://public-media.smithsonianmag.com/filer/whale-sharks-631.jpg"
       },
       {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 8.3403,
-        "lat": 115.0921,
-        "elevation": 52,
-        "photo": "https://goo.gl/WXtpYx"
-      }
-    ]
-  },
-  {
-    "username": "thebkr7@gmail.com",
-    "tripName": "vacation in New Zealand",
-    "destination": "New Zealand",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay #adventure",
-    "thumbnail": "https://goo.gl/kYsq8u",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 40.9006,
-        "lat": 174.8860,
-        "elevation": 32,
-        "photo": "https://goo.gl/kYsq8u"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 40.9006,
-        "lat": 174.8860,
-        "elevation": 52,
-        "photo": "https://goo.gl/kYsq8u"
-      }
-    ]
-  },
-  {
-    "username": "theNickChapman@gmail.com",
-    "tripName": "vacation in Australia",
-    "destination": "Australia",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay #adventure",
-    "thumbnail": "https://goo.gl/b2DPgh",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 25.2744,
-        "lat": 133.7751,
-        "elevation": 32,
-        "photo": "https://goo.gl/b2DPgh"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 25.2744,
-        "lat": 133.7751,
-        "elevation": 52,
-        "photo": "https://goo.gl/b2DPgh"
-      }
-    ]
-  },
-  {
-    "username": "thePhilster@gmail.com",
-    "tripName": "Motherland of South Korea",
-    "destination": "South Korea",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay #adventure",
-    "thumbnail": "https://goo.gl/t7xeio",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 35.9078,
-        "lat": 127.7669,
-        "elevation": 32,
-        "photo": "https://goo.gl/t7xeio"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 35.9078,
-        "lat": 127.7669,
-        "elevation": 52,
-        "photo": "https://goo.gl/t7xeio"
-      }
-    ]
-  },
-  {
-    "username": "huynh.r.k@gmail.com",
-    "tripName": "vacation in bali",
-    "destination": "Bali",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay #goodlife",
-    "thumbnail": "https://goo.gl/oQQDss",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 8.3405,
-        "lat": 115.0920,
-        "elevation": 32,
-        "photo": "https://goo.gl/fdc8y3"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 8.3403,
-        "lat": 115.0921,
-        "elevation": 52,
-        "photo": "https://goo.gl/WXtpYx"
-      }
-    ]
-  },
-  {
-    "username": "thebkr7@gmail.com",
-    "tripName": "vacation in New Zealand",
-    "destination": "New Zealand",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay #goodlife",
-    "thumbnail": "https://goo.gl/kYsq8u",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 40.9006,
-        "lat": 174.8860,
-        "elevation": 32,
-        "photo": "https://goo.gl/kYsq8u"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 40.9006,
-        "lat": 174.8860,
-        "elevation": 52,
-        "photo": "https://goo.gl/kYsq8u"
-      }
-    ]
-  },
-  {
-    "username": "theNickChapman@gmail.com",
-    "tripName": "vacation in Australia",
-    "destination": "Australia",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay #goodlife",
-    "thumbnail": "https://goo.gl/b2DPgh",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 25.2744,
-        "lat": 133.7751,
-        "elevation": 32,
-        "photo": "https://goo.gl/b2DPgh"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 25.2744,
-        "lat": 133.7751,
-        "elevation": 52,
-        "photo": "https://goo.gl/b2DPgh"
-      }
-    ]
-  },
-  {
-    "username": "thePhilster@gmail.com",
-    "tripName": "Motherland of South Korea",
-    "destination": "South Korea",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay, #goodlife",
-    "thumbnail": "https://goo.gl/t7xeio",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 35.9078,
-        "lat": 127.7669,
-        "elevation": 32,
-        "photo": "https://goo.gl/t7xeio"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 35.9078,
-        "lat": 127.7669,
-        "elevation": 52,
-        "photo": "https://goo.gl/t7xeio"
-      }
-    ]
-  },
-  {
-    "username": "huynh.r.k@gmail.com",
-    "tripName": "vacation in bali",
-    "destination": "Bali",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay, #goodlife",
-    "thumbnail": "https://goo.gl/HCgNo1",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 8.3405,
-        "lat": 115.0920,
-        "elevation": 32,
-        "photo": "https://goo.gl/fdc8y3"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 8.3403,
-        "lat": 115.0921,
-        "elevation": 52,
-        "photo": "https://goo.gl/WXtpYx"
-      }
-    ]
-  },
-  {
-    "username": "thebkr7@gmail.com",
-    "tripName": "vacation in New Zealand",
-    "destination": "New Zealand",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay, #goodlife",
-    "thumbnail": "https://goo.gl/kYsq8u",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 40.9006,
-        "lat": 174.8860,
-        "elevation": 32,
-        "photo": "https://goo.gl/kYsq8u"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 40.9006,
-        "lat": 174.8860,
-        "elevation": 52,
-        "photo": "https://goo.gl/kYsq8u"
-      }
-    ]
-  },
-  {
-    "username": "theNickChapman@gmail.com",
-    "tripName": "vacation in Australia",
-    "destination": "Australia",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay #goodlife",
-    "thumbnail": "https://goo.gl/b2DPgh",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 25.2744,
-        "lat": 133.7751,
-        "elevation": 32,
-        "photo": "https://goo.gl/b2DPgh"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 25.2744,
-        "lat": 133.7751,
-        "elevation": 52,
-        "photo": "https://goo.gl/b2DPgh"
-      }
-    ]
-  },
-  {
-    "username": "thePhilster@gmail.com",
-    "tripName": "Motherland of South Korea",
-    "destination": "South Korea",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay #adventure",
-    "thumbnail": "https://goo.gl/t7xeio",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 35.9078,
-        "lat": 127.7669,
-        "elevation": 32,
-        "photo": "https://goo.gl/t7xeio"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 35.9078,
-        "lat": 127.7669,
-        "elevation": 52,
-        "photo": "https://goo.gl/t7xeio"
-      }
-    ]
-  },
-  {
-    "username": "huynh.r.k@gmail.com",
-    "tripName": "vacation in bali",
-    "destination": "Bali",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay #adventure",
-    "thumbnail": "https://goo.gl/oQQDss",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 8.3405,
-        "lat": 115.0920,
-        "elevation": 32,
-        "photo": "https://goo.gl/fdc8y3"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 8.3403,
-        "lat": 115.0921,
-        "elevation": 52,
-        "photo": "https://goo.gl/WXtpYx"
-      }
-    ]
-  },
-  {
-    "username": "thebkr7@gmail.com",
-    "tripName": "vacation in New Zealand",
-    "destination": "New Zealand",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay #adventure",
-    "thumbnail": "https://goo.gl/kYsq8u",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 40.9006,
-        "lat": 174.8860,
-        "elevation": 32,
-        "photo": "https://goo.gl/kYsq8u"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 40.9006,
-        "lat": 174.8860,
-        "elevation": 52,
-        "photo": "https://goo.gl/kYsq8u"
-      }
-    ]
-  },
-  {
-    "username": "theNickChapman@gmail.com",
-    "tripName": "vacation in Australia",
-    "destination": "Australia",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay #adventure",
-    "thumbnail": "https://goo.gl/b2DPgh",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 25.2744,
-        "lat": 133.7751,
-        "elevation": 32,
-        "photo": "https://goo.gl/b2DPgh"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 25.2744,
-        "lat": 133.7751,
-        "elevation": 52,
-        "photo": "https://goo.gl/b2DPgh"
-      }
-    ]
-  },
-  {
-    "username": "thePhilster@gmail.com",
-    "tripName": "Motherland of South Korea",
-    "destination": "South Korea",
-    "description": "vacay after the bootcamp!",
-    "hashtag": "#vacay #adventure",
-    "thumbnail": "https://goo.gl/t7xeio",
-    "spots": [
-      {
-        "spotName": "beach1",
-        "description": "description for this spot hello world",
-        "long": 35.9078,
-        "lat": 127.7669,
-        "elevation": 32,
-        "photo": "https://goo.gl/t7xeio"
-      },
-      {
-        "spotName": "beach2",
-        "description": "description for this spot hello world",
-        "long": 35.9078,
-        "lat": 127.7669,
-        "elevation": 52,
-        "photo": "https://goo.gl/t7xeio"
+        "spotName": "Phi Phi Island",
+        "description": "Island Hopping",
+        "long": 98.7784,
+        "lat": 7.7407,
+        "elevation": 0,
+        "photo": "http://static.asiawebdirect.com/m/phuket/portals/phiphi-phuket-com/homepage/beaches/phi-phi-leh/pagePropertiesImage/koh-phiphi-leh.jpg"
       }
     ]
   }
+
 ]
