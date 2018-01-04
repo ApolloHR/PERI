@@ -4,6 +4,7 @@ import { GoogleApiWrapper } from 'google-maps-react';
 import { NavLink } from 'react-router-dom';
 import { postTrip } from '../actions/tripsActions.js';
 import SpotMap from './spotMap.jsx';
+import TripViewerOneSpot from './tripViewerOneSpot.jsx';
 
 @connect((store) => {
   return {
@@ -23,7 +24,7 @@ class TripViewer extends React.Component {
       }
     };
 
-    const { username, tripName, destination, description, spots } = this.props.spots;
+    const { username, tripName, destination, description, spots, hashtag, thumbnail } = this.props.spots;
 
     const trips = spots.map((spot, i) =>
       <div className="card block" key={i}>
@@ -47,40 +48,44 @@ class TripViewer extends React.Component {
     console.log('tripviewer thispropsspots =', this.props.spots);
     return (
       <div>
-        <SpotMap spots={this.props.spotsList}/>
         <div className="container">
+          <div className="columns">
+            <div className="column">
+              <p className="title is-size-2">{ tripName }</p>
+              <p className="subtitle is-size-5">{ destination }</p>
+              <button className="button is-primary is-outlined is-large"
+                      onClick={() => this.props.dispatch(postTrip(this.props.spots))}>
+                      POST YOUR TRIP
+              </button>
+              <hr/>
+              <p className="subtitle is-size-3">{ description }</p>
+              <p className="subtitle is-size-6">Created by { username }</p>
+              <p className="subtitle is-size-6">{ hashtag }</p>
+              <hr/>
+              <p className="subtitle is-size-6">{ spots.length + ' spots on this trip' }</p>
+              <hr/>
+            </div>
+            <div className="column">
+              <figure className="image">
+                <img src={ thumbnail } alt="Placeholder image"/>
+              </figure>
+            </div>
+          </div>
           <section className="hero">
             <div className="hero-body">
-              <div className="">
-                <h3 className="title has-text-centered">{ tripName }</h3>
+              <div className="container">
+                <h1 className="title">
+                  All Spots on This Trip:
+                </h1>
               </div>
             </div>
           </section>
-          <br></br>
-          <div className="">
-            <div className="block">
-              {trips}
-            </div>
-            <div className="level">
-              <div className="level-left"></div>
-              <div className="level-right">
-                <div className="level-item">
-                  <NavLink to="/" activeClassName="active">
-                    <button className="button is-primary is-outlined is-large"
-                            onClick={() => this.props.dispatch(postTrip(this.props.spots))}>
-                            POST YOUR TRIP
-                    </button>
-                  </NavLink>
-                </div>
-              </div>
-            </div>
-          </div>
+          <TripViewerOneSpot trip={ this.props.spots }/>
         </div>
-        <br></br>
-        <br></br>
       </div>
     );
   }
 }
+
 
 export default TripViewer;
