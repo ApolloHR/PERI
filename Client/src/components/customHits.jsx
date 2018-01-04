@@ -7,10 +7,6 @@ import OneTripSpots from './oneTripSpots.jsx';
 import Infinite from './infinite.jsx';
 
 
-// {hits.map(hit => {
-//           return (<OneTripSpots trip={hit} key={hit.ObjectID}/>);
-//         }
-//         )}
 const CustomHits = connectHits(({ hits }) => {
 
   return (

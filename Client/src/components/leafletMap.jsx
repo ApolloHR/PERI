@@ -17,7 +17,6 @@ let LeafletMap = (props) => (
       </Marker>
     </Map>
   </div>
-
 );
 
 export default LeafletMap;

@@ -12,7 +12,6 @@ class Invite extends React.Component {
   }
 
   handleChange(input) {
-    // console.log('should be guests email =', input.target.value)
     this.setState({guest: input.target.value});
   }
 
