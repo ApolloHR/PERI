@@ -7,7 +7,8 @@ import SpotMap from './spotMap.jsx';
 
 @connect((store) => {
   return {
-    spots: store.cloudinary.tripInfo
+    spots: store.cloudinary.tripInfo,
+    spotsList: store.cloudinary.tripInfo.spots
   }
 })
 
@@ -46,7 +47,7 @@ class TripViewer extends React.Component {
     console.log('tripviewer thispropsspots =', this.props.spots);
     return (
       <div>
-        <SpotMap spots={this.props.spots}/>
+        <SpotMap spots={this.props.spotsList}/>
         <div className="container">
           <section className="hero">
             <div className="hero-body">
