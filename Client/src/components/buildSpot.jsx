@@ -15,6 +15,13 @@ import { NavLink } from 'react-router-dom';
 })
 
 class BuildSpot extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      spotName: '',
+      description: '',
+    }
+  }
 
   getUserCoords() {
     return new Promise((resolve, reject) => {
@@ -84,10 +91,25 @@ class BuildSpot extends React.Component {
     });
   }
 
-  handleChange(e) {
+  // handleChange(e) {
+  //   let info = {...this.props.cloudinaryStore.tempSpot};
+  //   info[e.target.name] = e.target.value;
+  //   this.props.dispatch(cloudinarySpotInfo(info));
+  //   this.setState({ spotName: e.target.value, description: e.target.value })
+  // }
+
+  handleChangeSpotName(e) {
     let info = {...this.props.cloudinaryStore.tempSpot};
-    info[e.target.name] = e.target.value;
+    info['spotName'] = e.target.value;
     this.props.dispatch(cloudinarySpotInfo(info));
+    this.setState({ spotName: e.target.value});
+  }
+
+  handleChangeDescription(e) {
+    let info = {...this.props.cloudinaryStore.tempSpot};
+    info['description'] = e.target.value;
+    this.props.dispatch(cloudinarySpotInfo(info));
+    this.setState({ description: e.target.value});
   }
 
   handleSubmit(e) {
@@ -96,12 +118,15 @@ class BuildSpot extends React.Component {
     this.props.dispatch(cloudinaryAddSpot(info));
   }
 
+
   handleSubmitOne(e) {
     e.preventDefault();
     let info = {...this.props.cloudinaryStore.tempSpot};
     info.photo = this.props.cloudinaryStore.gallery[this.props.cloudinaryStore.gallery.length-1];
     console.log('buildSpot handleSubmit info =', info);
     this.props.dispatch(cloudinaryAddSpot(info));
+    this.setState({ spotName: '' });
+    this.setState({ description: '' });
   }
 
   render() {
@@ -120,7 +145,8 @@ class BuildSpot extends React.Component {
                         type="text"
                         name="spotName"
                         placeholder="Enter Place Name"
-                        onChange={this.handleChange.bind(this)}
+                        onChange={this.handleChangeSpotName.bind(this)}
+                        value={this.state.spotName}
                         required
                       />
                     </div>
@@ -133,7 +159,8 @@ class BuildSpot extends React.Component {
                         type="text"
                         name="description"
                         placeholder="Enter Place Description"
-                        onChange={this.handleChange.bind(this)}
+                        onChange={this.handleChangeDescription.bind(this)}
+                        value={this.state.description}
                         required
                       />
                     </div>
