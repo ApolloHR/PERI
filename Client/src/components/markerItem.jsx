@@ -23,7 +23,7 @@ class MarkerItem extends React.Component {
       >
         {<InfoBox options={
           {
-            pixelOffset: new google.maps.Size(-40, -150),
+            pixelOffset: new google.maps.Size(-125, -130),
             disableAutoPan: false,
             visible: this.state.isVisible,
             maxWidth: 0,
