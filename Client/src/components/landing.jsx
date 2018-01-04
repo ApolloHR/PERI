@@ -6,7 +6,6 @@ import Login from './login.jsx';
 import OneTrip from './oneTrip.jsx';
 import { fetchTrips } from '../actions/tripsActions';
 import { login } from '../actions/login';
-import Infinite from './infinite.jsx';
 import Search from './search.jsx';
 
 
