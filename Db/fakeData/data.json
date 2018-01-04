@@ -154,6 +154,215 @@
         "photo": "http://static.asiawebdirect.com/m/phuket/portals/phiphi-phuket-com/homepage/beaches/phi-phi-leh/pagePropertiesImage/koh-phiphi-leh.jpg"
       }
     ]
+  },
+  {
+    "username": "huynh.r.k@gmail.com",
+    "tripName": "Kathmandu trip to the mountains",
+    "destination": "Kathmandu",
+    "description": "Traveling around the mountains and doing some awesome hikes",
+    "hashtag": "#everst, #Kathmandu, #TheLife, #travel",
+    "thumbnail": "http://www.bravofly.com/offers/flights/bravofly/img/kathmandu.jpg",
+    "spots": [
+      {
+        "spotName": "bhaktapur temple",
+        "description": "Some ancient temples, pretty cool to look at",
+        "long": 85.4298,
+        "lat": 27.6710,
+        "elevation": 32,
+        "photo": "http://nepaltravels.com/wp-content/uploads/2017/03/bhaktapur-durbar.jpg"
+      },
+      {
+        "spotName": "Base Camp",
+        "description": "Hikng a week up to base camp!",
+        "long": 86.8528,
+        "lat": 28.0026,
+        "elevation": 0,
+        "photo": "https://d3hne3c382ip58.cloudfront.net/resized/750x420/everest-base-camp-trek-tour-2-17499_1514908748.JPG"
+      }
+    ]
+  },
+  {
+    "username": "theNickChapman@gmail.com",
+    "tripName": "Beautiful Iceland",
+    "destination": "Iceland",
+    "description": "Beautiful scenery",
+    "hashtag": "#photography, #travel, #iceland, #nordic",
+    "thumbnail": "http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Iceland/iceland-main-AP-xlarge.jpg",
+    "spots": [
+      {
+        "spotName": "Skaftafell water fall",
+        "description": "Got some great shots here. The hike to it was pretty difficult make sure you wear proper equipment!",
+        "long": -16.9752,
+        "lat": 64.0704,
+        "elevation": 32,
+        "photo": "https://iceland.nordicvisitor.com/images/1/iceland/summer/svartifoss_skaftafell_summer_south_nv_002.jpg"
+      },
+      {
+        "spotName": "Jökulsárlón",
+        "description": "Some beautiful iceburgs to look at!",
+        "long": -16.2306,
+        "lat": 64.0784,
+        "elevation": 0,
+        "photo": "https://cdn.getyourguide.com/img/tour_img-846332-70.jpg"
+      }
+    ]
+  },
+  {
+    "username": "phillip.jun@gmail.com",
+    "tripName": "Party up in Mexico",
+    "destination": "Mexico",
+    "description": "Great time to relax on the beach and have some drinks. ",
+    "hashtag": "#party, #mexico, #tequila, #nomorework",
+    "thumbnail": "https://static.businessinsider.com/image/55439ed669bedd815001cedf/image.jpg",
+    "spots": [
+      {
+        "spotName": "Playa del Carmen",
+        "description": "So good to just lay on this beach, great place to swim too!",
+        "long": -87.0739,
+        "lat": 20.6296,
+        "elevation": 32,
+        "photo": "https://www.riu.com/fcs_images/guia-destinos/guia_MX_13792_2x1.jpg"
+      },
+      {
+        "spotName": "Cabo San Lucas",
+        "description": "Wow found a pit where you could just swim all day! Highly recommened!",
+        "long": -109.9167,
+        "lat": 22.8905,
+        "elevation": 0,
+        "photo": "http://www.loscabosguide.com/wp-content/uploads/2017/04/arch-cabo-san-lucas-1991-105-2516-x4.jpg"
+      }
+    ]
+  },
+  {
+    "username": "thebkrcanbefound@gmail.com",
+    "tripName": "Accross the African savannah",
+    "destination": "Africa",
+    "description": "Wow so vast!!!",
+    "hashtag": "#africa, #lions, #dangerous, #beautiful",
+    "thumbnail": "http://techdrive.co/wp-content/uploads/2014/10/http-www.african-solutions.com-wp-content-uploads-2012-04-atc-dune-45-namibia.jpg",
+    "spots": [
+      {
+        "spotName": "Killamanjaro",
+        "description": "Awesome hike, great place to look over the land.",
+        "long": -37.3556,
+        "lat": -3.0674,
+        "elevation": 32,
+        "photo": "https://media-cdn.tripadvisor.com/media/photo-s/02/3b/f4/84/filename-screen-shot.jpg"
+      },
+      {
+        "spotName": "Victoria Falls",
+        "description": "Most beautiful waterfall I've ever seen!",
+        "long": 25.8572,
+        "lat": -17.9243,
+        "elevation": 0,
+        "photo": "http://victoriafallsbackpackers.com/wp-content/uploads/2015/01/victoria-falls-backpackers-slider-20.jpg"
+      }
+    ]
+  },
+  {
+    "username": "huynh.r.k@gmail.com",
+    "tripName": "Hiking in the Andes",
+    "destination": "Peru",
+    "description": "Hiking through the Andes!",
+    "hashtag": "#inca, #southamerica, #andes, #beautiful",
+    "thumbnail": "https://www.intrepidtravel.com/sites/intrepid/files/styles/low-quality/public/pd/highlight/image/peru_machu-picchu.jpg",
+    "spots": [
+      {
+        "spotName": "Machu Picchu",
+        "description": "A must travel for anyone looking for some serious views!!",
+        "long": -72.5450,
+        "lat": -13.1631,
+        "elevation": 32,
+        "photo": "https://www.nationalgeographic.com/content/dam/travel/2017-digital/family-travel/machu-picchu-family-travel.jpg"
+      },
+      {
+        "spotName": "Cusco",
+        "description": "Cool city to check out",
+        "long": -71.9675,
+        "lat": -13.5320,
+        "elevation": 0,
+        "photo": "http://www.andeantravelweb.com/images/cusco/cusco_006_800x450.jpg"
+      }
+    ]
+  },
+  {
+    "username": "nickpchapman@gmail.com",
+    "tripName": "Visiting the Putins",
+    "destination": "Russia",
+    "description": "Going back home to visit the motherland",
+    "hashtag": "#Russia, #vlad",
+    "thumbnail": "https://10206-presscdn-0-16-pagely.netdna-ssl.com/wp-content/uploads/2016/05/Dollarphotoclub_Russia-1-1920x1280.jpg",
+    "spots": [
+      {
+        "spotName": "Moscow",
+        "description": "A must travel for anyone looking for some serious views!!",
+        "long": 37.6173,
+        "lat": 55.7558,
+        "elevation": 32,
+        "photo": "https://www.cornerstone-group.com/wp-content/uploads/2013/06/EMEA-Moscow.jpg"
+      },
+      {
+        "spotName": "Saint Petersburg",
+        "description": "Cool city to check out",
+        "long": 30.3351,
+        "lat": 59.9343,
+        "elevation": 0,
+        "photo": "http://www.travelandtourworld.com/wp-content/uploads/2016/03/Saint-Petersburg-Russia.jpg"
+      }
+    ]
+  },
+  {
+    "username": "phillip.jun@gmail.com",
+    "tripName": "When bored, visit Greenland",
+    "destination": "Greenland",
+    "description": "Awesome trip, beautiful country",
+    "hashtag": "#greenland, #travel",
+    "thumbnail": "https://i.ytimg.com/vi/pCfRhnfW5YY/maxresdefault.jpg",
+    "spots": [
+      {
+        "spotName": "Ilulissat",
+        "description": "A must travel for anyone looking for some serious views!!",
+        "long": -51.0986,
+        "lat": 69.2198,
+        "elevation": 32,
+        "photo": "https://visitgreenland.com/wp-content/uploads/ilulissat-icefjord-from-the-air_10036131333_o-1.jpg"
+      },
+      {
+        "spotName": "Tasiilaq",
+        "description": "Cool city to check out",
+        "long": -37.6336,
+        "lat": 65.6135,
+        "elevation": 0,
+        "photo": "https://www.greenland-travel.com/files/2015/eastgreenland/tasiilaq-fish-drying-erwin-reinthaler.jpg"
+      }
+    ]
+  },
+  {
+    "username": "thebkrcanbefound@gmail.com",
+    "tripName": "Walking with Zaboomafo",
+    "destination": "Madagascar",
+    "description": "Awesome trip, beautiful country",
+    "hashtag": "#travel, #lemurs, #closetoAfica",
+    "thumbnail": "https://pbs.twimg.com/media/B1Hr-5EIAAA9N3_.png",
+    "spots": [
+      {
+        "spotName": "Morondava",
+        "description": "A must travel for anyone looking for some serious views!!",
+        "long": -51.0986,
+        "lat": 69.2198,
+        "elevation": 32,
+        "photo": "http://www.baobabcafe-hotel.net/images/3.jpg"
+      },
+      {
+        "spotName": "Tasiilaq",
+        "description": "Cool city to check out",
+        "long": 44.3000,
+        "lat": -20.2904,
+        "elevation": 0,
+        "photo": "https://www.greenland-travel.com/files/2015/eastgreenland/tasiilaq-fish-drying-erwin-reinthaler.jpg"
+      }
+    ]
   }
 
 ]
+
