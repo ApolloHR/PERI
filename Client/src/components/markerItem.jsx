@@ -30,7 +30,7 @@ class MarkerItem extends React.Component {
             closeBoxURL: '',
             boxStyle: {
               padding: '0px 0px 0px 0px',
-              width: '280px',
+              width: '250px',
               height: '64px'
             },
             infoBoxClearance: new google.maps.Size(1, 1),
@@ -40,10 +40,13 @@ class MarkerItem extends React.Component {
           }
         }
         >
-          <div className="infoBox-popup-box">
-              <img className="image is-64x64 marker-image" src={spot.photo}/>
-            <div className="infoBox-popup-content">{spot.spotName}
+          <div className="info-box-wrap">
+            <img className="image is-64x64" src={spot.photo}/>
+            <div className="info-box-text-wrap">
+              <h6 className="spotname">{spot.spotName}</h6>
+              <p className="description">{spot.description}</p>
             </div>
+            <div class="action-btns"></div>
           </div>
         </InfoBox>}
       </Marker>
