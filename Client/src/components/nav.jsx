@@ -2,10 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SkyLight from 'react-skylight';
 import { connect } from 'react-redux';
-
 import Login from './login.jsx';
 import Invite from './invite.jsx';
-
 
 const style = {
   nav: {
@@ -36,7 +34,7 @@ class Nav extends React.Component {
                 <i className="fa fa-ravelry fa-2x has-text-primary" style={style.nav}></i>
               </Link>
             </div>
-            <div className="level-right">              
+            <div className="level-right">
               <p className="level-item has-text-centered">
                 <a class="has-text-grey-dark" activeClassName="active" href="/auth/google" style={style.routes}> Login </a>
               </p>
@@ -61,8 +59,7 @@ class Nav extends React.Component {
               <p className="level-item has-text-centered">
                 <Link to="/planTrip" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Plan Trip </Link>
               </p>
-              <p className="level-item has-text-centered invite-pop-up" onClick={() => this.simpleDialog.show()}> Invite
-              </p>
+              <Link to="" class="has-text-grey-dark" activeClassName="active" style={style.routes} onClick={() => this.simpleDialog.show()}> Invite </Link>
               <SkyLight hideOnOverlayClicked ref={ref => this.simpleDialog = ref}>
                 <Invite />
               </SkyLight>
@@ -76,6 +73,5 @@ class Nav extends React.Component {
     }
   }
 }
-
 
 export default Nav;

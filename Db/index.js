@@ -1,9 +1,6 @@
-//  REQUIRE
 const mongoose = require('mongoose');
 const algoliasearch = require('algoliasearch');
-
 const { User, Trip, Spot, Fork } = require('./schema.js');
-// const { updateUpvote } = require('./algoliaSearch.js');
 
 // FOR .ENV VARIABLES
 require('dotenv').config();
