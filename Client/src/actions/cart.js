@@ -23,10 +23,3 @@ export function cartTripInfo(data) {
     type: 'CART_TRIPINFO', payload: data
   };
 }
-
-export function updateMap(data) {
-  // insert function that takes the parameter from buildTrip form and sets the new payload
-  return {
-    type: 'CART_UPDATEMAP', payload: data
-  };
-}
