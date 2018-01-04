@@ -52,7 +52,6 @@ class OneSpot extends React.Component {
                     <div className="media">
                       <div className="media-content">
                         <p className="title is-4">{spot.spotName}</p>
-                        <br></br>
                         <p className="subtitle is-6">{spot.description}</p>
                         <div className="control">
                           <button
@@ -66,6 +65,7 @@ class OneSpot extends React.Component {
                       </div>
                     </div>
                   </div>
+                <hr></hr>
                 </div>
               );
             })}

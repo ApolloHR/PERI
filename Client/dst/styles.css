@@ -34,6 +34,7 @@
 div.card-content {
   padding-top: 10px;
   padding-left: 0px;
+  padding-bottom: 0px;
 }
 
 div.subtitle.is-6 {
@@ -138,11 +139,27 @@ ul.ais-Pagination__root {
 }
 
 div.card.trip-card.card-height {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    color: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: none;
 }
 
+div.card {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: none;
+  padding-bottom: 10px;
+}
+
+p.title.is-4 {
+  margin: 0 auto;
+  margin-bottom: 7%
+}
+
+p.subtitle.is-6 {
+  margin: 0 auto;
+  margin-bottom: 2%;
+}
 /*=====Post a Trip=====*/
 
 .uploadImage {
