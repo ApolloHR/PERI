@@ -53,10 +53,12 @@ class TripViewer extends React.Component {
             <div className="column">
               <p className="title is-size-2">{ tripName }</p>
               <p className="subtitle is-size-5">{ destination }</p>
-              <button className="button is-primary is-outlined is-large"
-                      onClick={() => this.props.dispatch(postTrip(this.props.spots))}>
-                      POST YOUR TRIP
-              </button>
+              <NavLink to="/" activeClassName="active">
+                <button className="button is-primary is-outlined is-large"
+                        onClick={() => this.props.dispatch(postTrip(this.props.spots))}>
+                        POST YOUR TRIP
+                </button>
+              </NavLink>
               <hr/>
               <p className="subtitle is-size-3">{ description }</p>
               <p className="subtitle is-size-6">Created by { username }</p>
