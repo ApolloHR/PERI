@@ -40,7 +40,11 @@ class UserSearch extends React.Component {
   }
 
   hasBeenClicked() {
-    this.setState({searchClicked: true})
+    if(this.state.searchClicked === true) {
+      this.setState({searchClicked: false})
+    } else {
+      this.setState({searchClicked: true})
+    }
   }
 
   render() {
@@ -60,7 +64,7 @@ class UserSearch extends React.Component {
             apiKey='f0e90c174d07dbbcec7820fc3e8d04fb'
             indexName='users'
           >
-            <button onClick={this.hasBeenClicked} >Search For Friends</button>
+            <button onClick={this.hasBeenClicked} >Search For User</button>
             <h1 className="title has-text-grey-dark" id="experience">{this.props.auth.creds.username} Trips</h1>
             <div className="container">
               <CustomHits/>
@@ -77,6 +81,7 @@ class UserSearch extends React.Component {
             apiKey='f0e90c174d07dbbcec7820fc3e8d04fb'
             indexName='users'
           >
+            <button onClick={this.hasBeenClicked} >Search For User</button>
             <div className="column main-search">
               <h3 className="subtitle is-3">Search for a User</h3>
               <form>
@@ -90,7 +95,7 @@ class UserSearch extends React.Component {
                 </div>
               </form>
             </div>
-            <h1 className="title has-text-grey-dark" id="experience">{this.props.auth.creds.username} Trips</h1>
+            <h1 className="title has-text-grey-dark" id="experience">User's Trips</h1>
             <div className="container">
               <CustomHits/>
               <Pagination/>

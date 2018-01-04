@@ -36,20 +36,7 @@ class Nav extends React.Component {
                 <i className="fa fa-ravelry fa-2x has-text-primary" style={style.nav}></i>
               </Link>
             </div>
-            <div className="level-right">
-
-              <p className="level-item has-text-centered">
-                <Link to="/postTrip" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Post Trip </Link>
-              </p>
-              <p className="level-item has-text-centered">
-                <Link to="/planTrip" class="has-text-grey-dark" activeClassName="active" style={style.routes}> Plan Trip </Link>
-              </p>
-              <p className="level-item has-text-centered">
-                <Link to="" class="has-text-grey-dark" activeClassName="active" style={style.routes} onClick={() => this.simpleDialog.show()}> Invite </Link>
-              </p>
-              <SkyLight hideOnOverlayClicked ref={ref => this.simpleDialog = ref}>
-                <Invite />
-              </SkyLight>
+            <div className="level-right">              
               <p className="level-item has-text-centered">
                 <a class="has-text-grey-dark" activeClassName="active" href="/auth/google" style={style.routes}> Login </a>
               </p>
