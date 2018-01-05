@@ -156,84 +156,124 @@
     ]
   },
   {
-    "username": "huynh.r.k@gmail.com",
-    "tripName": "Kathmandu trip to the mountains",
-    "destination": "Kathmandu",
-    "description": "Traveling around the mountains and doing some awesome hikes",
-    "hashtag": "#everst, #Kathmandu, #TheLife, #travel",
-    "thumbnail": "http://www.bravofly.com/offers/flights/bravofly/img/kathmandu.jpg",
+    "username": "theRayMan@gmail.com",
+    "tripName": "Morocco 2014",
+    "destination": "Morocco",
+    "description": "week long trip to morocco",
+    "hashtag": "#Fez, #Mediterranean",
+    "thumbnail": "http://www.luxury-tours-morocco.com/images/Morocco-sahara-desert-tour-Marrakech-to-Merzouga-3-days-203154.jpg",
     "spots": [
       {
-        "spotName": "bhaktapur temple",
-        "description": "Some ancient temples, pretty cool to look at",
-        "long": 85.4298,
-        "lat": 27.6710,
+        "spotName": "Majorelle Garden",
+        "description": "Walked around Majorelle Garden.",
+        "long": -8.010932,
+        "lat": 31.6402969,
         "elevation": 32,
-        "photo": "http://nepaltravels.com/wp-content/uploads/2017/03/bhaktapur-durbar.jpg"
+        "photo": "http://jardinmajorelle.com/wp-content/uploads/2011/12/2.1.2.2-Fontaine-carr%C3%A9e1-e1329395037976.jpg"
       },
       {
-        "spotName": "Base Camp",
-        "description": "Hikng a week up to base camp!",
-        "long": 86.8528,
-        "lat": 28.0026,
+        "spotName": "Ouzoud Falls",
+        "description": "Ouzoud Waterfalls are located near the Moyen village",
+        "long": -6.7897962,
+        "lat": 32.0152787,
         "elevation": 0,
-        "photo": "https://d3hne3c382ip58.cloudfront.net/resized/750x420/everest-base-camp-trek-tour-2-17499_1514908748.JPG"
+        "photo": "https://www.marrakech-desert-trips.com/wp-content/uploads/2015/03/excursion-marrakech-to-Ouzoud-waterfalls.jpg"
+      },
+      {
+        "spotName": "Hike to Toubkal",
+        "description": "Hike in the snowy Atlas mountains",
+        "long": -7.923503,
+        "lat": 31.0600712,
+        "elevation": 13000,
+        "photo": "https://www.mountain-forecast.com/system/images/12153/large_illustration/Toubkal.JPG"
+      },
+      {
+        "spotName": "Hassan Tower",
+        "description": "Awesome ancient tower",
+        "long": -6.8250043,
+        "lat": 34.0241362,
+        "elevation": 59,
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/8/81/Tour_Hassan-Rabat-2.jpg"
       }
     ]
   },
   {
-    "username": "theNickChapman@gmail.com",
-    "tripName": "Beautiful Iceland",
-    "destination": "Iceland",
-    "description": "Beautiful scenery",
-    "hashtag": "#photography, #travel, #iceland, #nordic",
-    "thumbnail": "http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Iceland/iceland-main-AP-xlarge.jpg",
+    "username": "nickpchapman@gmail.com",
+    "tripName": "Cape Town Adventure",
+    "destination": "Cape Town",
+    "description": "My South African Adventures",
+    "hashtag": "#Africa",
+    "thumbnail": "https://media-cdn.tripadvisor.com/media/photo-s/01/68/cc/76/cape-town.jpg",
     "spots": [
       {
-        "spotName": "Skaftafell water fall",
-        "description": "Got some great shots here. The hike to it was pretty difficult make sure you wear proper equipment!",
-        "long": -16.9752,
-        "lat": 64.0704,
+        "spotName": "Table Mountain cable car",
+        "description": "We took the cable car up to the top. Amazing views",
+        "long": 18.4622866,
+        "lat": -34.3589263,
         "elevation": 32,
-        "photo": "https://iceland.nordicvisitor.com/images/1/iceland/summer/svartifoss_skaftafell_summer_south_nv_002.jpg"
+        "photo": "https://www.drivesouthafrica.co.za/images/uploads/1ed.png"
       },
       {
-        "spotName": "Jökulsárlón",
-        "description": "Some beautiful iceburgs to look at!",
-        "long": -16.2306,
-        "lat": 64.0784,
+        "spotName": "Robben Island",
+        "description": "Day Trip to Robben Island",
+        "long": 18.3610826,
+        "lat": -33.8047449,
         "elevation": 0,
-        "photo": "https://cdn.getyourguide.com/img/tour_img-846332-70.jpg"
+        "photo": "https://i1.wp.com/farm4.staticflickr.com/3856/15135661971_d9ff2e1396_o.jpg?ssl=1"
+      },
+      {
+        "spotName": "Awesome Aquarium",
+        "description": "Two Oceans Aquarium",
+        "long": 18.415472,
+        "lat": -33.9192705,
+        "elevation": 13000,
+        "photo": "https://www.wheretostay.co.za/_wts4/locations/poi/0/0/000695/529_730x490.jpg"
+      },
+      {
+        "spotName": "Day at the Botanical Garden",
+        "description": "Kirstenbosch National Garden",
+        "long": 18.4305333,
+        "lat": -33.9875011,
+        "elevation": 59,
+        "photo": "https://media-cdn.tripadvisor.com/media/photo-s/02/20/5c/a0/vygie-beds-in-spring.jpg"
       }
     ]
   },
-  {
-    "username": "phillip.jun@gmail.com",
-    "tripName": "Party up in Mexico",
-    "destination": "Mexico",
-    "description": "Great time to relax on the beach and have some drinks. ",
-    "hashtag": "#party, #mexico, #tequila, #nomorework",
-    "thumbnail": "https://static.businessinsider.com/image/55439ed669bedd815001cedf/image.jpg",
+    {
+    "username": "aaronrobinson@gmail.com",
+    "tripName": "Dreaming of Argentina",
+    "destination": "Cape Town",
+    "description": "My South African Adventures",
+    "hashtag": "#Argentina #Adventure",
+    "thumbnail": "https://d1ljaggyrdca1l.cloudfront.net/wp-content/uploads/2017/04/Argentina-Iguazu-Falls-Walking-Tour1-1600x900.jpg",
     "spots": [
       {
-        "spotName": "Playa del Carmen",
-        "description": "So good to just lay on this beach, great place to swim too!",
-        "long": -87.0739,
-        "lat": 20.6296,
+        "spotName": "Iguazu Falls Walking Tour",
+        "description": "Super fun! highly recomend!",
+        "long": -54.4366662,
+        "lat": -25.695259,
         "elevation": 32,
-        "photo": "https://www.riu.com/fcs_images/guia-destinos/guia_MX_13792_2x1.jpg"
+        "photo": "https://i0.wp.com/www.wanderingwagars.com/wp-content/uploads/2017/03/Iguazu-Falls-Brazil-with-Kids-Feature.jpg?fit=1600%2C900&ssl=1"
       },
       {
-        "spotName": "Cabo San Lucas",
-        "description": "Wow found a pit where you could just swim all day! Highly recommened!",
-        "long": -109.9167,
-        "lat": 22.8905,
+        "spotName": "La Boca",
+        "description": "A great neighborhood in Buenos Aires. Awesome food.",
+        "long": -58.3704502,
+        "lat": -34.6375881,
         "elevation": 0,
-        "photo": "http://www.loscabosguide.com/wp-content/uploads/2017/04/arch-cabo-san-lucas-1991-105-2516-x4.jpg"
+        "photo": "https://i.pinimg.com/originals/3d/c9/34/3dc934384712fd3c0b2ccc5f1ef7fb7e.jpg"
+      },
+      {
+        "spotName": "Lunch in Tierra Santa",
+        "description": "Great restraunt in Tierra Santa",
+        "long": -58.4332296,
+        "lat": -34.5473819,
+        "elevation": 13000,
+        "photo": "http://www.toimg.net/managed/images/bounded/10134648/w482/h317/image.jpg"
       }
     ]
   },
-  {
+    {
     "username": "thebkrcanbefound@gmail.com",
     "tripName": "Accross the African savannah",
     "destination": "Africa",
@@ -362,7 +402,84 @@
         "photo": "https://www.greenland-travel.com/files/2015/eastgreenland/tasiilaq-fish-drying-erwin-reinthaler.jpg"
       }
     ]
+  },
+  {
+    "username": "huynh.r.k@gmail.com",
+    "tripName": "Kathmandu trip to the mountains",
+    "destination": "Kathmandu",
+    "description": "Traveling around the mountains and doing some awesome hikes",
+    "hashtag": "#everst, #Kathmandu, #TheLife, #travel",
+    "thumbnail": "http://www.bravofly.com/offers/flights/bravofly/img/kathmandu.jpg",
+    "spots": [
+      {
+        "spotName": "bhaktapur temple",
+        "description": "Some ancient temples, pretty cool to look at",
+        "long": 85.4298,
+        "lat": 27.6710,
+        "elevation": 32,
+        "photo": "http://nepaltravels.com/wp-content/uploads/2017/03/bhaktapur-durbar.jpg"
+      },
+      {
+        "spotName": "Base Camp",
+        "description": "Hikng a week up to base camp!",
+        "long": 86.8528,
+        "lat": 28.0026,
+        "elevation": 0,
+        "photo": "https://d3hne3c382ip58.cloudfront.net/resized/750x420/everest-base-camp-trek-tour-2-17499_1514908748.JPG"
+      }
+    ]
+  },
+  {
+    "username": "theNickChapman@gmail.com",
+    "tripName": "Beautiful Iceland",
+    "destination": "Iceland",
+    "description": "Beautiful scenery",
+    "hashtag": "#photography, #travel, #iceland, #nordic",
+    "thumbnail": "http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Iceland/iceland-main-AP-xlarge.jpg",
+    "spots": [
+      {
+        "spotName": "Skaftafell water fall",
+        "description": "Got some great shots here. The hike to it was pretty difficult make sure you wear proper equipment!",
+        "long": -16.9752,
+        "lat": 64.0704,
+        "elevation": 32,
+        "photo": "https://iceland.nordicvisitor.com/images/1/iceland/summer/svartifoss_skaftafell_summer_south_nv_002.jpg"
+      },
+      {
+        "spotName": "Jökulsárlón",
+        "description": "Some beautiful iceburgs to look at!",
+        "long": -16.2306,
+        "lat": 64.0784,
+        "elevation": 0,
+        "photo": "https://cdn.getyourguide.com/img/tour_img-846332-70.jpg"
+      }
+    ]
+  },
+  {
+    "username": "phillip.jun@gmail.com",
+    "tripName": "Party up in Mexico",
+    "destination": "Mexico",
+    "description": "Great time to relax on the beach and have some drinks. ",
+    "hashtag": "#party, #mexico, #tequila, #nomorework",
+    "thumbnail": "https://static.businessinsider.com/image/55439ed669bedd815001cedf/image.jpg",
+    "spots": [
+      {
+        "spotName": "Playa del Carmen",
+        "description": "So good to just lay on this beach, great place to swim too!",
+        "long": -87.0739,
+        "lat": 20.6296,
+        "elevation": 32,
+        "photo": "https://www.riu.com/fcs_images/guia-destinos/guia_MX_13792_2x1.jpg"
+      },
+      {
+        "spotName": "Cabo San Lucas",
+        "description": "Wow found a pit where you could just swim all day! Highly recommened!",
+        "long": -109.9167,
+        "lat": 22.8905,
+        "elevation": 0,
+        "photo": "http://www.loscabosguide.com/wp-content/uploads/2017/04/arch-cabo-san-lucas-1991-105-2516-x4.jpg"
+      }
+    ]
   }
-
 ]
 
