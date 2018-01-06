@@ -39,25 +39,25 @@ NICK CAN FILL THIS OUT
 
 
 # HELPFUL RESOURCES #
-AXIOS
+AXIOS </br>
 https://github.com/axios/axios
-EXPRESS
+EXPRESS</br>
 https://expressjs.com/
-GOOGLE MAPS API REFERS
+GOOGLE MAPS API REFERS</br>
 https://developers.google.com/maps/documentation/javascript/
-BULMA
+BULMA</br>
 https://bulma.io/
-MONGOOSE
+MONGOOSE</br>
 http://mongoosejs.com/docs/index.html
-PASSPORT
+PASSPORT</br>
 http://www.passportjs.org/docs
-REACT
+REACT</br>
 https://reactjs.org/docs/components-and-props.html
-REDUX
+REDUX</br>
 https://redux.js.org/
-WEBPACK
+WEBPACK</br>
 https://webpack.js.org/
-GOOGLE MAPS REACT TOM CHENT
+GOOGLE MAPS REACT TOM CHENT</br>
 https://github.com/tomchentw/react-google-maps
-ALGOLIA REACT CODE DEMOS
+ALGOLIA REACT CODE DEMOS</br>
 https://community.algolia.com/react-instantsearch/examples/Demos.html
