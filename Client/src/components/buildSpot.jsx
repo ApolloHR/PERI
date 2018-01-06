@@ -58,7 +58,7 @@ class BuildSpot extends React.Component {
 
   uploadWidget() {
     let _this = this;
-    window.cloudinary.openUploadWidget({ cloud_name: "peri", theme: "white", cropping: 'server', cropping_show_back_button: true, cropping_aspect_ratio: 1, sources: ["local", "url", "camera", "google_photos", "facebook", "instagram"], show_powered_by: false, upload_preset: "uploadperi", tags:["users"]},
+    window.cloudinary.openUploadWidget({ cloud_name: `${process.env.CLOUDINARY_CLOUDNAME}`, theme: "white", cropping: 'server', cropping_show_back_button: true, cropping_aspect_ratio: 1, sources: ["local", "url", "camera", "google_photos", "facebook", "instagram"], show_powered_by: false, upload_preset: `${process.env.CLOUDINARY_PRESET}`, tags:["users"]},
     function(error, result) {
       if(error) {
         console.log("upload widget error =", error);
