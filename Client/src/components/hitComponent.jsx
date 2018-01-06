@@ -27,7 +27,6 @@ const HitComponent = (props) => {
         </Link>
       </div>
     </div>
-
   );
 };
 

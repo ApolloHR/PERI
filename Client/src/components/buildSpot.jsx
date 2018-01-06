@@ -91,13 +91,6 @@ class BuildSpot extends React.Component {
     });
   }
 
-  // handleChange(e) {
-  //   let info = {...this.props.cloudinaryStore.tempSpot};
-  //   info[e.target.name] = e.target.value;
-  //   this.props.dispatch(cloudinarySpotInfo(info));
-  //   this.setState({ spotName: e.target.value, description: e.target.value })
-  // }
-
   handleChangeSpotName(e) {
     let info = {...this.props.cloudinaryStore.tempSpot};
     info['spotName'] = e.target.value;

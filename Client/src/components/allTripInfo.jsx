@@ -30,35 +30,35 @@ class AllTripInfo extends React.Component {
     axios.post('/getOneTrip', {
       trip: this.props.location.query
     })
-      .then((response) => {
-        const { _id, tripName, destination, description, username, hashtag, spots, thumbnail, upvotes } = response.data;
-        this.setState({
-          _id: _id,
-          tripName: tripName,
-          destination: destination,
-          description: description,
-          username: username,
-          hashtag: hashtag,
-          spots: spots,
-          thumbnail: thumbnail,
-          upvotes: upvotes
-        });
-      })
-      .catch((error) => {
-        console.log('no server in sight');
+    .then((response) => {
+      const { _id, tripName, destination, description, username, hashtag, spots, thumbnail, upvotes } = response.data;
+      this.setState({
+        _id: _id,
+        tripName: tripName,
+        destination: destination,
+        description: description,
+        username: username,
+        hashtag: hashtag,
+        spots: spots,
+        thumbnail: thumbnail,
+        upvotes: upvotes
       });
+    })
+    .catch((error) => {
+      console.log('no server in sight');
+    });
   }
 
   upvote() {
     axios.post('/upvote', {
       _id: this.state._id
     })
-      .then ((response) => {
-        this.setState({ upvotes: response.data.upvotes });
-      })
-      .catch((error) => {
-        console.log('error =', error);
-      });
+    .then ((response) => {
+      this.setState({ upvotes: response.data.upvotes });
+    })
+    .catch((error) => {
+      console.log('error =', error);
+    });
   }
 
   addTripToCart() {
@@ -66,12 +66,12 @@ class AllTripInfo extends React.Component {
     axios.post('/spots', {
       tripId: this.props.location.query.objectID
     })
-      .then(function (response) {
-      thisContext.props.dispatch(addTripToCart(response.data));
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    .then(function (response) {
+    thisContext.props.dispatch(addTripToCart(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   render() {
