@@ -1,16 +1,8 @@
 import React from 'react';
 import algoliasearch from 'algoliasearch';
-import { connect } from 'react-redux';
 import { InstantSearch, SearchBox, SortBy, Stats, Pagination } from 'react-instantsearch/dom';
 import { Link } from 'react-router-dom';
-import searchInput from '../actions/searchActions.js';
 import CustomHits from './customHits.jsx';
-
-@connect((store) => {
-  return {
-    search: store.search
-  }
-})
 
 class Search extends React.Component {
   constructor(props) {
@@ -18,8 +10,6 @@ class Search extends React.Component {
   }
 
   render() {
-    const { search } = this.props;
-    console.log(search.search);
     const style = {
       searchBar: {
         maxWidth: '100%'
