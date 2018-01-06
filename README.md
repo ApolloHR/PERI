@@ -2,6 +2,7 @@
 1. fork and clone the repo
 2. npm install 
 3. npm run startDev
+4. npm run compile
 
 # CLOUD DATABASE SETUP #
 1. setup an account at mlab.com
@@ -30,6 +31,11 @@
   ALGOLIA_API=[Admin Api Key from algolia]
 5. Go to algoliaSearch.js in Db directory and change line 7's Application ID with your owns
 
+# Cloudinary Setup #
+1. Sign up at www.cloudinary.com
+2. Create upload preset
+3. Get cloud name
+4. Inside .env file add preset and cloud name
 
 # OAuth 1.0 client ID#
 BENJI NEEDS TO FILL THIS PART OUT
