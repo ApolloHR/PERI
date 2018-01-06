@@ -6,10 +6,8 @@ import OneTripSpots from './oneTripSpots.jsx';
 
 
 const CustomHits = connectHits(({ hits }) => {
-
   return (
     <div>
-
       <div className='row'>
         {hits.map((hit, i) => {
           return (<OneTripSpots trip={hit} key={i}/>);
