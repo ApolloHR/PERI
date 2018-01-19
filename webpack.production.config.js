@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 var BUILD_DIR = path.resolve(__dirname, './Client/dst');
 var APP_DIR = path.resolve(__dirname, './Client/src');
@@ -11,11 +12,8 @@ var config = {
     filename: 'bundle.js',
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      compress: {
-        warnings: false
-      }
+    new UglifyJsPlugin({
+      sourceMap: true,
     })
   ],
   module: {
