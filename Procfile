@@ -1,1 +1,1 @@
-web: webpack && node ./Server/index.js
+web: ./webpack.production.config.js && node ./Server/index.js
