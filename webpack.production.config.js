@@ -5,7 +5,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 var BUILD_DIR = path.resolve(__dirname, './Client/dst');
 var APP_DIR = path.resolve(__dirname, './Client/src');
 
-var config = {
+module.exports = {
   entry: APP_DIR + '/index.js',
   output: {
     path: BUILD_DIR,
@@ -30,5 +30,3 @@ var config = {
     ]
   },
 };
-
-module.exports = config;
