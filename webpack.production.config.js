@@ -11,11 +11,6 @@ module.exports = {
     path: BUILD_DIR,
     filename: 'bundle.js',
   },
-  plugins: [
-    new UglifyJsPlugin({
-      sourceMap: true,
-    })
-  ],
   module: {
     loaders: [
       {
@@ -29,4 +24,9 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new UglifyJsPlugin({
+      sourceMap: true,
+    })
+  ],
 };
